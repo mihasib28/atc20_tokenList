@@ -20,16 +20,18 @@ const tokens = [
     address: "AC3ZNwL2dMZGj7thrARcPvZCYGjuTD5C9V8KXdBcCiqQ",
     logo: "https://tokenlist.atcscan.io/metadata/AC3ZNwL2dMZGj7thrARcPvZCYGjuTD5C9V8KXdBcCiqQ/logo.png"
 },
-{
-    name: "USDB",
-    address: "ACZDghSb25an1yfMQV3cdM5VvX9JDcUvePhksjCa92yf",
-    logo: "https://tokenlist.atcscan.io/metadata/ACZDghSb25an1yfMQV3cdM5VvX9JDcUvePhksjCa92yf/logo.png"
-},
+
 {
     name: "CNYC",
     address: "ACQqeKkAbnZgp4G8aZsUxQ3We4kgGa55XG1HvsfkqnZR",
     logo: "https://tokenlist.atcscan.io/metadata/ACQqeKkAbnZgp4G8aZsUxQ3We4kgGa55XG1HvsfkqnZR/logo.png"
 },
+{
+    name: "USDB",
+    address: "ACZDghSb25an1yfMQV3cdM5VvX9JDcUvePhksjCa92yf",
+    logo: "https://tokenlist.atcscan.io/metadata/ACZDghSb25an1yfMQV3cdM5VvX9JDcUvePhksjCa92yf/logo.png"
+},
+
 {
     name: "BUSD",
     address: "ACQLqcatoR3nKLJ3Hs8m7ydxHUib5BWiph7To2ATodhU",
