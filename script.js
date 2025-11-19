@@ -3,7 +3,7 @@ const tokens = [
 {
     name: "Atlantis Coin (ATC)",
     address: "",
-    logo: "../image/atclogo.png", // replace if needed
+    logo: "../image/atclogo.png",
     isMainToken: true,
     description: "Native Utility Token of AtlantisChain.",
     links: [
@@ -268,31 +268,30 @@ function renderTokens() {
     const list = document.getElementById("tokenList");
 
     list.innerHTML = tokens.map(t => {
-        // SPECIAL CASE: Atlantis Coin card
-        // SPECIAL CASE: Atlantis Coin card
-if (t.isMainToken) {
-    return `
-        <div class="token-card token-card-main">
-            <img src="${t.logo}" class="token-logo">
-            <div class="token-name">${t.name}</div>
-            <div class="contract" style="font-size:14px; margin-bottom:10px;">
-                ${t.description}
-            </div>
-            <div class="button-row main-buttons">
-                ${t.links.map(link => `
-                    <button class="btn" onclick="window.open('${link.url}', '_blank')">
-                        ${link.text}
-                    </button>
-                `).join("")}
-            </div>
-        </div>
-    `;
-}
 
+        // ATC special card
+        if (t.isMainToken) {
+            return `
+                <div class="token-card token-card-main">
+                    <img src="${t.logo}" class="token-logo">
+                    <div class="token-name">${t.name}</div>
+                    <div class="contract" style="font-size:14px; margin-bottom:10px;">
+                        ${t.description}
+                    </div>
+                    <div class="button-row main-buttons">
+                        ${t.links.map(link => `
+                            <button class="btn" onclick="window.open('${link.url}', '_blank')">
+                                ${link.text}
+                            </button>
+                        `).join("")}
+                    </div>
+                </div>
+            `;
+        }
 
-        // NORMAL TOKENS
+        // Normal tokens
         return `
-            <div class="token-card token-card-main">
+            <div class="token-card">
                 <img src="${t.logo}" class="token-logo">
                 <div class="token-name">${t.name}</div>
                 <div class="contract">${t.address}</div>
@@ -307,13 +306,13 @@ if (t.isMainToken) {
     }).join("");
 }
 
-// Function to copy address to clipboard
+// Copy address
 function copyAddress(addr) {
     navigator.clipboard.writeText(addr);
     showCopied();
 }
 
-// Function to show "Copied!" alert
+// "Copied" popup
 function showCopied() {
     let alertBox = document.querySelector(".copy-alert");
 
@@ -329,7 +328,5 @@ function showCopied() {
     setTimeout(() => alertBox.classList.remove("show"), 1500);
 }
 
-// Load tokens on page load
-renderTokens();
-
-
+// Load tokens
+renderTokens(); 
