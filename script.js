@@ -1,6 +1,42 @@
 // Token list (edit freely)
 const tokens = [
+{
+    name: "Atlantis Coin (ATC)",
+    address: "",
+    logo: "https://s2.coinmarketcap.com/static/img/coins/64x64/22039.png", // replace if needed
+    isMainToken: true,
+    description: "Native Utility Token of AtlantisChain.",
+    links: [
+        { text: "AtlantisChain.org", url: "https://AtlantisChain.org" },
+        { text: "ATCscan.io", url: "https://ATCscan.io" },
+        { text: "AtlantisWallet.org", url: "https://AtlantisWallet.org" },
+        { text: "CoinMarketCap", url: "https://coinmarketcap.com/currencies/atlantis-coin/" }
+    ]
+},
+
+
     {
+    name: "USDA",
+    address: "AC3ZNwL2dMZGj7thrARcPvZCYGjuTD5C9V8KXdBcCiqQ",
+    logo: "https://tokenlist.atcscan.io/metadata/AC3ZNwL2dMZGj7thrARcPvZCYGjuTD5C9V8KXdBcCiqQ/logo.png"
+},
+{
+    name: "USDB",
+    address: "ACZDghSb25an1yfMQV3cdM5VvX9JDcUvePhksjCa92yf",
+    logo: "https://tokenlist.atcscan.io/metadata/ACZDghSb25an1yfMQV3cdM5VvX9JDcUvePhksjCa92yf/logo.png"
+},
+{
+    name: "CNYC",
+    address: "ACQqeKkAbnZgp4G8aZsUxQ3We4kgGa55XG1HvsfkqnZR",
+    logo: "https://tokenlist.atcscan.io/metadata/ACQqeKkAbnZgp4G8aZsUxQ3We4kgGa55XG1HvsfkqnZR/logo.png"
+},
+{
+    name: "BUSD",
+    address: "ACQLqcatoR3nKLJ3Hs8m7ydxHUib5BWiph7To2ATodhU",
+    logo: "https://tokenlist.atcscan.io/metadata/ACQLqcatoR3nKLJ3Hs8m7ydxHUib5BWiph7To2ATodhU/logo.png"
+},
+
+{
     name: "Queen",
     address: "ACtPnTY6cCqdPWTfvFPJ4mDRAPTyDa1xfruVR41E1SG4",
     logo: "https://tokenlist.atcscan.io/metadata/ACtPnTY6cCqdPWTfvFPJ4mDRAPTyDa1xfruVR41E1SG4/logo.png"
@@ -40,16 +76,8 @@ const tokens = [
     address: "ACGdPai5V3wgtgbB1iG3rpzMpBCaNyZofyqXPvQ45h7r",
     logo: "https://tokenlist.atcscan.io/metadata/ACGdPai5V3wgtgbB1iG3rpzMpBCaNyZofyqXPvQ45h7r/logo.png"
 },
-{
-    name: "CNYC",
-    address: "ACQqeKkAbnZgp4G8aZsUxQ3We4kgGa55XG1HvsfkqnZR",
-    logo: "https://tokenlist.atcscan.io/metadata/ACQqeKkAbnZgp4G8aZsUxQ3We4kgGa55XG1HvsfkqnZR/logo.png"
-},
-{
-    name: "USDA",
-    address: "AC3ZNwL2dMZGj7thrARcPvZCYGjuTD5C9V8KXdBcCiqQ",
-    logo: "https://tokenlist.atcscan.io/metadata/AC3ZNwL2dMZGj7thrARcPvZCYGjuTD5C9V8KXdBcCiqQ/logo.png"
-},
+
+
 {
     name: "TRX",
     address: "ACjeBtLQjKvqu8vPW7pa7ik6HPgz2meCyAofYpXMX2Wy",
@@ -80,16 +108,8 @@ const tokens = [
     address: "ACXDi4GUfURUSzeEeVtybJ2HKnuhNphovZ6KmS6XLp9R",
     logo: "https://tokenlist.atcscan.io/metadata/ACXDi4GUfURUSzeEeVtybJ2HKnuhNphovZ6KmS6XLp9R/logo.png"
 },
-{
-    name: "USDB",
-    address: "ACZDghSb25an1yfMQV3cdM5VvX9JDcUvePhksjCa92yf",
-    logo: "https://tokenlist.atcscan.io/metadata/ACZDghSb25an1yfMQV3cdM5VvX9JDcUvePhksjCa92yf/logo.png"
-},
-{
-    name: "BUSD",
-    address: "ACQLqcatoR3nKLJ3Hs8m7ydxHUib5BWiph7To2ATodhU",
-    logo: "https://tokenlist.atcscan.io/metadata/ACQLqcatoR3nKLJ3Hs8m7ydxHUib5BWiph7To2ATodhU/logo.png"
-},
+
+
 {
     name: "GJ11",
     address: "AC9RwDs7HoV65NFd5QtnkUPwrWTnANktAcoak33Qv4xv",
@@ -243,28 +263,57 @@ const tokens = [
 
 ];
 
+// Function to render tokens
 function renderTokens() {
     const list = document.getElementById("tokenList");
 
-    list.innerHTML = tokens.map(t => `
-        <div class="token-card">
+    list.innerHTML = tokens.map(t => {
+        // SPECIAL CASE: Atlantis Coin card
+        // SPECIAL CASE: Atlantis Coin card
+if (t.isMainToken) {
+    return `
+        <div class="token-card token-card-main">
             <img src="${t.logo}" class="token-logo">
             <div class="token-name">${t.name}</div>
-            <div class="contract">${t.address}</div>
-
-            <div class="button-row">
-                <button class="btn" onclick="copyAddress('${t.address}')">Copy</button>
-                <button class="btn" onclick="window.open('https://atcscan.io/address/${t.address}', '_blank')">ATCScan</button>
+            <div class="contract" style="font-size:14px; margin-bottom:10px;">
+                ${t.description}
+            </div>
+            <div class="button-row main-buttons">
+                ${t.links.map(link => `
+                    <button class="btn" onclick="window.open('${link.url}', '_blank')">
+                        ${link.text}
+                    </button>
+                `).join("")}
             </div>
         </div>
-    `).join("");
+    `;
 }
 
+
+        // NORMAL TOKENS
+        return `
+            <div class="token-card token-card-main">
+                <img src="${t.logo}" class="token-logo">
+                <div class="token-name">${t.name}</div>
+                <div class="contract">${t.address}</div>
+                <div class="button-row">
+                    <button class="btn" onclick="copyAddress('${t.address}')">Copy</button>
+                    <button class="btn" onclick="window.open('https://atcscan.io/address/${t.address}', '_blank')">
+                        ATCScan
+                    </button>
+                </div>
+            </div>
+        `;
+    }).join("");
+}
+
+// Function to copy address to clipboard
 function copyAddress(addr) {
     navigator.clipboard.writeText(addr);
     showCopied();
 }
 
+// Function to show "Copied!" alert
 function showCopied() {
     let alertBox = document.querySelector(".copy-alert");
 
@@ -280,5 +329,7 @@ function showCopied() {
     setTimeout(() => alertBox.classList.remove("show"), 1500);
 }
 
-// Load tokens
+// Load tokens on page load
 renderTokens();
+
+
