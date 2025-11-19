@@ -31,11 +31,12 @@ body {
 }
 
 .token-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
+/* Normal token cards */
 .token-card {
     background: rgba(29, 34, 66, 0.45);
     border: 1px solid rgba(0,140,255,0.3);
@@ -43,11 +44,30 @@ body {
     padding: 20px;
     backdrop-filter: blur(12px);
     transition: transform 0.25s, box-shadow 0.25s;
+    width: calc(25% - 20px);
+    min-width: 260px;
 }
 
 .token-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 15px #008cff75;
+}
+
+/* ATC CARD → FULL WIDTH */
+.token-card-main {
+    width: 100% !important;
+    max-width: 100%;
+}
+
+/* ATC multi-row button layout */
+.token-card-main .main-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.token-card-main .main-buttons .btn {
+    flex: 1 1 calc(50% - 10px);
 }
 
 .token-logo {
