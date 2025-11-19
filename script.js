@@ -268,51 +268,47 @@ function renderTokens() {
     const list = document.getElementById("tokenList");
 
     list.innerHTML = tokens.map(t => {
+        
 
-        // ATC special card
         if (t.isMainToken) {
             return `
                 <div class="token-card token-card-main">
-                    <img src="${t.logo}" class="token-logo">
+                    <img src="${t.logo}" class="token-logo" alt="">
                     <div class="token-name">${t.name}</div>
-                    <div class="contract" style="font-size:14px; margin-bottom:10px;">
-                        ${t.description}
-                    </div>
-                    <div class="button-row main-buttons">
-                        ${t.links.map(link => `
-                            <button class="btn" onclick="window.open('${link.url}', '_blank')">
-                                ${link.text}
-                            </button>
-                        `).join("")}
+                    <div class="contract">${t.description}</div>
+
+                    <div class="main-buttons">
+                        ${t.links.map(
+                            link => `<button class="btn" onclick="window.open('${link.url}', '_blank')">${link.text}</button>`
+                        ).join("")}
                     </div>
                 </div>
             `;
         }
 
-        // Normal tokens
+
         return `
             <div class="token-card">
-                <img src="${t.logo}" class="token-logo">
+                <img src="${t.logo}" class="token-logo" alt="">
                 <div class="token-name">${t.name}</div>
                 <div class="contract">${t.address}</div>
+
                 <div class="button-row">
                     <button class="btn" onclick="copyAddress('${t.address}')">Copy</button>
-                    <button class="btn" onclick="window.open('https://atcscan.io/address/${t.address}', '_blank')">
-                        ATCScan
-                    </button>
+                    <button class="btn" onclick="window.open('https://atcscan.io/address/${t.address}', '_blank')">ATCScan</button>
                 </div>
             </div>
         `;
     }).join("");
 }
 
-// Copy address
+
 function copyAddress(addr) {
     navigator.clipboard.writeText(addr);
     showCopied();
 }
 
-// "Copied" popup
+
 function showCopied() {
     let alertBox = document.querySelector(".copy-alert");
 
@@ -328,5 +324,4 @@ function showCopied() {
     setTimeout(() => alertBox.classList.remove("show"), 1500);
 }
 
-// Load tokens
-renderTokens(); 
+renderTokens();

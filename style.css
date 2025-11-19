@@ -1,3 +1,6 @@
+/* style.css */
+
+/* RESET & BASE */
 * {
     margin: 0;
     padding: 0;
@@ -10,42 +13,52 @@ body {
     color: #e8e8e8;
 }
 
+/* HEADER */
 .header {
     text-align: center;
     padding: 40px 20px;
 }
 
 .header h1 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     color: #46b6ff;
     text-shadow: 0 0 15px #008cff;
 }
 
 .subtitle {
+    margin-top: 8px;
     font-size: 1.1rem;
     opacity: 0.7;
 }
 
+.disclaimer-link {
+    margin-top: 22px;
+}
+
+.disclaimer-link a {
+    color: #6ec6ff;
+}
+
+/* CONTAINER */
 .container {
     padding: 20px;
 }
 
+/* RESPONSIVE GRID */
 .token-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 20px;
 }
 
-/* Normal token cards */
+/* TOKEN CARD BASE */
 .token-card {
     background: rgba(29, 34, 66, 0.45);
     border: 1px solid rgba(0,140,255,0.3);
-    border-radius: 16px;
+    border-radius: 18px;
     padding: 20px;
     backdrop-filter: blur(12px);
     transition: transform 0.25s, box-shadow 0.25s;
-    width: calc(25% - 20px);
-    min-width: 260px;
 }
 
 .token-card:hover {
@@ -53,54 +66,55 @@ body {
     box-shadow: 0 0 15px #008cff75;
 }
 
-/* ATC CARD → FULL WIDTH */
+/* MAIN TOKEN CARD - FULL WIDTH */
 .token-card-main {
-    width: 100% !important;
-    max-width: 100%;
+    grid-column: 1 / -1;
 }
 
-/* ATC multi-row button layout */
-.token-card-main .main-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+/* MAIN TOKEN BUTTONS */
+.main-buttons {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
 }
 
-.token-card-main .main-buttons .btn {
-    flex: 1 1 calc(50% - 10px);
-}
-
+/* LOGO */
 .token-logo {
-    width: 52px;
-    height: 52px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     margin-bottom: 12px;
 }
 
+/* NAME & ADDRESS */
 .token-name {
     font-size: 1.2rem;
-    margin-bottom: 8px;
+    font-weight: 600;
+    margin-bottom: 6px;
 }
 
 .contract {
     font-size: 0.9rem;
-    word-wrap: break-word;
     opacity: 0.8;
-    margin-bottom: 12px;
+    word-wrap: break-word;
+    margin-bottom: 14px;
 }
 
+/* BUTTON ROW FOR NORMAL TOKENS */
 .button-row {
     display: flex;
     gap: 10px;
 }
 
+/* BUTTONS */
 .btn {
     flex: 1;
-    padding: 8px 12px;
+    padding: 10px 12px;
     background: #008cff;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     transition: 0.2s;
     font-size: 0.9rem;
@@ -110,13 +124,14 @@ body {
     background: #34b9ff;
 }
 
+/* COPY ALERT */
 .copy-alert {
     position: fixed;
     top: 20px;
     right: 20px;
     background: #008cff;
-    padding: 10px 16px;
-    border-radius: 8px;
+    padding: 10px 18px;
+    border-radius: 10px;
     opacity: 0;
     transform: translateY(-10px);
     transition: 0.4s ease;
@@ -125,4 +140,12 @@ body {
 .copy-alert.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    opacity: 0.7;
+    font-size: 0.9rem;
 }
