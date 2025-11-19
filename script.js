@@ -3,7 +3,7 @@ const tokens = [
 {
     name: "Atlantis Coin (ATC)",
     address: "",
-    logo: "https://s2.coinmarketcap.com/static/img/coins/64x64/22039.png", // replace if needed
+    logo: "../image/atclogo.png", // replace if needed
     isMainToken: true,
     description: "Native Utility Token of AtlantisChain.",
     links: [
