@@ -3,9 +3,9 @@ const tokens = [
 {
     name: "Atlantis Coin (ATC)",
     address: "",
-    logo: "https://atlantischain.org/gallery/dark-explorer-logo.70c0fdf61.svg?ts=1763543006",
+    logo: "Asset/atc.png",
     isMainToken: true,
-    description: "Native Utility Token of AtlantisChain.",
+    description: "Native Utility Token of AtlantisChain",
     links: [
         { text: "AtlantisChain.org", url: "https://AtlantisChain.org" },
         { text: "ATCscan.io", url: "https://ATCscan.io" },

@@ -67,9 +67,42 @@ body {
 }
 
 /* MAIN TOKEN CARD - FULL WIDTH */
+/* CENTER CONTENT FOR MAIN TOKEN CARD ONLY */
 .token-card-main {
-    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* center horizontally */
+    text-align: center;       /* center text */
+    justify-content: center;  /* center vertically */
+    grid-column: 1 / -1;      /* full width */
+    padding: 10px;
+    box-sizing: border-box;
 }
+
+/* MAIN CARD BUTTONS */
+.token-card-main .main-buttons {
+    display: flex;
+    flex-wrap: nowrap;        /* default: no wrap on large screens */
+    justify-content: center;
+    gap: 12px;
+    overflow-x: auto;         /* allow horizontal scroll if needed */
+    padding-bottom: 5px;
+}
+
+/* RESPONSIVE FOR MOBILE */
+@media (max-width: 600px) {
+    .token-card-main .main-buttons {
+        flex-wrap: wrap;       /* allow buttons to wrap */
+        gap: 8px;              /* smaller gap for mobile */
+        justify-content: center;
+    }
+    
+    .token-card-main .main-buttons button {
+        flex: 1 1 45%;         /* buttons take ~half width */
+        min-width: 120px;      /* prevent too small buttons */
+    }
+}
+
 
 /* MAIN TOKEN BUTTONS */
 .main-buttons {
