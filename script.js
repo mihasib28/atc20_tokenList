@@ -16,104 +16,104 @@ const tokens = [
 
 
     {
-    name: "USDA",
+    name: "Atlantis USD (USDA)",
     address: "AC3ZNwL2dMZGj7thrARcPvZCYGjuTD5C9V8KXdBcCiqQ",
     logo: "https://tokenlist.atcscan.io/metadata/AC3ZNwL2dMZGj7thrARcPvZCYGjuTD5C9V8KXdBcCiqQ/logo.png"
 },
 
 {
-    name: "CNYC",
+    name: "CNY Coin (CNYC)",
     address: "ACQqeKkAbnZgp4G8aZsUxQ3We4kgGa55XG1HvsfkqnZR",
     logo: "https://tokenlist.atcscan.io/metadata/ACQqeKkAbnZgp4G8aZsUxQ3We4kgGa55XG1HvsfkqnZR/logo.png"
 },
 {
-    name: "USDB",
+    name: "Blockchain USD (USDB)",
     address: "ACZDghSb25an1yfMQV3cdM5VvX9JDcUvePhksjCa92yf",
     logo: "https://tokenlist.atcscan.io/metadata/ACZDghSb25an1yfMQV3cdM5VvX9JDcUvePhksjCa92yf/logo.png"
 },
 
 {
-    name: "BUSD",
+    name: "Binance USD (BUSD)",
     address: "ACQLqcatoR3nKLJ3Hs8m7ydxHUib5BWiph7To2ATodhU",
     logo: "https://tokenlist.atcscan.io/metadata/ACQLqcatoR3nKLJ3Hs8m7ydxHUib5BWiph7To2ATodhU/logo.png"
 },
 
 {
-    name: "Queen",
+    name: "Diana the Earth Queen (QUEEN)",
     address: "ACtPnTY6cCqdPWTfvFPJ4mDRAPTyDa1xfruVR41E1SG4",
     logo: "https://tokenlist.atcscan.io/metadata/ACtPnTY6cCqdPWTfvFPJ4mDRAPTyDa1xfruVR41E1SG4/logo.png"
 },
 {
-    name: "Emperor",
+    name: "Elon the Mars Emperor (EMPEROR)",
     address: "ACFTFdoB2woJhqh2NEDLQAxSCFg7kQuJJAiGHpuJ4WYY",
     logo: "https://tokenlist.atcscan.io/metadata/ACFTFdoB2woJhqh2NEDLQAxSCFg7kQuJJAiGHpuJ4WYY/logo.png"
 },
 {
-    name: "KING",
+    name: "Trump the Crypto King (KING)",
     address: "ACYAht7qi27gMNU7ZzTXzy2RTNVZKnfspvzuM5MF7Anq",
     logo: "https://tokenlist.atcscan.io/metadata/ACYAht7qi27gMNU7ZzTXzy2RTNVZKnfspvzuM5MF7Anq/logo.png"
 },
 {
-    name: "MAX",
+    name: "Dr Max the Cat wif Hat (MAX)",
     address: "AC8dLeddJKEyha842ZQiRLLooysrVeB9NVsV7hMwRKad",
     logo: "https://tokenlist.atcscan.io/metadata/AC8dLeddJKEyha842ZQiRLLooysrVeB9NVsV7hMwRKad/logo.png"
 },
 {
-    name: "DOGE",
+    name: "Dogecoin (DOGE)",
     address: "AChqa1LZ9sFQtLfPhNsPrcMkXGFkgfhnw2bb3TjbdW9V",
     logo: "https://tokenlist.atcscan.io/metadata/AChqa1LZ9sFQtLfPhNsPrcMkXGFkgfhnw2bb3TjbdW9V/logo.jpg"
 },
 {
-    name: "SOL",
+    name: "Solana (SOL)",
     address: "ACkAVQaCdvb3rqT1GsGNEqM5oimdw5jvbKc6Dz1QaBaT",
     logo: "https://tokenlist.atcscan.io/metadata/ACkAVQaCdvb3rqT1GsGNEqM5oimdw5jvbKc6Dz1QaBaT/logo.png"
 },
 {
-    name: "ETH",
+    name: "Ethereum (ETH)",
     address: "ACY7LgNL5QV2SHKiAoYRvBAvEaZfLG4mBoUyYW5kjrcY",
     logo: "https://tokenlist.atcscan.io/metadata/ACY7LgNL5QV2SHKiAoYRvBAvEaZfLG4mBoUyYW5kjrcY/logo.png"
 },
 {
-    name: "BTC",
+    name: "Bitcoin (BTC)",
     address: "ACGdPai5V3wgtgbB1iG3rpzMpBCaNyZofyqXPvQ45h7r",
     logo: "https://tokenlist.atcscan.io/metadata/ACGdPai5V3wgtgbB1iG3rpzMpBCaNyZofyqXPvQ45h7r/logo.png"
 },
 
 
 {
-    name: "TRX",
+    name: "Tron (TRX)",
     address: "ACjeBtLQjKvqu8vPW7pa7ik6HPgz2meCyAofYpXMX2Wy",
     logo: "https://tokenlist.atcscan.io/metadata/ACjeBtLQjKvqu8vPW7pa7ik6HPgz2meCyAofYpXMX2Wy/logo.png"
 },
 {
-    name: "BNB",
+    name: "Binance Coin (BNB)",
     address: "AC8wvafPjCdtC1L38Y1vkQiQRKVQQgfm1xsiS6AJRpXS",
     logo: "https://tokenlist.atcscan.io/metadata/AC8wvafPjCdtC1L38Y1vkQiQRKVQQgfm1xsiS6AJRpXS/logo.png"
 },
 {
-    name: "PEPE",
+    name: "Pepe (PEPE)",
     address: "AChtEnyeWybwDkMFaiDtWFavne7R3uZ2JCTguQog5kq5",
     logo: "https://tokenlist.atcscan.io/metadata/AChtEnyeWybwDkMFaiDtWFavne7R3uZ2JCTguQog5kq5/logo.png"
 },
 {
-    name: "KIRK",
+    name: "Charlie Kirk the American Hero (KIRK)",
     address: "ACmXEAEZCgi8BHAvgKqzeovTBNfpTZjv5dQypzV3pLjF",
     logo: "https://tokenlist.atcscan.io/metadata/ACmXEAEZCgi8BHAvgKqzeovTBNfpTZjv5dQypzV3pLjF/logo.png"
 },
 {
-    name: "AzukiCoin",
+    name: "AzukiCoin (AZUKI)",
     address: "ACuaycuupvSBHZ7ijU7gT6GvSapm81khxa7itVjrsAVP",
     logo: "https://tokenlist.atcscan.io/metadata/ACuaycuupvSBHZ7ijU7gT6GvSapm81khxa7itVjrsAVP/logo.png"
 },
 {
-    name: "LABUBU",
+    name: "Labubu the Atlantis Fairy (LABUBU)",
     address: "ACXDi4GUfURUSzeEeVtybJ2HKnuhNphovZ6KmS6XLp9R",
     logo: "https://tokenlist.atcscan.io/metadata/ACXDi4GUfURUSzeEeVtybJ2HKnuhNphovZ6KmS6XLp9R/logo.png"
 },
 
 
 {
-    name: "GJ11",
+    name: "Stealth Attack Drone (GJ11)",
     address: "AC9RwDs7HoV65NFd5QtnkUPwrWTnANktAcoak33Qv4xv",
     logo: "https://tokenlist.atcscan.io/metadata/AC9RwDs7HoV65NFd5QtnkUPwrWTnANktAcoak33Qv4xv/logo.png"
 },
@@ -123,22 +123,22 @@ const tokens = [
     logo: "https://tokenlist.atcscan.io/metadata/ACj9UQvTi1D6pN7X6Dnmcgzpsnam9Ab5ikZ8LAVLVSkv/logo.png"
 },
 {
-    name: "WIF",
+    name: "Dogwifhat (WIF)",
     address: "ACD3uWgLTWCyvaKfYyCKhdUB3FTLUGtgyyVrGjACVq1Y",
     logo: "https://tokenlist.atcscan.io/metadata/ACD3uWgLTWCyvaKfYyCKhdUB3FTLUGtgyyVrGjACVq1Y/logo.png"
 },
 {
-    name: "POPCAT",
+    name: "Popcat (POPCAT)",
     address: "ACygPor7YK4NJcEpoyigr6qkM8B5SEGTVnc8YQLC9iMY",
     logo: "https://tokenlist.atcscan.io/metadata/ACygPor7YK4NJcEpoyigr6qkM8B5SEGTVnc8YQLC9iMY/logo.png"
 },
 {
-    name: "SHIB",
+    name: "Shiba Inu (SHIB)",
     address: "ACFBDRVWMRvp9iYCrAVWbGfzr9tE5ddSapaoUugcKay3",
     logo: "https://tokenlist.atcscan.io/metadata/ACFBDRVWMRvp9iYCrAVWbGfzr9tE5ddSapaoUugcKay3/logo.png"
 },
 {
-    name: "WEN",
+    name: "Wen (WEN)",
     address: "ACSghPtkMLkZ7qP1Bw5nbFKhV8VtvfNaWDjbEoyo2XWt",
     logo: "https://tokenlist.atcscan.io/metadata/ACSghPtkMLkZ7qP1Bw5nbFKhV8VtvfNaWDjbEoyo2XWt/logo.png"
 },
