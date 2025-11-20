@@ -7,10 +7,10 @@ const tokens = [
     isMainToken: true,
     description: "Native Utility Token of AtlantisChain",
     links: [
-        { text: "AtlantisChain.org", url: "https://AtlantisChain.org" },
-        { text: "ATCscan.io", url: "https://ATCscan.io" },
-        { text: "AtlantisWallet.org", url: "https://AtlantisWallet.org" },
-        { text: "CoinMarketCap", url: "https://coinmarketcap.com/currencies/atlantis-coin/" }
+        { text: "Website", url: "https://AtlantisChain.org", icon: "https://img.icons8.com/ios-glyphs/30/FFFFFF/domain.png" },
+        { text: "Explorer", url: "https://ATCscan.io", icon: "Asset/magnifying.svg" },
+        { text: "Wallet", url: "https://AtlantisWallet.org", icon: "https://img.icons8.com/metro/26/FFFFFF/wallet.png" },
+        { text: "CoinMarketCap", url: "https://coinmarketcap.com/currencies/atlantis-coin/", icon: "Asset/cmc.png" }
     ]
 },
 
@@ -244,7 +244,7 @@ const tokens = [
 },
 {
     name: "Virtual Protocol (VIRTUAL)",
-    address: "ACPNtrhiQ86cGcfzdLaeMkSE6bNWQssf3ydya7mg9ndb",
+    address: "ACPzGAaYcMcMoeT99fuC4U21j3AHStQdNVibwnKecAb",
     logo: "https://tokenlist.atcscan.io/metadata/ACPNtrhiQ86cGcfzdLaeMkSE6bNWQssf3ydya7mg9ndb/logo.png"
 },
 {
@@ -261,6 +261,31 @@ const tokens = [
     name: "Kaito (KAITO)",
     address: "ACG1KK1y29SxkuzcfuzCU7aJouoRyizbE6HiGj1JmxvM",
     logo: "https://tokenlist.atcscan.io/metadata/ACG1KK1y29SxkuzcfuzCU7aJouoRyizbE6HiGj1JmxvM/logo.png"
+},
+{
+    name: "Peanut the Squirrel (PNUT)",
+    address: "AC9nQgRdg8aetyvm1Nsm6mKBKgcqu6WadhsUYaVZx9xz",
+    logo: "https://tokenlist.atcscan.io/metadata/AC9nQgRdg8aetyvm1Nsm6mKBKgcqu6WadhsUYaVZx9xz/logo.png"
+},
+{
+    name: "Avalanche (AVAX)",
+    address: "ACvVJ8ybccWnwSRpuzWpqqQwQkrmRUx3qXnQkHTHxyxZ",
+    logo: "https://tokenlist.atcscan.io/metadata/ACvVJ8ybccWnwSRpuzWpqqQwQkrmRUx3qXnQkHTHxyxZ/logo.png"
+},
+{
+    name: "American Coin® (AC)",
+    address: "ACUtUZHXhmowvarHDMuVMfxTUUYJWkMr4BjEnfPFeV8w",
+    logo: "https://tokenlist.atcscan.io/metadata/ACUtUZHXhmowvarHDMuVMfxTUUYJWkMr4BjEnfPFeV8w/logo.png"
+},
+{
+    name: "Official Trump (TRUMP)",
+    address: "ACYjBGNBLwrxX2yAQpDyeL8UXGuFMDBoFmWKfj3s8SmZ",
+    logo: "https://tokenlist.atcscan.io/metadata/ACYjBGNBLwrxX2yAQpDyeL8UXGuFMDBoFmWKfj3s8SmZ/logo.png"
+},
+{
+    name: "SPX6900 (SPX)",
+    address: "ACp2rMrPfWmAMDaan1ksddeoRpY1N4s1seq639Zz2g3s",
+    logo: "https://tokenlist.atcscan.io/metadata/ACp2rMrPfWmAMDaan1ksddeoRpY1N4s1seq639Zz2g3s/logo.png"
 },
 
 ];
@@ -281,12 +306,19 @@ function renderTokens() {
 
                     <div class="main-buttons">
                         ${t.links.map(
-                            link => `<button class="btn" onclick="window.open('${link.url}', '_blank')">${link.text}</button>`
+                            link => `
+                                <button class="btn" onclick="window.open('${link.url}', '_blank')">
+                                    <img src="${link.icon}" class="btn-icon" alt=""> 
+                                    ${link.text}
+                                </button>
+                            `
                         ).join("")}
                     </div>
                 </div>
             `;
         }
+
+        
 
 
         return `
