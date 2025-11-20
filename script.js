@@ -295,12 +295,39 @@ const tokens = [
 
 ];
 
-// Function to render tokens
-function renderTokens() {
+
+const searchWrapper = document.createElement("div");
+searchWrapper.className = "search-wrapper";
+
+
+const searchInput = document.createElement("input");
+searchInput.className = "search-input";
+searchInput.placeholder = "Search token or contract...";
+
+
+searchInput.addEventListener("keyup", filterTokens);
+
+
+const container = document.querySelector(".container");
+container.insertBefore(searchWrapper, container.firstChild);
+searchWrapper.appendChild(searchInput);
+
+function filterTokens() {
+    const value = searchInput.value.toLowerCase();
+
+    const filtered = tokens.filter(t =>
+        t.name.toLowerCase().includes(value) ||
+        (t.address && t.address.toLowerCase().includes(value))
+    );
+
+    renderTokens(filtered);
+}
+
+
+function renderTokens(listData = tokens) {
     const list = document.getElementById("tokenList");
 
-    list.innerHTML = tokens.map(t => {
-        
+    list.innerHTML = listData.map(t => {
 
         if (t.isMainToken) {
             return `
@@ -310,36 +337,34 @@ function renderTokens() {
                     <div class="contract">${t.description}</div>
 
                     <div class="main-buttons">
-                        ${t.links.map(
-                            link => `
-                                <button class="btn" onclick="window.open('${link.url}', '_blank')">
-                                    <img src="${link.icon}" class="btn-icon" alt=""> 
-                                    ${link.text}
-                                </button>
-                            `
-                        ).join("")}
+                        ${t.links.map(link => `
+                            <button class="btn" onclick="window.open('${link.url}', '_blank')">
+                                <img src="${link.icon}" class="btn-icon">
+                                ${link.text}
+                            </button>
+                        `).join("")}
                     </div>
                 </div>
             `;
         }
 
-        
-
-
         return `
             <div class="token-card">
-                <img src="${t.logo}" class="token-logo" alt="">
+                <img src="${t.logo}" class="token-logo">
                 <div class="token-name">${t.name}</div>
                 <div class="contract">${t.address}</div>
 
                 <div class="button-row">
                     <button class="btn" onclick="copyAddress('${t.address}')">Copy</button>
-                    <button class="btn" onclick="window.open('https://atcscan.io/address/${t.address}', '_blank')">ATCScan</button>
+                    <button class="btn" onclick="window.open('https://atcscan.io/address/${t.address}', '_blank')">
+                        ATCScan
+                    </button>
                 </div>
             </div>
         `;
     }).join("");
 }
+
 
 
 function copyAddress(addr) {
