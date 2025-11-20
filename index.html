@@ -19,10 +19,50 @@
     </h2>
 </header>
 
+<!-- Main ATC Token Card -->
+<div class="token-card-main">
+    <img src="Asset/atc.png" class="token-logo" alt="Atlantis Coin Logo">
 
-<main class="container">
-    <div id="tokenList" class="token-grid"></div>
-</main>
+    <div class="token-name">Atlantis Coin® (ATC)</div>
+
+    <div class="contract">Native Utility Token of AtlantisChain</div>
+
+    <div class="main-buttons">
+
+        <button class="btn" onclick="window.open('https://AtlantisChain.org', '_blank')">
+            <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/domain.png" class="btn-icon">
+            Website
+        </button>
+
+        <button class="btn" onclick="window.open('https://ATCscan.io', '_blank')">
+            <img src="Asset/magnifying.svg" class="btn-icon">
+            Explorer
+        </button>
+
+        <button class="btn" onclick="window.open('https://AtlantisWallet.org', '_blank')">
+            <img src="https://img.icons8.com/metro/26/FFFFFF/wallet.png" class="btn-icon">
+            Wallet
+        </button>
+
+        <button class="btn" onclick="window.open('https://coinmarketcap.com/currencies/atlantis-coin/', '_blank')">
+            <img src="Asset/cmc.png" class="btn-icon">
+            CoinMarketCap
+        </button>
+
+    </div>
+</div>
+
+
+
+<div class="container">
+
+    <div id="mainCardArea"></div>      <!-- First card goes here -->
+
+    <div id="searchArea"></div>        <!-- Search bar goes here -->
+
+    <div id="tokenList" class="token-grid"></div>   <!-- Other tokens -->
+</div>
+
 
 <footer class="footer">
     &copy; 2025. All rights reserved. This website is an unofficial ATC-20 token directory and is not affiliated with AtlantisChain, Atlantis X DEX, AtlantisCEX, or atcscan.io.

@@ -1,18 +1,6 @@
 // Token list (edit freely)
 const tokens = [
-{
-    name: "Atlantis Coin® (ATC)",
-    address: "",
-    logo: "Asset/atc.png",
-    isMainToken: true,
-    description: "Native Utility Token of AtlantisChain",
-    links: [
-        { text: "Website", url: "https://AtlantisChain.org", icon: "https://img.icons8.com/ios-glyphs/30/FFFFFF/domain.png" },
-        { text: "Explorer", url: "https://ATCscan.io", icon: "Asset/magnifying.svg" },
-        { text: "Wallet", url: "https://AtlantisWallet.org", icon: "https://img.icons8.com/metro/26/FFFFFF/wallet.png" },
-        { text: "CoinMarketCap", url: "https://coinmarketcap.com/currencies/atlantis-coin/", icon: "Asset/cmc.png" }
-    ]
-},
+
 
 
     {
@@ -296,59 +284,42 @@ const tokens = [
 ];
 
 
-const searchWrapper = document.createElement("div");
-searchWrapper.className = "search-wrapper";
 
+// --- Insert search bar ---
+function insertSearchBar() {
+    const searchArea = document.getElementById("searchArea");
 
-const searchInput = document.createElement("input");
-searchInput.className = "search-input";
-searchInput.placeholder = "Search token or contract...";
+    // Create wrapper
+    const wrapper = document.createElement("div");
+    wrapper.className = "search-wrapper";
 
+    // Create input
+    const input = document.createElement("input");
+    input.className = "search-input";
+    input.id = "searchInput";
+    input.placeholder = "Search token or contract...";
 
-searchInput.addEventListener("keyup", filterTokens);
+    input.addEventListener("keyup", filterTokens);
 
-
-const container = document.querySelector(".container");
-container.insertBefore(searchWrapper, container.firstChild);
-searchWrapper.appendChild(searchInput);
-
-function filterTokens() {
-    const value = searchInput.value.toLowerCase();
-
-    const filtered = tokens.filter(t =>
-        t.name.toLowerCase().includes(value) ||
-        (t.address && t.address.toLowerCase().includes(value))
-    );
-
-    renderTokens(filtered);
+    wrapper.appendChild(input);
+    searchArea.appendChild(wrapper);
 }
 
 
-function renderTokens(listData = tokens) {
-    const list = document.getElementById("tokenList");
+// --- Render tokens ---
+function renderTokens(list = tokens) {
+    const mainArea = document.getElementById("mainCardArea");
+    const listArea = document.getElementById("tokenList");
 
-    list.innerHTML = listData.map(t => {
+    // Clear areas
+    mainArea.innerHTML = "";
+    listArea.innerHTML = "";
 
-        if (t.isMainToken) {
-            return `
-                <div class="token-card-main">
-                    <img src="${t.logo}" class="token-logo" alt="">
-                    <div class="token-name">${t.name}</div>
-                    <div class="contract">${t.description}</div>
+    list.forEach(t => {
 
-                    <div class="main-buttons">
-                        ${t.links.map(link => `
-                            <button class="btn" onclick="window.open('${link.url}', '_blank')">
-                                <img src="${link.icon}" class="btn-icon">
-                                ${link.text}
-                            </button>
-                        `).join("")}
-                    </div>
-                </div>
-            `;
-        }
 
-        return `
+        // NORMAL CARD
+        listArea.innerHTML += `
             <div class="token-card">
                 <img src="${t.logo}" class="token-logo">
                 <div class="token-name">${t.name}</div>
@@ -362,30 +333,44 @@ function renderTokens(listData = tokens) {
                 </div>
             </div>
         `;
-    }).join("");
+    });
 }
 
 
+// --- Filter tokens ---
+function filterTokens() {
+    const v = document.getElementById("searchInput").value.toLowerCase();
 
+    const filtered = tokens.filter(t =>
+        t.name.toLowerCase().includes(v) ||
+        (t.address && t.address.toLowerCase().includes(v))
+    );
+
+    renderTokens(filtered);
+}
+
+
+// --- Copy ---
 function copyAddress(addr) {
     navigator.clipboard.writeText(addr);
     showCopied();
 }
 
-
 function showCopied() {
-    let alertBox = document.querySelector(".copy-alert");
+    let box = document.querySelector(".copy-alert");
 
-    if (!alertBox) {
-        alertBox = document.createElement("div");
-        alertBox.className = "copy-alert";
-        alertBox.textContent = "Copied!";
-        document.body.appendChild(alertBox);
+    if (!box) {
+        box = document.createElement("div");
+        box.className = "copy-alert";
+        box.textContent = "Copied!";
+        document.body.appendChild(box);
     }
 
-    alertBox.classList.add("show");
-
-    setTimeout(() => alertBox.classList.remove("show"), 1500);
+    box.classList.add("show");
+    setTimeout(() => box.classList.remove("show"), 1500);
 }
 
+
+// INITIAL LOAD
+insertSearchBar();
 renderTokens();
