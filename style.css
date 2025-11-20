@@ -88,6 +88,26 @@ body {
     box-sizing: border-box;
 }
 
+.token-name-main {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+
+/* COPY ALERT */
+.copy-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #008cff;
+    padding: 10px 18px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 0.4s ease;
+}
+
 /* MAIN CARD BUTTONS */
 .token-card-main .main-buttons {
     display: flex;
@@ -137,12 +157,21 @@ body {
     margin-bottom: 6px;
 }
 
+.contract-main {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    word-wrap: break-word;
+    margin-bottom: 8px;
+    min-height: 1.2rem;
+    overflow: hidden;
+}
+
 .contract {
     font-size: 0.9rem;
     opacity: 0.8;
     word-wrap: break-word;
-    margin-bottom: 14px;
-    min-height: 2.4rem;
+    margin-bottom: 10px;
+    min-height: 1rem;
     overflow: hidden;
 }
 

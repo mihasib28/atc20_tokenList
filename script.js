@@ -1,9 +1,6 @@
 // Token list (edit freely)
 const tokens = [
-
-
-
-    {
+{
     name: "Atlantis USD (USDA)",
     address: "AC3ZNwL2dMZGj7thrARcPvZCYGjuTD5C9V8KXdBcCiqQ",
     logo: "https://tokenlist.atcscan.io/metadata/AC3ZNwL2dMZGj7thrARcPvZCYGjuTD5C9V8KXdBcCiqQ/logo.png"
