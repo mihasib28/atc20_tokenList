@@ -66,6 +66,15 @@ body {
     box-shadow: 0 0 15px #008cff75;
 }
 
+.token-card-main {
+    background: rgba(29, 34, 66, 0.45);
+    border: 1px solid rgba(0,140,255,0.3);
+    border-radius: 18px;
+    padding: 20px;
+    backdrop-filter: blur(12px);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
 /* MAIN TOKEN CARD - FULL WIDTH */
 /* CENTER CONTENT FOR MAIN TOKEN CARD ONLY */
 .token-card-main {
@@ -114,6 +123,7 @@ body {
 
 /* LOGO */
 .token-logo {
+    
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -138,7 +148,12 @@ body {
 .button-row {
     display: flex;
     gap: 10px;
+    flex-wrap: nowrap;      /* stops breaking on PC */
+    justify-content: center;
 }
+
+
+
 
 /* BUTTONS */
 .btn {

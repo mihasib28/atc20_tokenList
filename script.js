@@ -1,7 +1,7 @@
 // Token list (edit freely)
 const tokens = [
 {
-    name: "Atlantis Coin (ATC)",
+    name: "Atlantis Coin® (ATC)",
     address: "",
     logo: "Asset/atc.png",
     isMainToken: true,
@@ -287,6 +287,11 @@ const tokens = [
     address: "ACp2rMrPfWmAMDaan1ksddeoRpY1N4s1seq639Zz2g3s",
     logo: "https://tokenlist.atcscan.io/metadata/ACp2rMrPfWmAMDaan1ksddeoRpY1N4s1seq639Zz2g3s/logo.png"
 },
+{
+    name: "Ai16z (AI16Z)",
+    address: "AC77LoWoNgCt2fDQ1eBtTsueMVtJ2ndRa6GMByGvWkC3",
+    logo: "https://tokenlist.atcscan.io/metadata/AC77LoWoNgCt2fDQ1eBtTsueMVtJ2ndRa6GMByGvWkC3/logo.png"
+},
 
 ];
 
@@ -299,7 +304,7 @@ function renderTokens() {
 
         if (t.isMainToken) {
             return `
-                <div class="token-card token-card-main">
+                <div class="token-card-main">
                     <img src="${t.logo}" class="token-logo" alt="">
                     <div class="token-name">${t.name}</div>
                     <div class="contract">${t.description}</div>
