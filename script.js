@@ -318,8 +318,10 @@ function renderTokens(list = tokens) {
         // NORMAL CARD
         listArea.innerHTML += `
             <div class="token-card">
+              <div class="logo-text">
                 <img src="${t.logo}" class="token-logo">
                 <div class="token-name">${t.name}</div>
+              </div>
                 <div class="contract">${t.address}</div>
 
                 <div class="button-row">
