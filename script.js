@@ -290,7 +290,7 @@ const tokens = [
 {
     name: "Ai16z (AI16Z)",
     address: "AC77LoWoNgCt2fDQ1eBtTsueMVtJ2ndRa6GMByGvWkC3",
-    logo: "https://tokenlist.atcscan.io/metadata/AC77LoWoNgCt2fDQ1eBtTsueMVtJ2ndRa6GMByGvWkC3/logo.png"
+    logo: "Asset/ai16z.png"
 },
 
 ];

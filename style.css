@@ -142,14 +142,31 @@ body {
     opacity: 0.8;
     word-wrap: break-word;
     margin-bottom: 14px;
+    min-height: 2.4rem;
+    overflow: hidden;
 }
 
-/* BUTTON ROW FOR NORMAL TOKENS */
+.token-card {
+    
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    min-height: 250px; 
+}
+
+
 .button-row {
     display: flex;
     gap: 10px;
-    flex-wrap: nowrap;      /* stops breaking on PC */
+    flex-wrap: nowrap;      
     justify-content: center;
+}
+
+
+.btn {
+    flex: 1; 
+    padding: 10px 12px;
+    
 }
 
 
