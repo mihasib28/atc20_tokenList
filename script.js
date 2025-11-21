@@ -277,6 +277,16 @@ const tokens = [
     address: "AC77LoWoNgCt2fDQ1eBtTsueMVtJ2ndRa6GMByGvWkC3",
     logo: "Asset/ai16z.png"
 },
+{
+    name: "BRICS Coin (BC)",
+    address: "ACCv9BaPmjfhB94SMvQ1qWRo4EZPijFkKJLNbATUYkYC",
+    logo: "https://tokenlist.atcscan.io/metadata/ACCv9BaPmjfhB94SMvQ1qWRo4EZPijFkKJLNbATUYkYC/logo.png"
+},
+{
+    name: "I Love You Coin (ILUC)",
+    address: "ACGKw5MAmdaYHzYk5v8ahwzMFiCn7uUqRQ2HC3fFThB9",
+    logo: "https://tokenlist.atcscan.io/metadata/ACGKw5MAmdaYHzYk5v8ahwzMFiCn7uUqRQ2HC3fFThB9/logo.png"
+},
 
 ];
 
