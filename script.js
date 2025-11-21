@@ -287,6 +287,11 @@ const tokens = [
     address: "ACGKw5MAmdaYHzYk5v8ahwzMFiCn7uUqRQ2HC3fFThB9",
     logo: "https://tokenlist.atcscan.io/metadata/ACGKw5MAmdaYHzYk5v8ahwzMFiCn7uUqRQ2HC3fFThB9/logo.png"
 },
+{
+    name: "APEC Coin (APEC)",
+    address: "ACj2r8Kk1hj8sLXtYw15TBCFCEQfGHuPKo5nXCFgz4wJ",
+    logo: "https://tokenlist.atcscan.io/metadata/ACj2r8Kk1hj8sLXtYw15TBCFCEQfGHuPKo5nXCFgz4wJ/logo.png"
+},
 
 ];
 
