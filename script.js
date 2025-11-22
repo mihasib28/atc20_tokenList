@@ -355,6 +355,9 @@ const tokens = [
 
 
 // --- Insert search bar ---
+const originalTokens = [...tokens];
+
+// --- Insert search bar ---
 function insertSearchBar() {
     const searchArea = document.getElementById("searchArea");
 
@@ -372,16 +375,15 @@ function insertSearchBar() {
     searchArea.appendChild(wrapper);
 }
 
-
 // --- Render tokens ---
 function renderTokens(list = tokens) {
     const mainArea = document.getElementById("mainCardArea");
     const listArea = document.getElementById("tokenList");
+
     mainArea.innerHTML = "";
     listArea.innerHTML = "";
 
     list.forEach(t => {
-
         listArea.innerHTML += `
             <div class="token-card">
                 <div class="logo-text">
@@ -389,7 +391,6 @@ function renderTokens(list = tokens) {
                     <div class="token-name">${t.name}</div>
                 </div>
                 <div class="contract">${t.address}</div>
-
                 <div class="button-row">
                     <button class="btn" onclick="copyAddress('${t.address}')">Copy</button>
                     <button class="btn" onclick="window.open('https://atcscan.io/address/${t.address}', '_blank')">ATCScan</button>
@@ -414,8 +415,10 @@ function filterTokens() {
         filtered = filtered.filter(t => t.category === value);
     }
 
-    // Sort alphabetically A-Z
-    filtered.sort((a, b) => a.name.localeCompare(b.name));
+    // Sort alphabetically A-Z if "A-Z" is selected
+    if (value === "az") {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+    }
 
     renderTokens(filtered);
 }
@@ -424,17 +427,22 @@ function filterTokens() {
 function sortTokens() {
     const value = document.getElementById("sortSelect").value;
 
-    let list = [...tokens];
+    let list;
 
-    // Apply category filter if not "all"
-    if (value === "stable" || value === "utility" || value === "meme") {
-        list = list.filter(t => t.category === value);
+    if (value === "all") {
+        // Restore original token order
+        list = [...originalTokens];
+    } else if (value === "az") {
+        // Sort all tokens alphabetically A-Z
+        list = [...tokens].sort((a, b) => a.name.localeCompare(b.name));
+    } else if (value === "stable" || value === "utility" || value === "meme" || value === "native") {
+        // Filter by category, then sort A-Z
+        list = tokens.filter(t => t.category === value).sort((a, b) => a.name.localeCompare(b.name));
+    } else {
+        list = [...tokens];
     }
 
-    // Always sort alphabetically A-Z
-    list.sort((a, b) => a.name.localeCompare(b.name));
-
-    // Apply search filter if anything is typed
+    // Apply search filter if typing exists
     const searchInput = document.getElementById("searchInput");
     if (searchInput && searchInput.value) {
         const v = searchInput.value.toLowerCase();
