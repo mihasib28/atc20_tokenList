@@ -75,6 +75,67 @@ body {
     background: #0d210d;
 }
 
+.info-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.info-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Tooltip Box */
+.info-icon::after {
+    content: attr(data-msg);
+    white-space: pre-line; /* Keep line breaks */
+    position: absolute;
+    left: 50%;
+    top: 130%;
+    transform: translateX(-50%);
+    background: #0d1021;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    min-width: 180px;
+    width: max-content;
+    max-width: 250px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s ease;
+    z-index: 99;
+}
+
+/* Tooltip Arrow */
+.info-icon::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 120%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    opacity: 0;
+    transition: 0.25s ease;
+}
+
+/* Show on hover (Desktop) */
+.info-icon:hover::after,
+.info-icon:hover::before {
+    opacity: 1;
+}
+
+/* Show on tap/click (Mobile) */
+.info-icon.active::after,
+.info-icon.active::before {
+    opacity: 1;
+}
+
+
 
 
 
