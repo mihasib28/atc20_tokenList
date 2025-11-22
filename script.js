@@ -476,6 +476,12 @@ function showCopied() {
     setTimeout(() => box.classList.remove("show"), 1500);
 }
 
+document.querySelectorAll('.info-icon').forEach(el => {
+    el.addEventListener('click', () => {
+        el.classList.toggle('active');
+    });
+});
+
 // --- INITIAL LOAD ---
 insertSearchBar();
 renderTokens();
