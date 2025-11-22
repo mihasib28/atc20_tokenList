@@ -48,6 +48,36 @@ body {
     gap: 20px;
 }
 
+.filter{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+#sortSelect {
+    border-radius: 6px;
+    border: 1px solid #008cff70;
+    background: #12172c;
+    color: #e8e8e8;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.2s;
+}
+
+#sortSelect:hover {
+    border-color: #46b6ff;
+}
+
+#sortSelect option {
+    color: white;
+    background: #0d210d;
+}
+
+
+
+
 /* TOKEN CARD BASE */
 .token-card {
     background: rgba(29, 34, 66, 0.45);
@@ -87,7 +117,7 @@ body {
 }
 
 .token-name-main {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 2px;
 }

@@ -41,7 +41,7 @@
 
     <div class="token-name-main">Atlantis Coin® (ATC)</div>
 
-    <div class="contract-main">Native Utility Token of AtlantisChain</div>
+    <div class="contract-main">Native Utility Coin of AtlantisChain - for ATC</div>
 
     <div class="main-buttons">
 
@@ -75,6 +75,18 @@
     <div id="mainCardArea"></div>      <!-- First card goes here -->
 
     <div id="searchArea"></div>        <!-- Search bar goes here -->
+
+    <div class="filter">
+        <label for="sortSelect">Sort by:</label>
+        <select id="sortSelect" onchange="sortTokens()">
+    <option value="all">All</option>
+    <option value="stable">Stablecoin</option>
+    <option value="utility">Utility Coin</option>
+    <option value="meme">Memecoin</option>
+    <option value="az">A-Z</option>
+</select>
+
+    </div>
 
     <div id="tokenList" class="token-grid"></div>   <!-- Other tokens -->
 </div>
