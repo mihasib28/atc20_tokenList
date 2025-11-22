@@ -282,6 +282,7 @@ const tokens = [
     name: "Uniswap (UNI)",
     address: "AC8BBu4F2v5c5twVkR7JByTpma6nR1qX8rzUz2WSZZjn",
     logo: "https://tokenlist.atcscan.io/metadata/AC8BBu4F2v5c5twVkR7JByTpma6nR1qX8rzUz2WSZZjn/logo.png",
+    category: "utility"
 },
 {
     name: "Matic Token (MATIC)",
