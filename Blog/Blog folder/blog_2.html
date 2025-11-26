@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AtlantisChain — Ultra-Super-Fast Layer-0 Blockchain</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#00b39f;
+      --glass: rgba(255,255,255,0.03);
+      --maxwidth:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background-color: #0d1624;
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px 20px;
+      display:flex;
+      justify-content:center;
+    }
+    .container{width:100%;max-width:var(--maxwidth)}
+    header{margin-bottom:28px}
+    .hero{
+      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:28px;
+      display:flex;
+      gap:24px;
+      align-items:center;
+      box-shadow:0 6px 30px rgba(3,7,18,0.6);
+    }
+    .hero-card{flex:1}
+    h1{font-size:26px;margin:0 0 8px;font-weight:500;color:#eaf6f3}
+    p.lead{margin:0;color:var(--muted);font-size:15px}
+
+    .stats{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .stat{background:var(--glass);padding:12px 14px;border-radius:10px;min-width:150px}
+    .stat .num{font-size:20px;font-weight:600;color:#bff0e7}
+    .stat .label{font-size:12px;color:var(--muted);margin-top:4px}
+
+    main{margin-top:24px;display:grid;grid-template-columns:1fr 380px;gap:22px}
+
+    .content{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:20px;border-radius:12px}
+    article h2{font-size:20px;margin-top:6px;font-weight:500}
+    article p{color:var(--muted);margin:12px 0}
+    ul.features{padding-left:18px;color:var(--muted)}
+    .feature-item{margin-bottom:8px}
+
+    .content {
+        box-shadow:0 6px 30px rgba(3,7,18,0.6);
+    }
+
+    aside{position:relative}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:16px;border-radius:12px}
+    .card h3{margin:0 0 10px;font-size:16px;font-weight:500}
+    .cards-grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .post{display:flex;gap:12px;align-items:flex-start}
+    .post img{width:96px;height:64px;object-fit:cover;border-radius:8px;flex-shrink:0}
+    .post .meta{flex:1}
+    .post h4{margin:0 0 6px;font-size:14px;font-weight:500}
+    .post p{margin:0;font-size:13px;color:var(--muted)}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);cursor:pointer;font-size:13px}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#00d7b0);color:#031018;border:none}
+
+    /* modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:24px;z-index:60}
+    .modal.open{display:flex}
+    .overlay{position:absolute;inset:0;background:rgba(1,6,15,0.75);backdrop-filter:blur(4px)}
+    .modal-card{position:relative;z-index:2;background:#07131a;padding:22px;border-radius:12px;max-width:920px;width:100%;max-height:86vh;overflow:auto}
+    .modal-card h2{margin-top:0}
+    .close{position:absolute;top:12px;right:12px;background:transparent;border:none;color:var(--muted);cursor:pointer}
+
+
+    .read-more button {
+      background-color: #1a1a2e;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+    }
+    .read-more button:hover {
+      background-color: #00003b;
+    }
+
+    footer{margin-top:26px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center; margin-bottom: 5px;}
+
+
+    /* responsive */
+    @media (max-width:980px){
+      main{grid-template-columns:1fr}
+      .hero{flex-direction:column;align-items:flex-start}
+      .stat{min-width:120px}
+    }
+
+    @media (max-width:480px){
+      body{padding:18px}
+      h1{font-size:20px}
+    }
+
+    /* subtle typography tweaks to avoid heavy bold */
+    h1,h2,h3,h4{font-variant-numeric:tabular-nums}
+    h1,h2,h3,h4,strong{font-weight:500}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="hero">
+        <div class="hero-card">
+          <h1>AtlantisChain — Ultra-super-fast Layer-0 blockchain</h1>
+          <p class="lead">A Layer-0 network built to transform FinTech, Web3 services, public infrastructure, and global commerce through unmatched speed, scalability, and near-zero fees.</p>
+
+          <div class="stats" aria-hidden>
+            <div class="stat">
+              <div class="num">3,600,000 TPS</div>
+              <div class="label">peak transactions per second</div>
+            </div>
+            <div class="stat">
+              <div class="num">0.031 s</div>
+              <div class="label">block time</div>
+            </div>
+            <div class="stat">
+              <div class="num">100M+</div>
+              <div class="label">blocks in 36 days</div>
+            </div>
+            <div class="stat">
+              <div class="num">375M+</div>
+              <div class="label">blocks in 145 days</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="min-width:220px;max-width:260px">
+          <div class="card">
+            <h3>Protected technology</h3>
+            <p style="color:var(--muted);margin-bottom:10px">As of Q3 2025, AtlantisChain is the only public blockchain in the Web3 space with lawfully protected intellectual property.</p>
+            <ul style="color:var(--muted);padding-left:18px;margin:0">
+              <li>USPTO-registered trademark</li>
+              <li>Patent-ready proprietary inventions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="content">
+        <article>
+          <h2>Overview</h2>
+          <p>AtlantisChain operates at a speed level unmatched by other public blockchains. Engineered as a Layer-0 architecture, it achieves an extreme throughput of 3,600,000 transactions per second while maintaining a block time of just 0.031 seconds. This performance has allowed AtlantisChain to surpass more than 220 established blockchains.</p>
+
+          <h2>Performance milestones</h2>
+          <p>The network produced over 100 million blocks within the first 36 days of operation and exceeded 375 million blocks in 145 days. These milestones demonstrate sustained throughput and production capacity at global scale.</p>
+
+          <h2>Real-world applications</h2>
+          <p>AtlantisChain is engineered for sectors where instant processing, near-zero fees, and predictable performance are essential. Typical applications include payment rails, high-frequency settlement systems, enterprise-grade Web3 services, government infrastructure, digital identity frameworks, and supply chain tracking.</p>
+
+          <h2>Why developers and enterprises should evaluate AtlantisChain</h2>
+          <ul class="features">
+            <li class="feature-item">Ultra-high throughput enables applications that previously required centralized systems</li>
+            <li class="feature-item">Near-zero transaction fees unlock business models that are otherwise uneconomical on other chains</li>
+            <li class="feature-item">Short block time reduces latency for time-sensitive operations</li>
+            <li class="feature-item">Legal protection and patent-ready innovations build institutional trust</li>
+          </ul>
+
+          <h2>Community and ecosystem</h2>
+          <p>Alongside technical progress, AtlantisChain is launching community initiatives and reward programs to encourage adoption, development, and ecosystem growth. These programs are designed to bring developers, enterprises, and users together around high-performance decentralized applications.</p>
+
+          <h2>Concluding thoughts</h2>
+          <p>AtlantisChain represents a next-generation approach to public blockchain infrastructure. By combining Layer-0 design principles with extreme throughput, short block times, and protected intellectual property, the network provides a foundation for large-scale Web3 services and real-world enterprise adoption.</p>
+        </article>
+        <footer>
+        <div>Published on <time datetime="2025-11-26">November 26, 2025</time></div>
+      </footer>
+      </section>
+      
+    </main>
+
+    <!-- modal for read more -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="overlay" tabindex="-1" onclick="closeModal()"></div>
+      <div class="modal-card" role="document">
+        <button class="close" aria-label="Close" onclick="closeModal()">Close</button>
+        <div id="modal-content">
+          <!-- content injected by JS -->
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      const posts = {
+        0: {
+          title: 'AtlantisChain — Ultra-super-fast Layer-0 blockchain',
+          body: `AtlantisChain operates at a speed level unmatched by other public blockchains. Engineered as a Layer-0 architecture, it achieves an extreme throughput of 3,600,000 transactions per second while maintaining a block time of just 0.031 seconds. This performance has allowed AtlantisChain to surpass more than 220 established blockchains.
+
+Performance milestones
+
+The network produced over 100 million blocks within the first 36 days of operation and exceeded 375 million blocks in 145 days. These milestones demonstrate sustained throughput and production capacity at global scale.
+
+Real-world applications
+
+AtlantisChain is engineered for sectors where instant processing, near-zero fees, and predictable performance are essential. Typical applications include payment rails, high-frequency settlement systems, enterprise-grade Web3 services, government infrastructure, digital identity frameworks, and supply chain tracking.
+
+Legal protections
+
+As of Q3 2025, AtlantisChain holds a unique distinction in the blockchain industry: it is the only public blockchain with lawfully protected intellectual property. This includes a USPTO-registered trademark and patent-ready proprietary inventions. These legal foundations support long-term credibility and institutional trust.
+
+Community and next steps
+
+AtlantisChain is expanding community-driven initiatives and rewards to encourage adoption and development. With its technical capability and legal legitimacy, the network is positioned to become a foundation for global Web3 infrastructure.`
+        },
+        1: {
+          title: 'How AtlantisChain achieves ultra-high throughput',
+          body: 'This post explores the Layer-0 architecture and core innovations that enable the chain to process millions of transactions per second. The overview covers consensus optimizations, parallel processing, and block propagation techniques that contribute to the observed performance.'
+        },
+        2: {
+          title: 'Performance milestones and what they mean',
+          body: 'This post explains the significance of block production milestones, how TPS relates to application capacity, and which metrics enterprise teams should watch when evaluating public blockchains for mission-critical services.'
+        }
+      };
+
+      function openModal(id){
+        const modal = document.getElementById('modal');
+        const content = document.getElementById('modal-content');
+        const post = posts[id];
+        if(!post) return;
+        content.innerHTML = `<h2>${post.title}</h2><div style=\"color:var(--muted);white-space:pre-wrap;margin-top:12px\">${escapeHtml(post.body)}</div>`;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal(){
+        const modal = document.getElementById('modal');
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      }
+
+      function escapeHtml(str){
+        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'\n');
+      }
+
+      function openRead(id){ openModal(id); }
+
+      document.querySelectorAll('[data-post]').forEach(btn => {
+        btn.addEventListener('click', (e)=>{
+          const id = btn.getAttribute('data-post');
+          openModal(id);
+        });
+      });
+
+      // close on ESC
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape') closeModal();
+      });
+
+    </script>
+  </div>
+</body>
+</html>
