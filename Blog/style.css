@@ -8,13 +8,26 @@ body {
     header {
       background-color: #e4e4e4;
       color: #141414;
-      padding: 20px;
+      padding: 5px;
       text-align: center;
+      align-items: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       position: static;
       top: 0;
       z-index: 999;
     }
+
+   .header-logo {
+    height: 70px;
+    width: auto;
+} 
+
+@media (max-width: 600px) {
+  .header-logo {
+    height: 50px;
+    width: auto;   /* smaller on mobile */
+  }
+}
 
     h1 {
       margin: 0;
