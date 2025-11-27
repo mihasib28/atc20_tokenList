@@ -53,61 +53,165 @@ h1.title{
 
 
 
-.grid{
-  display:grid;
-  grid-template-columns:1fr 380px;
-  gap:28px;
+/* Base grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 28px;
 }
 
-@media (max-width:980px){
-  .grid{
-    grid-template-columns:1fr;
+/* Medium screens */
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
-  .aside{
-    order:2;
+  .aside {
+    order: 2;
+  }
+}
+
+/* Improve feature grid */
+@media (max-width: 700px) {
+  .features {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (max-width:600px){
-  .grid{
-    gap:18px;
+/* Mobile layout */
+@media (max-width: 600px) {
+  .grid {
+    gap: 18px;
   }
-  .card{
-    padding:18px;
+  .card {
+    padding: 18px;
   }
-  .kpis{
-    flex-direction:column;
-    gap:8px;
+  .kpis {
+    flex-direction: column;
+    gap: 8px;
+  }
+  h2 {
+    font-size: 16px;
   }
 }
-    .tag{font-size:13px;color:var(--muted)}
 
+/* Small mobile (better text flow) */
+@media (max-width: 480px) {
+  .hero .lead {
+    font-size: 14px;
+  }
+  .feature p {
+    font-size: 13px;
+  }
+  .kpi {
+    font-size: 12px;
+  }
+}
 
-    footer{margin-top:26px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center; margin-bottom: 5px;}
+/* Ultra small (like 360px) */
+@media (max-width: 360px) {
+  .card {
+    padding: 14px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+  .kpis {
+    gap: 6px;
+  }
+}
 
-    .grid{display:grid;grid-template-columns:1fr 380px;gap:28px}
-    @media (max-width:980px){.grid{grid-template-columns:1fr} .aside{order:2}}
+/* Typography + general styles */
+.tag {
+  font-size: 13px;
+  color: var(--muted);
+}
 
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:22px;box-shadow:0 8px 30px rgba(2,8,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+footer {
+  margin-top: 26px;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .hero{display:flex;flex-direction:column;gap:14px}
-    .hero .lead{color:var(--muted);font-size:15px}
-    .kpis{display:flex;gap:12px;margin-top:6px;flex-wrap:wrap}
-    .kpi{background:var(--glass);padding:10px 12px;border-radius:10px;font-weight:600;font-size:13px;color:var(--accent)}
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 8px 30px rgba(2,8,23,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+}
 
-    section{margin-top:18px}
-    h2{margin:0 0 10px 0;font-size:18px;color:#dff7ef}
-    p{margin:0 0 12px 0;color:var(--muted)}
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
 
-    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    @media (max-width:700px){.features{grid-template-columns:1fr}}
-    .feature{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
-    .feature h3{margin:0 0 6px 0;font-size:15px}
-    .feature p{margin:0;color:var(--muted);font-size:14px}
-    
-    #LM {
-        margin-left: 6px;
-    }
+.hero .lead {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.kpis {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.kpi {
+  background: var(--glass);
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+section {
+  margin-top: 18px;
+}
+
+h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #dff7ef;
+}
+
+p {
+  margin: 0 0 12px 0;
+  color: var(--muted);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.feature h3 {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+}
+
+.feature p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+#LM {
+  margin-left: 6px;
+}
 
     
 
@@ -131,9 +235,42 @@ h1.title{
     /* Code / pre style for tech details */
     .tech{background:rgba(0,0,0,0.12);padding:12px;border-radius:8px;color:#cfeef2;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;font-size:13px}
 
+    .back-btn-card {
+
+  margin-bottom: 24px; /* increased bottom spacing */
+}
+
+.back-btn a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #e7f3fa;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 10px; /* margin under the button */
+  transition: 0.25s;
+}
+
+.back-btn a:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.back-btn img {
+  width: 22px;
+  height: 22px;
+}
+
   </style>
 </head>
 <body>
+
+  
+
   <div class="container">
     <header>
       <div class="brand">
@@ -148,6 +285,14 @@ h1.title{
         <div class="chip">Secure • Fast • Low-fee</div>
       </div>
     </header>
+
+    <div class="back-btn-card">
+
+  <div class="back-btn">
+    <a href="../blog.html">
+      <img src="https://img.icons8.com/forma-bold-filled-sharp/24/FFFFFF/back.png" alt="back arrow">Back Page
+    </a>
+  </div>
 
     <main class="grid">
       <div class="content">

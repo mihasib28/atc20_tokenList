@@ -26,7 +26,7 @@
     body{
       margin:0;
       font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg,var(--bg) 0%, #071226 100%);
+      background: #0d1624;
       color:#e6eef6;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -80,17 +80,59 @@
       .card{transition:transform .28s cubic-bezier(.2,.9,.3,1)}
       .card:hover{transform:translateY(-6px)}
     }
+
+.back-btn-card {
+  margin-bottom: 24px; /* increased bottom spacing */
+}
+ 
+.back-btn a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #e7f3fa;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 10px; /* margin under the button */
+  transition: 0.25s;
+}
+
+.back-btn a:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.back-btn img {
+  width: 22px;
+  height: 22px;
+}
+
+
   </style>
 </head>
 <body>
+  <div class="back-btn-card">
+
+  <div class="back-btn">
+    <a href="../blog.html">
+      <img src="https://img.icons8.com/forma-bold-filled-sharp/24/FFFFFF/back.png" alt="back arrow">Back Page
+    </a>
+  </div>
+
   <div class="container">
     <div class="card" role="main">
+      
+
       <header>
         <div>
           <h1>Atlantis Chain — Pioneering the Future of Decentralized Finance</h1>
           <p class="lead">A modern blockchain ecosystem combining token launches, a DEX, a native stablecoin and community-focused launch tools.</p>
         </div>
       </header>
+      
 
       <article>
         <p>Atlantis Chain is a next-generation blockchain designed to support ATC-20 tokens, decentralized applications and a thriving DeFi economy. By combining accessible tooling with secure infrastructure, Atlantis Chain makes it easier for both developers and everyday users to participate in token issuance, trading and governance.</p>
