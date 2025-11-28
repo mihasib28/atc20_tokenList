@@ -554,13 +554,14 @@ footer {
     color: #d7d7d7;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
+
 }
 
 .footer-container {
     max-width: 1200px;
     margin: auto;
     display: flex;
-    flex-direction: column; /* Mobile default */
+    flex-direction: column; 
     gap: 25px;
 }
 
@@ -654,5 +655,6 @@ footer {
 @media (max-width: 480px) {
     .footer-container h1 {
         font-size: 24px;
+        color: #008cff;
     }
 }
