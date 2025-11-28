@@ -356,53 +356,110 @@ body {
 
     /* Footer */
 
- footer {
-        background: #0d1021;
-        color: #d7d7d7;
-        padding: 40px 20px;
-        font-family: Arial, sans-serif;
+   footer {
+    background: #0d1021;
+    color: #d7d7d7;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* Mobile default */
+    gap: 25px;
+}
+
+/* Heading fix */
+.footer-container h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+/* Footer sections */
+.footer-section {
+    border: 1px solid #1d2138;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.footer-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #ffffff;
+    text-align: left;
+    font-size: 18px;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.footer-links {
+    display: none;
+    padding-left: 10px;
+    line-height: 1.7;
+    margin-top: 5px;
+}
+
+.footer-links a {
+    color: #d7d7d7;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #8b8b8b;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+/* Desktop Layout — 4 Columns */
+@media (min-width: 900px) {
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
     }
 
-    .footer-container {
-        max-width: 1200px;
-        margin: auto;
+    /* Make heading full width across all columns */
+    .footer-container h1 {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 10px;
     }
 
     .footer-section {
-        border-bottom: 1px solid #1d2138;
-        padding: 10px 0;
-    }
-
-    .footer-toggle {
-        width: 100%;
-        background: none;
         border: none;
-        color: #ffffff;
-        text-align: left;
-        font-size: 18px;
-        padding: 10px 0;
-        cursor: pointer;
+        padding: 0;
     }
 
+    /* On PC: links always visible */
     .footer-links {
-        display: none;
-        padding-left: 10px;
-        line-height: 1.7;
-        margin-top: 5px;
+        display: block !important;
+        padding-left: 0;
+        margin-top: 10px;
     }
 
-    .footer-links a {
-        color: #d7d7d7;
-        text-decoration: none;
+    /* Remove toggle behavior on PC */
+    .footer-toggle {
+        cursor: default;
+        background: #008cff;
+        border-radius: 20px;
+        padding: 10px 15px;
     }
+}
 
-    .footer-links a:hover {
-        text-decoration: underline;
+@media (max-width: 480px) {
+    .footer-container h1 {
+        font-size: 24px;
     }
-
-    .footer-bottom {
-        text-align: center;
-        color: #8b8b8b;
-        margin-top: 25px;
-        font-size: 14px;
-    }
+}
