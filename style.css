@@ -315,6 +315,20 @@ body {
     }
 }
 
+@media (max-width: 450px) {
+    .header h1 {
+    font-size: 1.8rem;
+   
+
+}
+
+.subtitle {
+    
+    font-size: 1rem;
+    
+}
+
+}
 
 /* MAIN TOKEN BUTTONS */
 .main-buttons {
