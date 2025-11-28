@@ -62,6 +62,7 @@ body {
     gap: 1.5rem;
     font-weight: 500;
     list-style: none;
+    backdrop-filter: blur(10px);
 }
 
 .navbar-container .navbar-menu li a {
@@ -101,9 +102,21 @@ body {
     
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .navbar {
-        backdrop-filter: none;
+
+        height: 70px;
+        
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        background: rgba(2, 0, 27, 0.8);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        
     }
 
     .navbar-container .navbar-menu {
@@ -143,6 +156,8 @@ body {
 @media (max-width: 480px) {
     .navbar-container {
         padding: 0 1rem;
+
+    
     }
 
     .navbar-logo {
