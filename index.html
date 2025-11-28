@@ -1,6 +1,7 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,9 +18,11 @@
     <link rel="stylesheet" href="style.css" />
 
     <meta name="title" content="ATC20Tokens | Official ATC Tokens List">
-<meta name="description" content="Discover ATC20 tokens, verified contracts, memecoins, and tools on the AtlantisChain ecosystem.">
-<meta name="keywords" content="ATC20, AT20,atc20 tokens,atc20 token,atc20 coin,atccoin,atc coin,atcscan, token,atc20token,blockchain,USDA, atc20tokens, AtlantisWallet, atlantis, atc20, crypto, at20tokens, AtlantisChain, Atlantis Coin, ATC, crypto tokens">
-<meta name="robots" content="index,follow">
+    <meta name="description"
+        content="Discover ATC20 tokens, verified contracts, memecoins, and tools on the AtlantisChain ecosystem.">
+    <meta name="keywords"
+        content="ATC20, AT20,atc20 tokens,atc20 token,atc20 coin,atccoin,atc coin,atcscan, token,atc20token,blockchain,USDA, atc20tokens, AtlantisWallet, atlantis, atc20, crypto, at20tokens, AtlantisChain, Atlantis Coin, ATC, crypto tokens">
+    <meta name="robots" content="index,follow">
 
 
 </head>
@@ -28,7 +31,13 @@
 
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">ATC-20 Tokens</a>
+            <a href="index.html" class="navbar-logo">
+                <span class="main-text">ATC-20 Tokens</span>
+                <span class="sub-text">Contract Directory</span>
+            </a>
+
+
+
             <button class="navbar-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -36,81 +45,83 @@
             </button>
             <div class="navbar-menu">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="./Blog/blog.html" >Blog</a></li>       
+                <li><a href="./Blog/blog.html">Blog</a></li>
 
-        </div>
+            </div>
     </nav>
 
-<header class="header">
-    <h1>ATC20 Token Contracts</h1>
-    <p class="subtitle">Discover tokens on the Atlantis Chain</p>
+    <header class="header">
+        <h1>ATC20 Token Contracts</h1>
+        <p class="subtitle">Discover tokens on the Atlantis Chain</p>
 
-    <h2 class="disclaimer-link">
-        <a href="./Disclaimer.html" style="text-decoration: none;">Terms & Conditions and Disclaimer</a>
-    </h2>
-</header>
+        <h2 class="disclaimer-link">
+            <a href="./Disclaimer.html" style="text-decoration: none;">Terms & Conditions</a>
+        </h2>
+    </header>
 
-<!-- Main ATC Token Card -->
-<div class="token-card-main">
-    <img src="Asset/atc.png" class="token-logo" alt="Atlantis Coin Logo">
+    <!-- Main ATC Token Card -->
+    <div class="token-card-main">
+        <img src="Asset/atc.png" class="token-logo" alt="Atlantis Coin Logo">
 
-    <div class="token-name-main">Atlantis Coin<sup>&reg;</sup> (ATC)
+        <div class="token-name-main">Atlantis Coin<sup>&reg;</sup> (ATC)
+        </div>
+
+        <div class="contract-main">Native Utility Coin of AtlantisChain</div>
+
+        <div class="main-buttons">
+
+            <button class="btn" onclick="window.open('https://AtlantisChain.org', '_blank')">
+                <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/domain.png" class="btn-icon">
+                Website
+            </button>
+
+            <button class="btn" onclick="window.open('https://ATCscan.io', '_blank')">
+                <img src="Asset/magnifying.svg" class="btn-icon">
+                Explorer
+            </button>
+
+            <button class="btn" onclick="window.open('https://AtlantisWallet.org', '_blank')">
+                <img src="https://img.icons8.com/metro/26/FFFFFF/wallet.png" class="btn-icon">
+                Wallet
+            </button>
+
+            <button class="btn" onclick="window.open('https://coinmarketcap.com/currencies/atlantis-coin/', '_blank')">
+                <img src="Asset/cmc.png" class="btn-icon">
+                CoinMarketCap
+            </button>
+
+        </div>
     </div>
 
-    <div class="contract-main">Native Utility Coin of AtlantisChain</div>
-
-    <div class="main-buttons">
-
-        <button class="btn" onclick="window.open('https://AtlantisChain.org', '_blank')">
-            <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/domain.png" class="btn-icon">
-            Website
-        </button>
-
-        <button class="btn" onclick="window.open('https://ATCscan.io', '_blank')">
-            <img src="Asset/magnifying.svg" class="btn-icon">
-            Explorer
-        </button>
-
-        <button class="btn" onclick="window.open('https://AtlantisWallet.org', '_blank')">
-            <img src="https://img.icons8.com/metro/26/FFFFFF/wallet.png" class="btn-icon">
-            Wallet
-        </button>
-
-        <button class="btn" onclick="window.open('https://coinmarketcap.com/currencies/atlantis-coin/', '_blank')">
-            <img src="Asset/cmc.png" class="btn-icon">
-            CoinMarketCap
-        </button>
-
-    </div>
-</div>
 
 
+    <div class="container">
 
-<div class="container">
+        <div id="mainCardArea"></div> <!-- First card goes here -->
 
-    <div id="mainCardArea"></div>      <!-- First card goes here -->
+        <div id="searchArea"></div> <!-- Search bar goes here -->
 
-    <div id="searchArea"></div>        <!-- Search bar goes here -->
+        <div class="filter">
+            <label for="sortSelect">Sort by:</label>
+            <select id="sortSelect" onchange="sortTokens()">
+                <option value="all">All [57 Tokens]</option>
+                <option value="stable">Stablecoin [4]</option>
+                <option value="utility">Utility coin [13]</option>
+                <option value="meme">Memecoin [40]</option>
+                <option value="az">All [A-Z]</option>
+            </select>
+        </div>
 
-    <div class="filter">
-        <label for="sortSelect">Sort by:</label>
-        <select id="sortSelect" onchange="sortTokens()">
-           <option value="all">All [57 Tokens]</option>
-           <option value="stable">Stablecoin [4]</option>
-           <option value="utility">Utility coin [13]</option>
-           <option value="meme">Memecoin [40]</option>
-           <option value="az">All [A-Z]</option>
-        </select>
+        <div id="tokenList" class="token-grid"></div> <!-- Other tokens -->
     </div>
 
-    <div id="tokenList" class="token-grid"></div>   <!-- Other tokens -->
-</div>
 
+    <footer class="footer">
+        &copy; 2025. All rights reserved. This website is an unofficial ATC-20 token directory and is not affiliated
+        with AtlantisChain, Atlantis X DEX, AtlantisCEX, or atcscan.io.
+    </footer>
 
-<footer class="footer">
-    &copy; 2025. All rights reserved. This website is an unofficial ATC-20 token directory and is not affiliated with AtlantisChain, Atlantis X DEX, AtlantisCEX, or atcscan.io.
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -34,23 +34,39 @@ body {
     max-width: 1600px;
 }
 .navbar-logo {
+    display: inline-flex;
+    flex-direction: column;     
+    align-items: flex-end;      
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+    line-height: 1.1;
+}
+
+.navbar-logo .main-text {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-    cursor: pointer;
 }
+
+.navbar-logo .sub-text {
+    font-size: 0.65rem;
+    margin-top: 2px;
+    opacity: 0.7;            
+}
+
+
 
 .navbar-menu {
     display: flex;
     text-align: center;
     gap: 1.5rem;
+    font-weight: 500;
     list-style: none;
 }
 
 .navbar-container .navbar-menu li a {
     text-decoration: none;
-    color: #ffffff;
+    color: rgb(0, 140, 255);
     font-size: 1.3rem;
     /* font-weight: 500; */
     padding: 3px 20px;
@@ -62,8 +78,8 @@ body {
 }
 .navbar-container .navbar-menu li a:hover,
 .navbar-container .navbar-menu li a.active {
-    color: #162530;
-    background: rgb(188, 212, 229, 0.8);
+    color: #e8e8e8;
+    background: rgb(0, 140, 255);
     border: 2px solid #ffffff;
 }
 
@@ -146,19 +162,20 @@ body {
 }
 
 .header h1 {
-    font-size: 2.6rem;
+    font-size: 2.1rem;
     color: #46b6ff;
-    text-shadow: 0 0 15px #008cff;
+
 }
 
 .subtitle {
-    margin-top: 8px;
-    font-size: 1.1rem;
-    opacity: 0.7;
+    margin-top: 3px;
+    font-size: 1.2rem;
+    color: #ffffff;
 }
 
 .disclaimer-link {
     margin-top: 22px;
+    font-size: 1.5rem;
 }
 
 .disclaimer-link a {
