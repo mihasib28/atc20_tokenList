@@ -483,6 +483,15 @@ function showCopied() {
     setTimeout(() => box.classList.remove("show"), 1500);
 }
 
+// --- Footer ---
+ const toggles = document.querySelectorAll('.footer-toggle');
+    toggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const links = btn.nextElementSibling;
+            links.style.display = links.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+
 // --- INITIAL LOAD ---
 insertSearchBar();
 renderTokens();
