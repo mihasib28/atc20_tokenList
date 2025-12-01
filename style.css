@@ -313,6 +313,13 @@ body {
     transition: transform 0.25s, box-shadow 0.25s;
 }
 
+.token-card-main:hover {
+    transform: translateY(-6px);
+    
+}
+
+
+
 /* MAIN TOKEN CARD - FULL WIDTH */
 /* CENTER CONTENT FOR MAIN TOKEN CARD ONLY */
 .token-card-main {
