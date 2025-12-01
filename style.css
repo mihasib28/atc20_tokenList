@@ -8,6 +8,7 @@
 body {
     background: #0d1021;
     color: #e8e8e8;
+    
 }
 
 /* navbar */
@@ -174,7 +175,46 @@ body {
 .header {
     text-align: center;
     padding: 20px 20px;
+    
+    
 }
+
+
+.spline {
+    position: absolute;
+    width: 100%;
+    height: 150vh;
+    top: 0;
+    z-index: -1;
+    
+}
+
+@media (max-width: 600px) {
+    .spline {
+        height: 100vh;
+    }
+}
+
+.spline2 {
+    position: absolute;
+    width: 100%;
+    height: 150vh;
+    top: 1500px;
+    z-index: -1;
+    bottom: 0;
+    
+    
+}
+
+@media (max-width: 600px) {
+    .spline2 {
+        height: 100vh;
+        top: 1500px;
+        bottom: 0;
+    }
+}
+
+/* header */
 
 .header h1 {
     font-size: 2.1rem;
@@ -265,6 +305,7 @@ body {
 
 .token-card-main {
     background: rgba(29, 34, 66, 0.45);
+
     border: 1px solid rgba(0,140,255,0.3);
     border-radius: 18px;
     padding: 20px;
@@ -459,7 +500,6 @@ body {
 }
 
 .token-card-main {
-    background: #0b1220;
     padding: 20px;
     border-radius: 15px;
     text-align: center;
@@ -547,6 +587,38 @@ body {
     border-color: #46b6ff;
 }
 
+
+
+/* support-text */
+
+.support-text {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 15px 20px;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.support-text a {
+    color: #4aa8ff;
+    text-decoration: underline;
+    transition: 0.2s ease;
+}
+
+.support-text a:hover {
+    opacity: 0.7;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .support-text {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+}
+
+
 /* Footer */
 
 footer {
@@ -563,6 +635,7 @@ footer {
     display: flex;
     flex-direction: column; 
     gap: 25px;
+    margin-bottom: 50px;
 }
 
 /* Heading fix */
