@@ -697,11 +697,11 @@ footer {
     clear: both;
 }
 
-.footer-section {
+.footer-toggle {
     transition: transform 0.8s ease; 
 }
 
-.footer-section:hover {
+.footer-toggle:hover {
     transform: translateY(-7px);
 }
 
@@ -717,6 +717,7 @@ footer {
     font-size: 18px;
     padding: 8px 0;
     cursor: pointer;
+    
 }
 
 .footer-links {
