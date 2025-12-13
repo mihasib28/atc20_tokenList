@@ -93,7 +93,7 @@ body {
     height: 3px;
     margin: 5px auto;
     background: #ffffff;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s ease-in-out;
     
 }
 
@@ -387,6 +387,23 @@ body {
     border-radius: 6px;
 }
 
+.footer-section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer-toggle {
+    transition: transform 0.8s ease; 
+}
+
+.footer-toggle:hover {
+    transform: translateY(-7px);
+}
+
+
+
+
 .footer-toggle {
     width: 100%;
     background: none;
@@ -396,6 +413,7 @@ body {
     font-size: 18px;
     padding: 8px 0;
     cursor: pointer;
+    
 }
 
 .footer-links {
