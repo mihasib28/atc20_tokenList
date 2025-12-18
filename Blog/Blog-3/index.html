@@ -1,169 +1,246 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Atlantis Chain — Pioneering the Future of DeFi</title>
-  <meta name="description" content="Atlantis Chain: a next-generation blockchain for ATC-20 tokens, Atlantis X DEX, USDA stablecoin and WTF Launchpad." />
+  <meta name="description"
+    content="Atlantis Chain: a next-generation blockchain for ATC-20 tokens, Atlantis X DEX, USDA stablecoin and WTF Launchpad." />
 
   <!-- Google Fonts: Inter (body) + Merriweather (display) -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Merriweather:wght@300;400&display=swap');
 
-    :root{
-      --bg:#0f1724; /* deep navy */
-      --card:#0b1220;
-      --muted:#9aa7bd;
-      --accent:#00d4ff;
-      --glass: rgba(255,255,255,0.04);
-      --radius:14px;
-      --max-width:980px;
+    :root {
+      --bg: #0f1724;
+      /* deep navy */
+      --card: #0b1220;
+      --muted: #9aa7bd;
+      --accent: #00d4ff;
+      --glass: rgba(255, 255, 255, 0.04);
+      --radius: 14px;
+      --max-width: 980px;
     }
 
     /* Reset and base */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       background: #0d1624;
-      color:#e6eef6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
-      padding:48px 20px;
-      display:flex;
-      justify-content:center;
+      color: #e6eef6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      padding: 48px 20px;
+      display: flex;
+      justify-content: center;
     }
 
-    .container{width:100%;max-width:var(--max-width)}
+    .container {
+      width: 100%;
+      max-width: var(--max-width)
+    }
 
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:var(--radius);
-      padding:36px;
-      box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: 0 6px 24px rgba(2, 6, 23, 0.6);
       backdrop-filter: blur(6px);
-      border:1px solid rgba(255,255,255,0.03);
+      border: 1px solid rgba(255, 255, 255, 0.03);
     }
 
-    header{display:flex;align-items:center;gap:18px;margin-bottom:22px}
+    header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 22px
+    }
 
-    h1{font-family:Merriweather,serif;margin:0;font-size:34px;line-height:1.08;font-weight:400}
-    p.lead{margin:10px 0 18px;color:var(--muted);font-size:15px}
+    h1 {
+      font-family: Merriweather, serif;
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.08;
+      font-weight: 400
+    }
+
+    p.lead {
+      margin: 10px 0 18px;
+      color: var(--muted);
+      font-size: 15px
+    }
 
     /* article styles */
-    article h2{font-family:Merriweather,serif;margin-top:26px;font-size:20px;font-weight:400}
-    article p{color:#d8e7f5;margin:12px 0}
-    ul{margin:8px 0 18px 20px;color:#cfe6ff}
-    li{margin:8px 0}
+    article h2 {
+      font-family: Merriweather, serif;
+      margin-top: 26px;
+      font-size: 20px;
+      font-weight: 400
+    }
+
+    article p {
+      color: #d8e7f5;
+      margin: 12px 0
+    }
+
+    ul {
+      margin: 8px 0 18px 20px;
+      color: #cfe6ff
+    }
+
+    li {
+      margin: 8px 0
+    }
 
     /* callout */
-    .callout{
-      background:linear-gradient(90deg, rgba(0,212,255,0.06), rgba(123,97,255,0.03));
-      border-radius:12px;padding:14px 16px;margin:18px 0;border:1px solid rgba(255,255,255,0.02);
-      color:#cfefff;font-size:15px
+    .callout {
+      background: linear-gradient(90deg, rgba(0, 212, 255, 0.06), rgba(123, 97, 255, 0.03));
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 18px 0;
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      color: #cfefff;
+      font-size: 15px
     }
 
     /* footer */
-    footer{margin-top:26px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+    footer {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
 
     /* responsive */
-    @media (max-width:640px){
-      h1{font-size:26px}
-      .card{padding:20px}
-      header{gap:12px}
+    @media (max-width:640px) {
+      h1 {
+        font-size: 26px
+      }
+
+      .card {
+        padding: 20px
+      }
+
+      header {
+        gap: 12px
+      }
     }
 
-    /* Accessibility: reduce motion */
-    @media (prefers-reduced-motion: no-preference){
-      .card{transition:transform .28s cubic-bezier(.2,.9,.3,1)}
-      .card:hover{transform:translateY(-6px)}
+    .back-btn-card {
+      margin-bottom: 24px;
+      /* increased bottom spacing */
     }
 
-.back-btn-card {
-  margin-bottom: 24px; /* increased bottom spacing */
-}
- 
-.back-btn a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 10px 14px;
-  border-radius: 10px;
-  color: #e7f3fa;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  border: 1px solid rgba(255,255,255,0.08);
-  margin-bottom: 10px; /* margin under the button */
-  transition: 0.25s;
-}
+    .back-btn a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: #e7f3fa;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 10px;
+      /* margin under the button */
+      transition: 0.25s;
+    }
 
-.back-btn a:hover {
-  background: rgba(255, 255, 255, 0.10);
-}
+    .back-btn a:hover {
+      background: rgba(255, 255, 255, 0.10);
+    }
 
-.back-btn img {
-  width: 22px;
-  height: 22px;
-}
-
-
+    .back-btn img {
+      width: 22px;
+      height: 22px;
+    }
   </style>
 </head>
+
 <body>
   <div class="back-btn-card">
 
-  <div class="back-btn">
-    <a href="/Blog"><img src="https://img.icons8.com/forma-bold-filled-sharp/24/FFFFFF/back.png" alt="back arrow">Back Page
-    </a>
-  </div>
-
-  <div class="container">
-    <div class="card" role="main">
-      
-
-      <header>
-        <div>
-          <h1>Atlantis Chain — Pioneering the Future of Decentralized Finance</h1>
-          <p class="lead">A modern blockchain ecosystem combining token launches, a DEX, a native stablecoin and community-focused launch tools.</p>
-        </div>
-      </header>
-      
-
-      <article>
-        <p>Atlantis Chain is a next-generation blockchain designed to support ATC-20 tokens, decentralized applications and a thriving DeFi economy. By combining accessible tooling with secure infrastructure, Atlantis Chain makes it easier for both developers and everyday users to participate in token issuance, trading and governance.</p>
-
-        <h2>What is Atlantis Chain?</h2>
-        <p>Atlantis Chain is an integrated platform for tokenized assets, smart contracts and decentralized finance. It emphasizes interoperability, developer-friendly tooling and transparent token launch mechanics. The ecosystem supports token creation, trading and value-stable transactions.</p>
-
-        <h2>Key features</h2>
-        <ul>
-          <li><strong style="font-weight:400">Atlantis X DEX:</strong> A decentralized exchange for trading ATC-20 tokens with low fees and strong liquidity support.</li>
-          <li><strong style="font-weight:400">USDA Stablecoin:</strong> A native stablecoin that offers price stability for trading and staking.</li>
-          <li><strong style="font-weight:400">ATC-20 Launch Tools:</strong> Templates and a launchpad that streamline token creation and presales.</li>
-          <li><strong style="font-weight:400">WTF Launchpad:</strong> A community-driven launch platform for presales, airdrops and early marketing.</li>
-        </ul>
-
-        <div class="callout">Why it matters: Atlantis Chain brings token issuance, discovery and trading together. That reduces friction for projects and gives investors a single trusted place to find new tokens.</div>
-
-        <h2>Opportunities for developers and investors</h2>
-        <p>Developers can deploy ATC-20 tokens and build dApps using Atlantis Chain's smart contract tooling. Investors can participate in presales, trade on Atlantis X DEX and use USDA for more predictable value storage.</p>
-
-        <h2>Security and scalability</h2>
-        <p>Modern architecture and audited smart contract patterns are core to Atlantis Chain, enabling fast confirmations and resilient operation under heavy usage.</p>
-
-        <h2>Conclusion</h2>
-        <p>Atlantis Chain is designed to be an all-in-one ecosystem for DeFi growth. Whether you are launching a token, trading on a decentralized exchange, or seeking a stable medium of exchange, Atlantis Chain offers a cohesive toolkit to participate in the decentralized economy.</p>
-
-      </article>
-
-      <footer>
-        <div>Published on <time datetime="2025-11-26">November 26, 2025</time></div>
-      </footer>
+    <div class="back-btn">
+      <a href="/Blog"><img src="https://img.icons8.com/forma-bold-filled-sharp/24/FFFFFF/back.png" alt="back arrow">Back
+        Page
+      </a>
     </div>
-  </div>
+
+    <div class="container">
+      <div class="card" role="main">
+
+
+        <header>
+          <div>
+            <h1>Atlantis Chain — Pioneering the Future of Decentralized Finance</h1>
+            <p class="lead">A modern blockchain ecosystem combining token launches, a DEX, a native stablecoin and
+              community-focused launch tools.</p>
+          </div>
+        </header>
+
+
+        <article>
+          <p>Atlantis Chain is a next-generation blockchain designed to support ATC-20 tokens, decentralized
+            applications and a thriving DeFi economy. By combining accessible tooling with secure infrastructure,
+            Atlantis Chain makes it easier for both developers and everyday users to participate in token issuance,
+            trading and governance.</p>
+
+          <h2>What is Atlantis Chain?</h2>
+          <p>Atlantis Chain is an integrated platform for tokenized assets, smart contracts and decentralized finance.
+            It emphasizes interoperability, developer-friendly tooling and transparent token launch mechanics. The
+            ecosystem supports token creation, trading and value-stable transactions.</p>
+
+          <h2>Key features</h2>
+          <ul>
+            <li><strong style="font-weight:400">Atlantis X DEX:</strong> A decentralized exchange for trading ATC-20
+              tokens with low fees and strong liquidity support.</li>
+            <li><strong style="font-weight:400">USDA Stablecoin:</strong> A native stablecoin that offers price
+              stability for trading and staking.</li>
+            <li><strong style="font-weight:400">ATC-20 Launch Tools:</strong> Templates and a launchpad that streamline
+              token creation and presales.</li>
+            <li><strong style="font-weight:400">WTF Launchpad:</strong> A community-driven launch platform for presales,
+              airdrops and early marketing.</li>
+          </ul>
+
+          <div class="callout">Why it matters: Atlantis Chain brings token issuance, discovery and trading together.
+            That reduces friction for projects and gives investors a single trusted place to find new tokens.</div>
+
+          <h2>Opportunities for developers and investors</h2>
+          <p>Developers can deploy ATC-20 tokens and build dApps using Atlantis Chain's smart contract tooling.
+            Investors can participate in presales, trade on Atlantis X DEX and use USDA for more predictable value
+            storage.</p>
+
+          <h2>Security and scalability</h2>
+          <p>Modern architecture and audited smart contract patterns are core to Atlantis Chain, enabling fast
+            confirmations and resilient operation under heavy usage.</p>
+
+          <h2>Conclusion</h2>
+          <p>Atlantis Chain is designed to be an all-in-one ecosystem for DeFi growth. Whether you are launching a
+            token, trading on a decentralized exchange, or seeking a stable medium of exchange, Atlantis Chain offers a
+            cohesive toolkit to participate in the decentralized economy.</p>
+
+        </article>
+
+        <footer>
+          <div>Published on <time datetime="2025-11-26">November 26, 2025</time></div>
+        </footer>
+      </div>
+    </div>
 </body>
+
 </html>
