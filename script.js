@@ -1,3 +1,8 @@
+// ================= TOKEN SETTINGS =================
+const TOKENS_PER_PAGE = 12;
+let currentPage = 1;
+let currentList = [];
+
 // Token list (edit freely)
 const tokens = [
 {
@@ -353,19 +358,16 @@ const tokens = [
 
 ];
 
+// ================= NAVBAR =================
 const navbarToggle = document.querySelector(".navbar-toggle");
 const navbarMenu = document.querySelector(".navbar-menu");
+
 navbarToggle.addEventListener("click", () => {
     navbarToggle.classList.toggle("active");
     navbarMenu.classList.toggle("active");
 });
 
-
-
-// --- Insert search bar ---
-const originalTokens = [...tokens];
-
-// --- Insert search bar ---
+// ================= SEARCH BAR =================
 function insertSearchBar() {
     const searchArea = document.getElementById("searchArea");
 
@@ -376,22 +378,26 @@ function insertSearchBar() {
     input.className = "search-input";
     input.id = "searchInput";
     input.placeholder = "Search token or contract...";
-
     input.addEventListener("keyup", filterTokens);
 
     wrapper.appendChild(input);
     searchArea.appendChild(wrapper);
 }
 
-// --- Render tokens ---
+// ================= RENDER TOKENS =================
 function renderTokens(list = tokens) {
-    const mainArea = document.getElementById("mainCardArea");
     const listArea = document.getElementById("tokenList");
+    const pagination = document.getElementById("pagination");
 
-    mainArea.innerHTML = "";
+    currentList = list;
+
+    const start = (currentPage - 1) * TOKENS_PER_PAGE;
+    const end = start + TOKENS_PER_PAGE;
+    const pageItems = list.slice(start, end);
+
     listArea.innerHTML = "";
 
-    list.forEach(t => {
+    pageItems.forEach(t => {
         listArea.innerHTML += `
             <div class="token-card">
                 <div class="logo-text">
@@ -406,64 +412,72 @@ function renderTokens(list = tokens) {
             </div>
         `;
     });
+
+    renderPagination(list);
 }
 
-// --- Filter tokens by search input ---
+// ================= PAGINATION =================
+function renderPagination(list) {
+    const pagination = document.getElementById("pagination");
+    pagination.innerHTML = "";
+
+    const totalPages = Math.ceil(list.length / TOKENS_PER_PAGE);
+    if (totalPages <= 1) return;
+
+    for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement("button");
+        btn.textContent = i;
+
+        if (i === currentPage) btn.classList.add("active");
+
+        btn.onclick = () => {
+            currentPage = i;
+            renderTokens(currentList);
+            window.scrollTo({ top: 300, behavior: "smooth" });
+        };
+
+        pagination.appendChild(btn);
+    }
+}
+
+// ================= FILTER =================
 function filterTokens() {
-    const v = document.getElementById("searchInput").value.toLowerCase();
-    const value = document.getElementById("sortSelect").value;
+    const searchValue = document.getElementById("searchInput").value.toLowerCase();
+    const category = document.getElementById("sortSelect").value;
 
     let filtered = tokens.filter(t =>
-        t.name.toLowerCase().includes(v) ||
-        (t.address && t.address.toLowerCase().includes(v))
+        t.name.toLowerCase().includes(searchValue) ||
+        t.address.toLowerCase().includes(searchValue)
     );
 
-    // Apply category filter if selected
-    if (value !== "all") {
-        filtered = filtered.filter(t => t.category === value);
+    if (category !== "all" && category !== "az") {
+        filtered = filtered.filter(t => t.category === category);
     }
 
-    // Sort alphabetically A-Z if "A-Z" is selected
-    if (value === "az") {
+    if (category === "az") {
         filtered.sort((a, b) => a.name.localeCompare(b.name));
     }
 
+    currentPage = 1;
     renderTokens(filtered);
 }
 
-// --- Sort tokens by category or A-Z ---
+// ================= SORT =================
 function sortTokens() {
     const value = document.getElementById("sortSelect").value;
+    let list = [...tokens];
 
-    let list;
-
-    if (value === "all") {
-        // Restore original token order
-        list = [...originalTokens];
-    } else if (value === "az") {
-        // Sort all tokens alphabetically A-Z
-        list = [...tokens].sort((a, b) => a.name.localeCompare(b.name));
-    } else if (value === "stable" || value === "utility" || value === "meme" || value === "native") {
-        // Filter by category, then sort A-Z
-        list = tokens.filter(t => t.category === value).sort((a, b) => a.name.localeCompare(b.name));
-    } else {
-        list = [...tokens];
+    if (value === "az") {
+        list.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (value !== "all") {
+        list = list.filter(t => t.category === value);
     }
 
-    // Apply search filter if typing exists
-    const searchInput = document.getElementById("searchInput");
-    if (searchInput && searchInput.value) {
-        const v = searchInput.value.toLowerCase();
-        list = list.filter(t =>
-            t.name.toLowerCase().includes(v) ||
-            (t.address && t.address.toLowerCase().includes(v))
-        );
-    }
-
+    currentPage = 1;
     renderTokens(list);
 }
 
-// --- Copy address ---
+// ================= COPY =================
 function copyAddress(addr) {
     navigator.clipboard.writeText(addr);
     showCopied();
@@ -483,15 +497,14 @@ function showCopied() {
     setTimeout(() => box.classList.remove("show"), 1500);
 }
 
-// --- Footer ---
- const toggles = document.querySelectorAll('.footer-toggle');
-    toggles.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const links = btn.nextElementSibling;
-            links.style.display = links.style.display === 'block' ? 'none' : 'block';
-        });
+// ================= FOOTER =================
+document.querySelectorAll(".footer-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const links = btn.nextElementSibling;
+        links.style.display = links.style.display === "block" ? "none" : "block";
     });
+});
 
-// --- INITIAL LOAD ---
+// ================= INIT =================
 insertSearchBar();
-renderTokens();
+renderTokens(tokens);
