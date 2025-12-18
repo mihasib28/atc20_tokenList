@@ -1,21 +1,26 @@
-body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #0d1021;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
 
-    /* navbar */
+body {
+    background: #0d1021;
+    color: #e8e8e8;
+    
+}
+
+   /* navbar */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
+    height: 70px;
     width: 100%;
     position: sticky;
     top: 0;
     background: transparent;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     z-index: 999;
 
@@ -49,7 +54,10 @@ body {
     opacity: 0.7;            
 }
 
-
+.more-btn {
+    display: block;
+    margin: 30px auto 0;
+}
 
 .navbar-menu {
     display: flex;
@@ -93,7 +101,7 @@ body {
     height: 3px;
     margin: 5px auto;
     background: #ffffff;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
     
 }
 
