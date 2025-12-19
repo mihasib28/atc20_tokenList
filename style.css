@@ -23,7 +23,6 @@ body {
     background: transparent;
     backdrop-filter: blur(10px);
     z-index: 999;
-
 }
 .navbar-container {
     display: flex;
@@ -58,37 +57,6 @@ body {
     display: block;
     margin: 30px auto 0;
 }
-
-
-/* Pagination */
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin: 30px 0;
-}
-
-.pagination button {
-    padding: 8px 14px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    background: #222;
-    color: #fff;
-    font-size: 14px;
-}
-
-.pagination button.active {
-    background: #1e88e5;
-}
-
-.pagination button:hover {
-    opacity: 0.8;
-}
-
-
-
 
 .navbar-menu {
     display: flex;
@@ -203,6 +171,39 @@ body {
         padding: 2px 12px;
     }
 }
+
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 30px 0;
+}
+
+.pagination button {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #222;
+    color: #fff;
+    font-size: 14px;
+}
+
+.pagination button.active {
+    background: #1e88e5;
+}
+
+.pagination button:hover {
+    opacity: 0.8;
+}
+
+
+
+
+
 
 /* HEADER */
 .header {
@@ -351,9 +352,6 @@ body {
     transform: translateY(-6px);
     
 }
-
-
-
 /* MAIN TOKEN CARD - FULL WIDTH */
 /* CENTER CONTENT FOR MAIN TOKEN CARD ONLY */
 .token-card-main {
@@ -372,8 +370,6 @@ body {
     font-weight: 700;
     margin-bottom: 2px;
 }
-
-
 
 /* COPY ALERT */
 .copy-alert {
@@ -685,9 +681,6 @@ body {
     transform: translateY(-7px);
 }
 
-
-
-
 /* Footer */
 
 footer {
@@ -738,9 +731,6 @@ footer {
 .footer-toggle:hover {
     transform: translateY(-7px);
 }
-
-
-
 
 .footer-toggle {
     width: 100%;
@@ -821,3 +811,5 @@ footer {
         color: #008cff;
     }
 }
+
+

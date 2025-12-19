@@ -1,5 +1,5 @@
 // ================= TOKEN SETTINGS =================
-const TOKENS_PER_PAGE = 12;
+const TOKENS_PER_PAGE = 20;
 let currentPage = 1;
 let currentList = [];
 
