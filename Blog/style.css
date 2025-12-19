@@ -63,7 +63,7 @@ body {
     display: flex;
     text-align: center;
     gap: 1.5rem;
-    font-weight: 500;
+    font-weight: 400;
     list-style: none;
     backdrop-filter: blur(10px);
 }
