@@ -44,14 +44,19 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <div class="navbar-menu">
-                <li><a href="/" class="active">Home</a></li>
-                <li><a href="/Blog">Blog</a></li>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="/" class="nav-link active" data-target="home">Home</a></li>
+                <li><a href="/Blog" class="nav-link" data-target="blog">Blog</a></li>
+                <li><a href="#presale" class="nav-link presale-btn" id="presaleNavBtn">Join Presale</a></li>
+            </ul>
 
-            </div>
+
+
+        </div>
     </nav>
 
-    <object class="Floating_avatars" data="/Floating avatars/" width="100%" height="550" style="margin-top: 10px;"></object>
+    <object class="Floating_avatars" data="/Floating avatars/" width="100%" height="470"
+        style="margin-top: 10px;"></object>
 
     <header class="header">
         <h1>ATC20 Token Contracts</h1>
@@ -121,20 +126,21 @@
     </div>
 
 
-    <div class="tokens-container">
+    <div class="tokens-container" id="presale" >
+
+        <!-- Ongoing Presale Tokens -->
+
+        <object data="/Ongoing_Presale_Tokens/" width="100%" height="340" style="margin-top: 50px;"></object>
+
         <!-- Upcoming_Token -->
 
-    <object data="/Upcoming_Token/" width="100%" height="340" style="margin-top: 30px;"></object>
+        <object data="/Upcoming_Token/" width="100%" height="340" style="margin-top: 50px;"></object>
 
-    <!-- Ongoing Presale Tokens -->
-
-    <object data="/Ongoing_Presale_Tokens/" width="100%" height="340" style="margin-top: 30px;"></object>
-
-    <!-- airdrop token -->
-     <object data="/Airdrop_tokens/" width="100%" height="340" style="margin-top: 30px;"></object>
+        <!-- airdrop token -->
+        <object data="/Airdrop_tokens/" width="100%" height="340" style="margin-top: 50px;"></object>
 
     </div>
-    
+
 
 
     <!-- Home Page Price Calculator -->
