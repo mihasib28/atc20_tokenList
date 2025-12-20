@@ -83,6 +83,13 @@ body {
   color: #4f7cff;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #4f7cff;
+  color: #ffffff;
+  border-color: #4f7cff;
 }
 
 /* RIGHT SIDE */
