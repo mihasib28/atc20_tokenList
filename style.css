@@ -176,6 +176,18 @@ html {
     }
 }
 
+.no-interaction {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.no-link-drag {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+
 
 /* Pagination */
 

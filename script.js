@@ -358,14 +358,17 @@ const tokens = [
 const navbarToggle = document.querySelector(".navbar-toggle");
 const navbarMenu = document.querySelector(".navbar-menu");
 
-navbarToggle.addEventListener("click", () => {
-  navbarToggle.classList.toggle("active");
-  navbarMenu.classList.toggle("active");
-});
+if (navbarToggle) {
+  navbarToggle.addEventListener("click", () => {
+    navbarToggle.classList.toggle("active");
+    navbarMenu.classList.toggle("active");
+  });
+}
 
 // ================= SEARCH BAR =================
 function insertSearchBar() {
   const searchArea = document.getElementById("searchArea");
+  if (!searchArea) return;
 
   const wrapper = document.createElement("div");
   wrapper.className = "search-wrapper";
@@ -380,10 +383,18 @@ function insertSearchBar() {
   searchArea.appendChild(wrapper);
 }
 
+// ================= DISABLE DRAG =================
+function disableDrag() {
+  document.querySelectorAll("img, a").forEach(el => {
+    el.setAttribute("draggable", "false");
+    el.addEventListener("dragstart", e => e.preventDefault());
+  });
+}
+
 // ================= RENDER TOKENS =================
 function renderTokens(list = tokens) {
   const listArea = document.getElementById("tokenList");
-  const pagination = document.getElementById("pagination");
+  if (!listArea) return;
 
   currentList = list;
 
@@ -393,30 +404,32 @@ function renderTokens(list = tokens) {
 
   listArea.innerHTML = "";
 
-  pageItems.forEach((t) => {
+  pageItems.forEach(t => {
     listArea.innerHTML += `
-            <div class="token-card">
-                <div class="logo-text">
-                    <img src="${t.logo}" class="token-logo">
-                    <div class="token-name">${t.name}</div>
-                </div>
-                <div class="contract">${t.address}</div>
-                <div class="button-row">
-                    <button class="btn" onclick="copyAddress('${t.address}')">Copy</button>
-                    <button class="btn" onclick="window.open('https://atcscan.io/address/${t.address}', '_blank')">ATCScan</button>
-                </div>
-            </div>
-        `;
+      <div class="token-card">
+        <div class="logo-text">
+          <img src="${t.logo}" class="token-logo" draggable="false">
+          <div class="token-name">${t.name}</div>
+        </div>
+        <div class="contract">${t.address}</div>
+        <div class="button-row">
+          <button class="btn" onclick="copyAddress('${t.address}')">Copy</button>
+          <button class="btn" onclick="window.open('https://atcscan.io/address/${t.address}', '_blank')">ATCScan</button>
+        </div>
+      </div>
+    `;
   });
 
+  disableDrag();
   renderPagination(list);
 }
 
 // ================= PAGINATION =================
 function renderPagination(list) {
   const pagination = document.getElementById("pagination");
-  pagination.innerHTML = "";
+  if (!pagination) return;
 
+  pagination.innerHTML = "";
   const totalPages = Math.ceil(list.length / TOKENS_PER_PAGE);
   if (totalPages <= 1) return;
 
@@ -429,7 +442,7 @@ function renderPagination(list) {
     btn.onclick = () => {
       currentPage = i;
       renderTokens(currentList);
-      document.getElementById("tokenSection").scrollIntoView({
+      document.getElementById("tokenSection")?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
@@ -444,16 +457,17 @@ function filterTokens() {
   const searchValue = document
     .getElementById("searchInput")
     .value.toLowerCase();
-  const category = document.getElementById("sortSelect").value;
+
+  const category = document.getElementById("sortSelect")?.value || "all";
 
   let filtered = tokens.filter(
-    (t) =>
+    t =>
       t.name.toLowerCase().includes(searchValue) ||
       t.address.toLowerCase().includes(searchValue)
   );
 
   if (category !== "all" && category !== "az") {
-    filtered = filtered.filter((t) => t.category === category);
+    filtered = filtered.filter(t => t.category === category);
   }
 
   if (category === "az") {
@@ -472,7 +486,7 @@ function sortTokens() {
   if (value === "az") {
     list.sort((a, b) => a.name.localeCompare(b.name));
   } else if (value !== "all") {
-    list = list.filter((t) => t.category === value);
+    list = list.filter(t => t.category === value);
   }
 
   currentPage = 1;
@@ -500,7 +514,7 @@ function showCopied() {
 }
 
 // ================= FOOTER =================
-document.querySelectorAll(".footer-toggle").forEach((btn) => {
+document.querySelectorAll(".footer-toggle").forEach(btn => {
   btn.addEventListener("click", () => {
     const links = btn.nextElementSibling;
     links.style.display = links.style.display === "block" ? "none" : "block";
@@ -510,3 +524,4 @@ document.querySelectorAll(".footer-toggle").forEach((btn) => {
 // ================= INIT =================
 insertSearchBar();
 renderTokens(tokens);
+disableDrag();

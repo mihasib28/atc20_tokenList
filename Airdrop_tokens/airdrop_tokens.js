@@ -41,18 +41,21 @@ tokens.forEach(token => {
   );
 });
 
-/* =========================
-   SLIDER LOGIC (UNCHANGED)
-========================= */
-let cardWidth =
-  document.querySelector(".quest-card").offsetWidth + 16;
+// Make dynamically created images non-draggable
+const avatars = document.querySelectorAll(".quest-card img");
+avatars.forEach(img => {
+  img.draggable = false;
+});
 
+// =========================
+// SLIDER LOGIC
+// =========================
+let cardWidth = document.querySelector(".quest-card").offsetWidth + 16;
 let autoSlideInterval;
 const slideDelay = 3000;
 
 window.addEventListener("resize", () => {
-  cardWidth =
-    document.querySelector(".quest-card").offsetWidth + 16;
+  cardWidth = document.querySelector(".quest-card").offsetWidth + 16;
 });
 
 nextBtn.addEventListener("click", () => {
@@ -67,10 +70,7 @@ prevBtn.addEventListener("click", () => {
 
 function startAutoSlide() {
   autoSlideInterval = setInterval(() => {
-    if (
-      slider.scrollLeft + slider.clientWidth >=
-      slider.scrollWidth - 5
-    ) {
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 5) {
       slider.scrollTo({ left: 0, behavior: "smooth" });
     } else {
       slider.scrollBy({ left: cardWidth, behavior: "smooth" });
@@ -93,3 +93,33 @@ slider.addEventListener("touchstart", stopAutoSlide);
 slider.addEventListener("touchend", startAutoSlide);
 
 startAutoSlide();
+
+// =========================
+// SEARCH FUNCTIONALITY
+// =========================
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", () => {
+  const searchValue = searchInput.value.toLowerCase();
+  const cards = document.querySelectorAll(".quest-card");
+
+  stopAutoSlide(); // stop auto slide while searching
+
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const title = card.querySelector("h3").innerText.toLowerCase();
+
+    if (title.includes(searchValue)) {
+      card.style.display = ""; // keep flex behavior
+      visibleCount++;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  // restart auto slide only if search is empty
+  if (searchValue === "") {
+    startAutoSlide();
+  }
+});

@@ -32,9 +32,9 @@
 
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="/" class="navbar-logo">
-                <span class="main-text">ATC-20 Tokens</span>
-                <span class="sub-text">Contract Directory</span>
+            <a href="/" class="navbar-logo no-link-drag" draggable="false">
+                <span class="main-text no-interaction" draggable="false">ATC-20 Tokens</span>
+                <span class="sub-text no-interaction" draggable="false">Contract Directory</span>
             </a>
 
 
@@ -63,13 +63,13 @@
         <p class="subtitle">Discover tokens on the Atlantis Chain</p>
 
         <h2 class="disclaimer-link">
-            <a href="/Disclaimer" style="text-decoration: none;">Terms & Conditions</a>
+            <a class="no-link-drag" href="/Disclaimer" style="text-decoration: none;">Terms & Conditions</a>
         </h2>
     </header>
 
     <!-- Main ATC Token Card -->
     <div class="token-card-main">
-        <img src="Asset/atc.png" class="token-logo" alt="Atlantis Coin Logo">
+        <img src="Asset/atc.png" class="token-logo no-interaction" alt="Atlantis Coin Logo" draggable="false">
 
         <div class="token-name-main">Atlantis Coin<sup>&reg;</sup> (ATC)
         </div>
@@ -79,22 +79,22 @@
         <div class="main-buttons">
 
             <button class="btn" onclick="window.open('https://AtlantisChain.org', '_blank')">
-                <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/domain.png" class="btn-icon">
+                <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/domain.png" class="btn-icon no-interaction" draggable="false">
                 Website
             </button>
 
             <button class="btn" onclick="window.open('https://ATCscan.io', '_blank')">
-                <img src="Asset/magnifying.svg" class="btn-icon">
+                <img src="Asset/magnifying.svg" class="btn-icon no-interaction" draggable="false">
                 Explorer
             </button>
 
             <button class="btn" onclick="window.open('https://AtlantisWallet.org', '_blank')">
-                <img src="https://img.icons8.com/metro/26/FFFFFF/wallet.png" class="btn-icon">
+                <img src="https://img.icons8.com/metro/26/FFFFFF/wallet.png" class="btn-icon no-interaction" draggable="false">
                 Wallet
             </button>
 
             <button class="btn" onclick="window.open('https://coinmarketcap.com/currencies/atlantis-coin/', '_blank')">
-                <img src="Asset/cmc.png" class="btn-icon">
+                <img src="Asset/cmc.png" class="btn-icon no-interaction" draggable="false">
                 CoinMarketCap
             </button>
 
@@ -118,7 +118,7 @@
             </select>
         </div>
 
-        <div id="tokenList" class="token-grid"></div>
+        <div id="tokenList" class="token-grid" draggable="false"></div>
 
         <!-- PAGINATION -->
         <div id="pagination" class="pagination"></div>

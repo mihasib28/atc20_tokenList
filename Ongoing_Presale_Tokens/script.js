@@ -242,18 +242,21 @@ tokens.forEach(token => {
   );
 });
 
-/* =========================
-   SLIDER LOGIC (UNCHANGED)
-========================= */
-let cardWidth =
-  document.querySelector(".quest-card").offsetWidth + 16;
+// Make dynamically created images non-draggable
+const avatars = document.querySelectorAll(".quest-card img");
+avatars.forEach(img => {
+  img.draggable = false;
+});
 
+// =========================
+// SLIDER LOGIC
+// =========================
+let cardWidth = document.querySelector(".quest-card").offsetWidth + 16;
 let autoSlideInterval;
 const slideDelay = 3000;
 
 window.addEventListener("resize", () => {
-  cardWidth =
-    document.querySelector(".quest-card").offsetWidth + 16;
+  cardWidth = document.querySelector(".quest-card").offsetWidth + 16;
 });
 
 nextBtn.addEventListener("click", () => {
@@ -268,10 +271,7 @@ prevBtn.addEventListener("click", () => {
 
 function startAutoSlide() {
   autoSlideInterval = setInterval(() => {
-    if (
-      slider.scrollLeft + slider.clientWidth >=
-      slider.scrollWidth - 5
-    ) {
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 5) {
       slider.scrollTo({ left: 0, behavior: "smooth" });
     } else {
       slider.scrollBy({ left: cardWidth, behavior: "smooth" });
@@ -295,6 +295,9 @@ slider.addEventListener("touchend", startAutoSlide);
 
 startAutoSlide();
 
+// =========================
+// SEARCH FUNCTIONALITY
+// =========================
 const searchInput = document.getElementById("searchInput");
 
 searchInput.addEventListener("input", () => {
@@ -321,6 +324,3 @@ searchInput.addEventListener("input", () => {
     startAutoSlide();
   }
 });
-
-
-
