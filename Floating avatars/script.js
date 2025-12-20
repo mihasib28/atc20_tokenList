@@ -4,7 +4,7 @@ const slides = document.querySelectorAll('.slide');
 
 let index = 0;
 const slideCount = slides.length;
-const intervalTime = 3000; // 1 second
+const intervalTime = 4000; // 1 second
 
 function goToSlide(i) {
   track.style.transform = `translateX(-${i * 100}%)`;
