@@ -240,13 +240,19 @@ tokens.forEach(token => {
     </div>
     `
   );
+   // Select the last inserted card
+  const newCard = slider.lastElementChild;
+
+  // Make its image non-draggable
+  const img = newCard.querySelector("img");
+  img.draggable = false;
+
+  // Make its link non-draggable
+  const link = newCard.querySelector("a.presale-btn");
+  link.draggable = false;
 });
 
-// Make dynamically created images non-draggable
-const avatars = document.querySelectorAll(".quest-card img");
-avatars.forEach(img => {
-  img.draggable = false;
-});
+
 
 // =========================
 // SLIDER LOGIC
