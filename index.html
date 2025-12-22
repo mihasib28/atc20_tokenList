@@ -190,8 +190,9 @@ USDA Value: ${usdbValue.toFixed(4)} USDA
 
 
 <!-- YouTube Videos Section -->
-<object class="video-section" data="/Video section/youtube_videos.html" type="text/html" width="100%" height="500"></object>
+<object class="video-section" data="/video_section/youtube_videos.html" type="text/html" width="100%" height="500"></object>
 
+<!-- chatbot -->
 
 
     <!-- Highest TPS Banner -->
@@ -200,6 +201,28 @@ USDA Value: ${usdbValue.toFixed(4)} USDA
         <a href="/Blog/Blog-4/"><img src="/Asset/565654656.png" alt="High speed Atlantis Chain Banner"></a>
     </div>
 
+     <!-- CHATBOT -->
+  <div class="chatbot">
+    <div class="chat-header">
+      Atlantis AI Assistant
+      <span id="closeChat">×</span>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="bot-msg">
+        Hello 👋 I’m Atlantis AI. Ask me about AtlantisChain, ATC-20, DEX, Launchpad, or USDA.
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Ask about Atlantis..." />
+      <button id="sendBtn">Send</button>
+    </div>
+
+    <div class="chat-hint" id="chatHint">Ask me about Atlantis</div>
+  </div>
+
+  <button class="chat-toggle" id="openChat">💬</button>
 
     <!-- footer -->
     <footer>
