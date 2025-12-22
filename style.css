@@ -545,6 +545,13 @@ html {
     transform: translateY(0);
 }
 
+/* Mobile Responsive */
+@media (max-width: 1000px) {
+    .video-section {
+       height: 1400px;
+    }
+}
+
 /* FOOTER */
 .footer {
     text-align: center;
@@ -678,7 +685,8 @@ html {
 
 .highest-tps-img {
     text-align: center;
-    margin: 40px 0;
+    margin-top: 0;
+    margin-bottom: 30px;
     border-radius: 20px;
     overflow: hidden;
 

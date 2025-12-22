@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Videos Section</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:  #0d1021;
+            padding:  20px 0;
+        }
+
+        .videos-section {
+            margin:  20px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            color: white;
+            margin-bottom: 25px;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        .section-title span {
+            color: #46b6ff;
+        }
+
+        .video-card {
+            background: rgba(29, 34, 66, 0.45);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            height: 100%;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background:  #000;
+        }
+
+        .video-container iframe {
+            position:  absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border:  none;
+        }
+
+        .video-info {
+            padding: 12px;
+        }
+
+        .video-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #f1f1f1;
+            margin-bottom: 6px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        .video-date {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            .video-title {
+                font-size: 0.9rem;
+            }
+
+            .video-info {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="videos-section">
+            <h2 class="section-title">
+                <i class="fab fa-youtube"></i> <span>Videos</span>
+            </h2>
+
+            <div class="row g-3">
+                <!-- Video Card 1 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/s06cDdvrHf4" 
+                                    allowfullscreen="" 
+                                    loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h5 class="video-title">ATC20 Direct - Official Presale Portal of AtlantisChain Stablecoins & ATC-20 Assets | Fast & Secure</h5>
+                            <div class="video-meta">
+                                <span class="video-date">
+                                    <i class="far fa-calendar"></i>
+                                    Jul 29
+                                </span>
+                                <span>1:34</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/j7x8vvP4Sa4" 
+                                    allowfullscreen="" 
+                                    loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h5 class="video-title">Atlantis Wallet Overview | Secure Your Assets Safely & Use Efficiently | Powered by AtlantisChain</h5>
+                            <div class="video-meta">
+                                <span class="video-date">
+                                    <i class="far fa-calendar"></i>
+                                    sept 3
+                                </span>
+                                <span>1:51</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/YnSKmA43i-0" 
+                                    allowfullscreen="" 
+                                    loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h5 class="video-title">AtlantisChain Is Here! Layer-ZERO Blockchain With USPTO-Registered Coin</h5>
+                            <div class="video-meta">
+                                <span class="video-date">
+                                    <i class="far fa-calendar"></i>
+                                    Jul 8
+                                </span>
+                                <span>0:25</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 4 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/eYNKHHgs51Q" 
+                                    allowfullscreen="" 
+                                    loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h5 class="video-title">Grab $ATC Now on HiBT & Get READY to Trade $ATC on @slex. & More Top Exchanges soon!</h5>
+                            <div class="video-meta">
+                                <span class="video-date">
+                                    <i class="far fa-calendar"></i>
+                                    Jul 10
+                                </span>
+                                <span>0:27</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle. min. js"></script>
+</body>
+</html>
