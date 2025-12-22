@@ -424,6 +424,211 @@ function renderTokens(list = tokens) {
   renderPagination(list);
 }
 
+ /* ================= SELECT ELEMENTS ================= */
+    const openChat = document.getElementById("openChat");
+    const closeChat = document.getElementById("closeChat");
+    const chatbot = document.querySelector(".chatbot");
+    const chatBody = document.getElementById("chatBody");
+    const userInput = document.getElementById("userInput");
+    const sendBtn = document.getElementById("sendBtn");
+    const chatHint = document.getElementById("chatHint");
+
+    /* ================= CHAT OPEN / CLOSE ================= */
+    openChat.addEventListener("click", () => {
+      chatbot.style.display = "flex";
+      stopChatHints();
+    });
+
+    closeChat.addEventListener("click", () => {
+      chatbot.style.display = "none";
+      startChatHints();
+    });
+
+    /* ================= CHAT HINT (EVERY 3s) ================= */
+    const hintMessages = [
+      "Ask me about Atlantis",
+      "Atlantis Assistant here",
+      "Need help with ATC-20?",
+      "Check TPS, fees & stats",
+      "Ask about DEX or Launchpad"
+    ];
+
+    let hintIndex = 0;
+    let hintInterval = null;
+
+    function startChatHints() {
+      if (hintInterval) return;
+
+      hintInterval = setInterval(() => {
+        if (chatbot.style.display === "flex") return;
+
+        chatHint.textContent = hintMessages[hintIndex];
+        chatHint.classList.add("show");
+
+        setTimeout(() => {
+          chatHint.classList.remove("show");
+        }, 2000);
+
+        hintIndex = (hintIndex + 1) % hintMessages.length;
+      }, 3000);
+    }
+
+    function stopChatHints() {
+      clearInterval(hintInterval);
+      hintInterval = null;
+      chatHint.classList.remove("show");
+    }
+
+    startChatHints();
+
+/* ================= BOT ANSWERS ================= */
+const answers = [
+  {
+    keywords: ["atlantis", "atlantischain"],
+    reply: "AtlantisChain is a high-performance blockchain ecosystem built for ATC-20 tokens, DeFi, DEX, Launchpad solutions, stablecoins, and scalable Web3 applications."
+  },
+  {
+    keywords: ["tps", "transactions per second", "speed", "performance"],
+    reply: "AtlantisChain delivers ultra-high performance with a peak capacity of 3.6M+ TPS, enabling fast and scalable on-chain activity."
+  },
+  {
+    keywords: ["block time", "confirmation time", "instant", "real time"],
+    reply: "AtlantisChain features an ultra-fast block time of approximately 0.031 seconds, allowing near-instant transaction confirmations."
+  },
+  {
+    keywords: ["fees", "gas", "gas fee", "cost"],
+    reply: "AtlantisChain offers near-zero gas fees, making transactions extremely cost-efficient for DeFi, trading, and memecoin usage."
+  },
+  {
+    keywords: ["atc-20", "atc20", "token", "token standard"],
+    reply: "ATC-20 is the native token standard of AtlantisChain, an ultra-super-fast Layer-0 blockchain capable of 3,600,000 TPS with a 0.031-second block time. ATC-20 tokens are optimized for near-zero fees, high scalability, and real-time Web3, DeFi, and global commerce applications."
+  },
+  {
+    keywords: ["atc20 direct", "direct launch", "direct mint"],
+    reply: "ATC-20 Direct enables instant token creation on AtlantisChain without complex smart contract deployment, simplifying project launches."
+  },
+  {
+    keywords: ["dex", "atlantis x", "swap", "trade"],
+    reply: "Atlantis X is the official decentralized exchange of AtlantisChain, providing on-chain swapping and trading for ATC-20 tokens."
+  },
+  {
+    keywords: ["launchpad", "wtf", "memecoin", "meme"],
+    reply: "Atlantis WTF Launchpad is a no-code platform that allows users to launch ATC-20 memecoins quickly and easily."
+  },
+  {
+    keywords: ["usda", "stable", "stablecoin"],
+    reply: "USDA is the native stablecoin of AtlantisChain, designed for price stability, fast settlements, and low-cost transactions."
+  },
+  {
+    keywords: ["wallet", "wallet support", "address"],
+    reply: "Atlantis Wallet is the official cold wallet of AtlantisChain, secured by the proprietary Atlantis QuantumLock™ system, eliminating traditional private keys and outdated security models."
+  },
+  {
+    keywords: ["presale", "max", "max presale"],
+    reply: "MAX Presale provides early access to selected Atlantis ecosystem tokens and supports long-term ecosystem growth."
+  },
+  {
+    keywords: ["security", "safe", "secure"],
+    reply: "AtlantisChain prioritizes security, transparency, and verifiable on-chain data through its core infrastructure and tools."
+  },
+  {
+    keywords: ["bridge", "cross-chain", "cross chain"],
+    reply: "AtlantisChain is expanding toward cross-chain integrations to enable seamless asset transfers across multiple blockchains."
+  },
+  {
+    keywords: ["utility", "utility token"],
+    reply: "ATC-20 utility tokens power applications, services, governance, and incentives across the AtlantisChain ecosystem."
+  },
+  {
+    keywords: ["governance", "vote", "dao"],
+    reply: "Governance on AtlantisChain allows token holders to participate in ecosystem decisions through ATC-20-based mechanisms."
+  },
+  {
+    keywords: ["airdrops", "airdrop", "rewards"],
+    reply: "AtlantisChain periodically offers rewards and airdrops through ecosystem campaigns and community events."
+  },
+  {
+    keywords: ["staking", "stake", "earn"],
+    reply: "Staking within the Atlantis ecosystem allows users to earn rewards while supporting network participation and growth."
+  },
+  {
+    keywords: ["liquidity", "lp", "liquidity pool"],
+    reply: "Liquidity pools on Atlantis X improve trading efficiency and reward users who provide liquidity."
+  },
+  {
+    keywords: ["developers", "build", "developer"],
+    reply: "AtlantisChain provides a developer-friendly environment for building dApps, tokens, and DeFi protocols using ATC-20."
+  },
+  {
+    keywords: ["nft", "nfts"],
+    reply: "AtlantisChain supports NFT creation and trading, enabling digital asset ownership within the ecosystem."
+  },
+  {
+    keywords: ["roadmap", "future", "plans"],
+    reply: "The AtlantisChain roadmap focuses on scalability, ecosystem expansion, and advanced DeFi infrastructure."
+  },
+  {
+    keywords: ["community", "users"],
+    reply: "AtlantisChain is supported by a growing global community of users, developers, and ecosystem contributors."
+  },
+  {
+    keywords: ["exchange", "cex", "listing"],
+    reply: "Atlantis ecosystem tokens aim for broader adoption through decentralized exchanges and future centralized listings."
+  },
+  {
+    keywords: ["blocks", "total blocks", "network activity"],
+    reply: "AtlantisChain has produced over 470 million blocks in just 179 days, demonstrating strong network activity and stability."
+  },
+  {
+    keywords: ["atcscan", "explorer", "scan"],
+    reply: "ATCScan is the official blockchain explorer for AtlantisChain, used to monitor transactions, blocks, tokens, and wallets."
+  },
+  {
+    keywords: ["why atlantis", "why atlantischain"],
+    reply: "AtlantisChain combines ultra-high TPS, near-zero gas fees, and ultra-fast block times, making it ideal for DeFi, DEX, and ATC-20 projects."
+  },
+  {
+    keywords: ["network", "mainnet", "stats", "chain stats"],
+    reply: "AtlantisChain mainnet statistics include 3.6M+ TPS peak, 0.031-second block time, near-zero gas fees, and hundreds of millions of blocks produced."
+  },
+  {
+    keywords: ["support", "help"],
+    reply: "For official support, updates, and announcements, always follow AtlantisChain’s verified communication channels."
+  }
+];
+
+
+    function botReply(message) {
+      const msg = message.toLowerCase();
+      for (let item of answers) {
+        if (item.keywords.some(k => msg.includes(k))) {
+          return item.reply;
+        }
+      }
+      return "Sorry, I didn’t understand that. Please ask about AtlantisChain, ATC-20, DEX, Launchpad, or USDA.";
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+    userInput.addEventListener("keypress", e => {
+      if (e.key === "Enter") sendMessage();
+    });
+
+    function sendMessage() {
+      const text = userInput.value.trim();
+      if (!text) return;
+
+      chatBody.innerHTML += `<div class="user-msg">${text}</div>`;
+      userInput.value = "";
+
+      setTimeout(() => {
+        const reply = botReply(text);
+        chatBody.innerHTML += `<div class="bot-msg">${reply}</div>`;
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 500);
+    }
+
+
+
 // ================= PAGINATION =================
 function renderPagination(list) {
   const pagination = document.getElementById("pagination");
