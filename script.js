@@ -581,7 +581,7 @@ const answers = [
   },
   {
     keywords: ["atcscan", "explorer", "scan"],
-    reply: "ATCScan is the official blockchain explorer for AtlantisChain, used to monitor transactions, blocks, tokens, and wallets."
+    reply: "ATCScan(atcscan.io) is the official blockchain explorer for AtlantisChain, used to monitor transactions, blocks, tokens, and wallets."
   },
   {
     keywords: ["why atlantis", "why atlantischain"],
