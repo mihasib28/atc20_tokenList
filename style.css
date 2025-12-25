@@ -684,9 +684,6 @@ html {
 }
 
 
-
-
-
 .highest-tps-img {
     text-align: center;
     margin-top: 0;
@@ -702,11 +699,11 @@ html {
     margin-top: 50px;
     height: auto;
     border-radius: 12px;
-    transition: transform 0.8s ease; 
+    transition: transform 0.7s ease; 
 }
 
 .highest-tps-img img:hover {
-    transform: translateY(-7px);
+    transform: translateY(-3px);
 }
 
 /* Footer */
@@ -757,7 +754,8 @@ footer {
 }
 
 .footer-toggle:hover {
-    transform: translateY(-7px);
+    transform: translateY(-3px);
+    
 }
 
 .footer-toggle {
@@ -783,10 +781,12 @@ footer {
 .footer-links a {
     color: #d7d7d7;
     text-decoration: none;
+    transition: 0.2s ease;
 }
 
 .footer-links a:hover {
     text-decoration: none;
+    opacity: 0.8;
 }
 
 .footer-bottom {
@@ -837,6 +837,10 @@ footer {
     .footer-container h1 {
         font-size: 24px;
         color: #008cff;
+    }
+
+    .footer-toggle {
+        padding: 1px 5px;
     }
 }
 
