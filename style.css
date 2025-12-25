@@ -75,13 +75,11 @@ html {
 
 .navbar-container .navbar-menu li a {
     text-decoration: none;
-    color: rgb(0, 140, 255);
-    font-size: 1.3rem;
-    /* font */
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
     font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-    /* font-weight: 500; */
+    font-weight: 400;
+    font-style: normal;
     padding: 3px 10px;
     border-radius: 20px;
     
@@ -92,9 +90,8 @@ html {
 }
 .navbar-container .navbar-menu li a:hover,
 .navbar-container .navbar-menu li a.active {
-    color: #e8e8e8;
-    background: rgb(0, 140, 255);
-    border: 2px solid #ffffff;
+    color: #46b6ff;
+
 }
 
 .navbar-toggle {

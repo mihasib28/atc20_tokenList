@@ -16,14 +16,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70px;
+    height: 60px;
     width: 100%;
     position: sticky;
     top: 0;
     background: transparent;
     backdrop-filter: blur(10px);
     z-index: 999;
-
 }
 .navbar-container {
     display: flex;
@@ -62,7 +61,7 @@ body {
 .navbar-menu {
     display: flex;
     text-align: center;
-    gap: 1.5rem;
+    gap: 1rem;
     font-weight: 400;
     list-style: none;
     backdrop-filter: blur(10px);
@@ -70,11 +69,14 @@ body {
 
 .navbar-container .navbar-menu li a {
     text-decoration: none;
-    color: rgb(0, 140, 255);
-    font-size: 1.3rem;
-    /* font-weight: 500; */
-    padding: 3px 20px;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 3px 10px;
     border-radius: 20px;
+    
     border: 2px solid transparent;
     transition: all 0.7s ease;
     white-space: nowrap;
@@ -82,9 +84,8 @@ body {
 }
 .navbar-container .navbar-menu li a:hover,
 .navbar-container .navbar-menu li a.active {
-    color: #e8e8e8;
-    background: rgb(0, 140, 255);
-    border: 2px solid #ffffff;
+    color: #46b6ff;
+
 }
 
 .navbar-toggle {
@@ -171,6 +172,17 @@ body {
         font-size: 1rem;
         padding: 2px 12px;
     }
+}
+
+.no-interaction {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.no-link-drag {
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
     header {
