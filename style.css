@@ -552,7 +552,7 @@ html {
 /* Mobile Responsive */
 @media (max-width: 1000px) {
     .video-section {
-       height: 1400px;
+       height: 1060px;
     }
 }
 
