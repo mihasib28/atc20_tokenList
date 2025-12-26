@@ -8,6 +8,13 @@ const prevBtn = document.getElementById("prevBtn");
 const tokens = [
   {
     badge: "Presale",
+    title: "Atlantis Oil (OIL)",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "./img/oilToken.jpg",
+    url: "https://x.com/Atlantis_Ex/status/2004480399934922769",
+  },
+  {
+    badge: "Presale",
     title: "Atlantis Gold (AU)",
     desc: "Atlantis Chain(ATC-20)",
     img: "./img/upcomingtoken_1.png",

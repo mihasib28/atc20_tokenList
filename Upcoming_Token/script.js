@@ -7,6 +7,13 @@ const prevBtn = document.getElementById("prevBtn");
 ========================= */
 const tokens = [
   {
+    badge: "Total Supply: 18.4B",
+    title: "Atlantis Oil (OIL)",
+    desc: "Digital Oil on AtlantisChain",
+    img: "./img/oilToken.jpg",
+    url: "https://x.com/Atlantis_Ex/status/2004480399934922769"
+  },
+  {
     badge: "CS: 50M",
     title: "Atlantis Gold (AU)",
     desc: "Pure Digital Gold on AtlantisChain",
