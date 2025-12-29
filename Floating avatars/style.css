@@ -100,7 +100,7 @@ body {
 /* IMAGE PLACEHOLDER — FIXED */
 .image-box {
   width: 100%;
-  aspect-ratio: 1.91 / 1;
+  aspect-ratio: 1.92 / 1.08;
   background: #181818;
   border-radius: 14px;
   overflow: hidden;
