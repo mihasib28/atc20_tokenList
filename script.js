@@ -749,7 +749,9 @@ function filterTokens() {
       t.address.toLowerCase().includes(searchValue)
   );
 
-  if (category !== "all" && category !== "az") {
+  if (category === "new") {
+    filtered = filtered.filter((t) => t.isNew === true);
+  } else if (category !== "all" && category !== "az") {
     filtered = filtered.filter((t) => t.category === category);
   }
 
@@ -768,7 +770,12 @@ function sortTokens() {
 
   if (value === "az") {
     list.sort((a, b) => a.name.localeCompare(b.name));
-  } else if (value !== "all") {
+  } 
+  // ✅ NEW category support
+  else if (value === "new") {
+    list = list.filter((t) => t.isNew === true);
+  } 
+  else if (value !== "all") {
     list = list.filter((t) => t.category === value);
   }
 
