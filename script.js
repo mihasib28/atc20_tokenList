@@ -440,7 +440,7 @@ function insertSearchBar() {
   input.className = "search-input";
   input.id = "searchInput";
   input.placeholder = "Search token or contract...";
-  input.addEventListener("keyup", filterTokens);
+  input.addEventListener("keyup", filterAndSortTokens);
 
   wrapper.appendChild(input);
   searchArea.appendChild(wrapper);
@@ -455,11 +455,9 @@ function disableDrag() {
 }
 
 // ================= RENDER TOKENS =================
-function renderTokens(list = tokens) {
+function renderTokens(list = currentList) {
   const listArea = document.getElementById("tokenList");
   if (!listArea) return;
-
-  currentList = list;
 
   const start = (currentPage - 1) * TOKENS_PER_PAGE;
   const end = start + TOKENS_PER_PAGE;
@@ -470,19 +468,16 @@ function renderTokens(list = tokens) {
   pageItems.forEach((t) => {
     listArea.innerHTML += `
       <div class="token-card">
-  <div class="logo-text">
-    <img src="${t.logo}" class="token-logo" draggable="false">
-    <div class="token-name">${t.name}</div>
-  </div>
-  <div class="contract">${t.address}</div>
-  <div class="button-row">
-    <button class="btn" onclick="copyAddress('${t.address}')">Copy</button>
-    <button class="btn" onclick="window.open('https://atcscan.io/address/${
-      t.address
-    }', '_blank')">ATCScan</button>
-  </div>
-</div>
-
+        <div class="logo-text">
+          <img src="${t.logo}" class="token-logo" draggable="false">
+          <div class="token-name">${t.name}</div>
+        </div>
+        <div class="contract">${t.address}</div>
+        <div class="button-row">
+          <button class="btn" onclick="copyAddress('${t.address}')">Copy</button>
+          <button class="btn" onclick="window.open('https://atcscan.io/address/${t.address}', '_blank')">ATCScan</button>
+        </div>
+      </div>
     `;
   });
 
@@ -490,7 +485,107 @@ function renderTokens(list = tokens) {
   renderPagination(list);
 }
 
-/* ================= SELECT ELEMENTS ================= */
+// ================= PAGINATION =================
+function renderPagination(list) {
+  const pagination = document.getElementById("pagination");
+  if (!pagination) return;
+
+  pagination.innerHTML = "";
+
+  const totalPages = Math.ceil(list.length / TOKENS_PER_PAGE);
+  if (totalPages <= 1) return;
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+
+    if (i === currentPage) btn.classList.add("active");
+
+    btn.onclick = () => {
+      if (currentPage === i) return;
+
+      currentPage = i;
+      renderTokens(currentList);
+
+      const tokenSection = document.getElementById("tokenSection");
+      const listArea = document.getElementById("tokenList");
+
+      if (!tokenSection || !listArea) return;
+      const rect = listArea.getBoundingClientRect();
+      if (rect.top < 0) {
+        tokenSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
+    pagination.appendChild(btn);
+  }
+}
+
+// ================= FILTER & SORT =================
+function filterAndSortTokens() {
+  const searchValue = document.getElementById("searchInput")?.value.toLowerCase() || "";
+  const category = document.getElementById("sortSelect")?.value || "default";
+
+  let filtered;
+
+  if (category === "default") {
+    // Show all tokens for default
+    filtered = [...tokens];
+  } else {
+    // Filter by category
+    filtered = tokens.filter((t) => t.category === category);
+  }
+
+  // Apply search filter on top
+  if (searchValue) {
+    filtered = filtered.filter(
+      (t) =>
+        t.name.toLowerCase().includes(searchValue) ||
+        t.address.toLowerCase().includes(searchValue)
+    );
+  }
+
+  // Always sort A→Z
+  filtered.sort((a, b) => a.name.localeCompare(b.name));
+
+  currentPage = 1;
+  currentList = filtered;
+  renderTokens(filtered);
+}
+
+
+// Hook category change
+document.getElementById("sortSelect")?.addEventListener("change", filterAndSortTokens);
+
+// ================= COPY =================
+function copyAddress(addr) {
+  navigator.clipboard.writeText(addr);
+  showCopied();
+}
+
+function showCopied() {
+  let box = document.querySelector(".copy-alert");
+
+  if (!box) {
+    box = document.createElement("div");
+    box.className = "copy-alert";
+    box.textContent = "Copied!";
+    document.body.appendChild(box);
+  }
+
+  box.classList.add("show");
+  setTimeout(() => box.classList.remove("show"), 1500);
+}
+
+// ================= FOOTER =================
+document.querySelectorAll(".footer-toggle").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const links = btn.nextElementSibling;
+    links.style.display = links.style.display === "block" ? "none" : "block";
+  });
+});
+
+// ================= CHAT =================
 const openChat = document.getElementById("openChat");
 const closeChat = document.getElementById("closeChat");
 const chatbot = document.querySelector(".chatbot");
@@ -499,18 +594,17 @@ const userInput = document.getElementById("userInput");
 const sendBtn = document.getElementById("sendBtn");
 const chatHint = document.getElementById("chatHint");
 
-/* ================= CHAT OPEN / CLOSE ================= */
-openChat.addEventListener("click", () => {
+openChat?.addEventListener("click", () => {
   chatbot.style.display = "flex";
   stopChatHints();
 });
 
-closeChat.addEventListener("click", () => {
+closeChat?.addEventListener("click", () => {
   chatbot.style.display = "none";
   startChatHints();
 });
 
-/* ================= CHAT HINT (EVERY 3s) ================= */
+// ================= CHAT HINTS =================
 const hintMessages = [
   "Ask me about Atlantis",
   "Atlantis Assistant here",
@@ -524,17 +618,13 @@ let hintInterval = null;
 
 function startChatHints() {
   if (hintInterval) return;
-
   hintInterval = setInterval(() => {
     if (chatbot.style.display === "flex") return;
 
     chatHint.textContent = hintMessages[hintIndex];
     chatHint.classList.add("show");
 
-    setTimeout(() => {
-      chatHint.classList.remove("show");
-    }, 2000);
-
+    setTimeout(() => chatHint.classList.remove("show"), 2000);
     hintIndex = (hintIndex + 1) % hintMessages.length;
   }, 3000);
 }
@@ -694,17 +784,13 @@ const answers = [
 function botReply(message) {
   const msg = message.toLowerCase();
   for (let item of answers) {
-    if (item.keywords.some((k) => msg.includes(k))) {
-      return item.reply;
-    }
+    if (item.keywords.some((k) => msg.includes(k))) return item.reply;
   }
   return "Sorry, I didn’t understand that. Please ask about AtlantisChain, ATC-20, DEX, Launchpad, or USDA.";
 }
 
-sendBtn.addEventListener("click", sendMessage);
-userInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") sendMessage();
-});
+sendBtn?.addEventListener("click", sendMessage);
+userInput?.addEventListener("keypress", (e) => { if (e.key === "Enter") sendMessage(); });
 
 function sendMessage() {
   const text = userInput.value.trim();
@@ -720,122 +806,8 @@ function sendMessage() {
   }, 500);
 }
 
-// ================= PAGINATION =================
-function renderPagination(list) {
-  const pagination = document.getElementById("pagination");
-  if (!pagination) return;
-
-  pagination.innerHTML = "";
-
-  const totalPages = Math.ceil(list.length / TOKENS_PER_PAGE);
-  if (totalPages <= 1) return;
-
-  for (let i = 1; i <= totalPages; i++) {
-    const btn = document.createElement("button");
-    btn.textContent = i;
-
-    if (i === currentPage) {
-      btn.classList.add("active");
-    }
-
-    btn.onclick = () => {
-      if (currentPage === i) return; // stop re-scroll
-
-      currentPage = i;
-      renderTokens(currentList);
-
-      const tokenSection = document.getElementById("tokenSection");
-      const listArea = document.getElementById("tokenList");
-
-      if (!tokenSection || !listArea) return;
-
-      const rect = listArea.getBoundingClientRect();
-
-      // ✅ scroll ONLY if list top is above viewport
-      if (rect.top < 0) {
-        tokenSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    };
-
-    pagination.appendChild(btn);
-  }
-}
-
-
-
-// ================= FILTER =================
-function filterTokens() {
-  const searchValue = document
-    .getElementById("searchInput")
-    .value.toLowerCase();
-
-  const category = document.getElementById("sortSelect")?.value || "all";
-
-  let filtered = tokens.filter(
-    (t) =>
-      t.name.toLowerCase().includes(searchValue) ||
-      t.address.toLowerCase().includes(searchValue)
-  );
-
-  if (category !== "all" && category !== "az") {
-    filtered = filtered.filter((t) => t.category === category);
-  }
-
-  if (category === "az") {
-    filtered.sort((a, b) => a.name.localeCompare(b.name));
-  }
-
-  currentPage = 1;
-  renderTokens(filtered);
-}
-
-// ================= SORT =================
-function sortTokens() {
-  const value = document.getElementById("sortSelect").value;
-  let list = [...tokens];
-
-  if (value === "az") {
-    list.sort((a, b) => a.name.localeCompare(b.name));
-  } else if (value !== "all") {
-    list = list.filter((t) => t.category === value);
-  }
-
-  currentPage = 1;
-  renderTokens(list);
-}
-
-// ================= COPY =================
-function copyAddress(addr) {
-  navigator.clipboard.writeText(addr);
-  showCopied();
-}
-
-function showCopied() {
-  let box = document.querySelector(".copy-alert");
-
-  if (!box) {
-    box = document.createElement("div");
-    box.className = "copy-alert";
-    box.textContent = "Copied!";
-    document.body.appendChild(box);
-  }
-
-  box.classList.add("show");
-  setTimeout(() => box.classList.remove("show"), 1500);
-}
-
-// ================= FOOTER =================
-document.querySelectorAll(".footer-toggle").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const links = btn.nextElementSibling;
-    links.style.display = links.style.display === "block" ? "none" : "block";
-  });
-});
-
 // ================= INIT =================
 insertSearchBar();
-renderTokens(tokens);
+currentList = [...tokens].sort((a, b) => a.name.localeCompare(b.name));
+renderTokens(currentList);
 disableDrag();
