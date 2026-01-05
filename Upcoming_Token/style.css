@@ -112,6 +112,39 @@ body {
   border-radius: 50%;
 }
 
+
+/* Blur the content */
+.quests-section.coming-soon .quests-header,
+.quests-section.coming-soon .slider-wrapper {
+  filter: blur(6px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Overlay */
+.coming-soon-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Text style */
+.coming-soon-overlay span {
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 16px 32px;
+  border-radius: 12px;
+}
+
+
+
+
 @media (max-width: 768px) {
   .slider-buttons {
     display: none;
