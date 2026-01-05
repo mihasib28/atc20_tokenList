@@ -401,7 +401,12 @@ const tokens = [
     address: "AC4GpohUNiFFJMHufJnxLsM7ziVpP6qVo23s55yMRgNC",
     logo: "https://tokenlist.atcscan.io/metadata/AC4GpohUNiFFJMHufJnxLsM7ziVpP6qVo23s55yMRgNC/logo.png",
     category: "utility"
-
+  },
+   {
+    name: "Make Oil Great Again (MOGA)",
+    address: "AC7v97VXL6VydnzMa51bFtGyUxjGunU5yjdbmiaqAxk3",
+    logo: "https://tokenlist.atcscan.io/metadata/AC7v97VXL6VydnzMa51bFtGyUxjGunU5yjdbmiaqAxk3/logo.png",
+    category: "meme"
   }
 ];
 
