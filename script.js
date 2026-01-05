@@ -407,8 +407,15 @@ const tokens = [
     address: "AC7v97VXL6VydnzMa51bFtGyUxjGunU5yjdbmiaqAxk3",
     logo: "https://tokenlist.atcscan.io/metadata/AC7v97VXL6VydnzMa51bFtGyUxjGunU5yjdbmiaqAxk3/logo.png",
     category: "meme"
+  },
+   {
+    name: "Baby Doge Coin (BABYDOGE)",
+    address: "AC4osRAvTDK9Af5A8Z64vryXGGdEN7M7eNWUE4ej4D3b",
+    logo: "https://tokenlist.atcscan.io/metadata/AC4osRAvTDK9Af5A8Z64vryXGGdEN7M7eNWUE4ej4D3b/logo.png",
+    category: "meme"
   }
 ];
+
 
 // ================= NAVBAR =================
 const navbarToggle = document.querySelector(".navbar-toggle");
