@@ -13,10 +13,6 @@ body {
     
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* navbar */
 .navbar {
     display: flex;
@@ -494,26 +490,6 @@ html {
     min-height: 250px;
 
 }
-
-/* NEW TOKEN BADGE */
-.token-card {
-  position: relative; /* REQUIRED for badge positioning */
-}
-
-.new-badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: #008cff;
-  color: #ffffff;
-  font-size: 11px;
-  padding: 4px 9px;
-  border-radius: 12px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  z-index: 5;
-}
-
 
 
 .button-row {

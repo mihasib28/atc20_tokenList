@@ -357,50 +357,52 @@ const tokens = [
     address: "ACfyyzDg7XX7XSkPK6VSmAEgrdVcLc77iKxZCwf5TEhb",
     logo: "https://tokenlist.atcscan.io/metadata/ACfyyzDg7XX7XSkPK6VSmAEgrdVcLc77iKxZCwf5TEhb/logo.png",
     category: "meme",
-    isNew: true,
   },
    {
     name: "Drunk Raccoon (DRUNK)",
     address: "ACaXCarfhvkRUgRKMivTUSVPpa6FNUFanrwXNsDGJzzt",
     logo: "https://tokenlist.atcscan.io/metadata/ACaXCarfhvkRUgRKMivTUSVPpa6FNUFanrwXNsDGJzzt/logo.png",
-    category: "meme",
-    isNew: true,
+    category: "meme"
   },
    {
     name: "Tiger Girl (TIGER)",
     address: "ACojQ8RC9oFWNVWpQNxaAj4GeEkKzB12c7sriLQz38yX",
     logo: "https://tokenlist.atcscan.io/metadata/ACojQ8RC9oFWNVWpQNxaAj4GeEkKzB12c7sriLQz38yX/logo.png",
-    category: "meme",
-    isNew: true,
+    category: "meme"
   },
    {
     name: "AtlantisSpace (AS)",
     address: "ACRrsa3zQniNttRMnUynb9PAQkvX6xaQQypLKnGNwxnU",
     logo: "https://tokenlist.atcscan.io/metadata/ACRrsa3zQniNttRMnUynb9PAQkvX6xaQQypLKnGNwxnU/logo.png",
-    category: "utility",
-    isNew: true,
+    category: "utility"
   },
    {
     name: "BIGGER",
     address: "ACDxEyjuqRzkL1bbtKeCCX3VU9DmWxKGux1geV8pyuf6",
     logo: "https://tokenlist.atcscan.io/metadata/ACDxEyjuqRzkL1bbtKeCCX3VU9DmWxKGux1geV8pyuf6/logo.png",
-    category: "meme",
-    isNew: true,
+    category: "meme"
   },
    {
     name: "Atlantis Gold (AU)",
     address: "ACppX8Hct8QxrAGzcRYTyQ9hVK1qadZiXW4LbZ1S3NCS",
     logo: "https://tokenlist.atcscan.io/metadata/ACppX8Hct8QxrAGzcRYTyQ9hVK1qadZiXW4LbZ1S3NCS/logo.png",
-    category: "utility",
-    isNew: true,
+    category: "utility"
+
   },
    {
     name: "Atlantis Oil (OIL)",
     address: "ACqrLsw5FZNDW2FjU1AKADYwQYrem61e9fUGt89Q4UFc",
     logo: "https://tokenlist.atcscan.io/metadata/ACqrLsw5FZNDW2FjU1AKADYwQYrem61e9fUGt89Q4UFc/logo.png",
-    category: "utility",
-    isNew: true,
+    category: "utility"
+
   },
+   {
+    name: "CryptoLuck Games",
+    address: "AC4GpohUNiFFJMHufJnxLsM7ziVpP6qVo23s55yMRgNC",
+    logo: "https://tokenlist.atcscan.io/metadata/AC4GpohUNiFFJMHufJnxLsM7ziVpP6qVo23s55yMRgNC/logo.png",
+    category: "utility"
+
+  }
 ];
 
 // ================= NAVBAR =================
@@ -456,7 +458,6 @@ function renderTokens(list = tokens) {
   pageItems.forEach((t) => {
     listArea.innerHTML += `
       <div class="token-card">
-  ${t.isNew ? `<span class="new-badge">NEW</span>` : ""}
   <div class="logo-text">
     <img src="${t.logo}" class="token-logo" draggable="false">
     <div class="token-name">${t.name}</div>
@@ -713,6 +714,7 @@ function renderPagination(list) {
   if (!pagination) return;
 
   pagination.innerHTML = "";
+
   const totalPages = Math.ceil(list.length / TOKENS_PER_PAGE);
   if (totalPages <= 1) return;
 
@@ -720,20 +722,37 @@ function renderPagination(list) {
     const btn = document.createElement("button");
     btn.textContent = i;
 
-    if (i === currentPage) btn.classList.add("active");
+    if (i === currentPage) {
+      btn.classList.add("active");
+    }
 
     btn.onclick = () => {
+      if (currentPage === i) return; // stop re-scroll
+
       currentPage = i;
       renderTokens(currentList);
-      document.getElementById("tokenSection")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+
+      const tokenSection = document.getElementById("tokenSection");
+      const listArea = document.getElementById("tokenList");
+
+      if (!tokenSection || !listArea) return;
+
+      const rect = listArea.getBoundingClientRect();
+
+      // ✅ scroll ONLY if list top is above viewport
+      if (rect.top < 0) {
+        tokenSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     };
 
     pagination.appendChild(btn);
   }
 }
+
+
 
 // ================= FILTER =================
 function filterTokens() {
@@ -749,9 +768,7 @@ function filterTokens() {
       t.address.toLowerCase().includes(searchValue)
   );
 
-  if (category === "new") {
-    filtered = filtered.filter((t) => t.isNew === true);
-  } else if (category !== "all" && category !== "az") {
+  if (category !== "all" && category !== "az") {
     filtered = filtered.filter((t) => t.category === category);
   }
 
@@ -770,12 +787,7 @@ function sortTokens() {
 
   if (value === "az") {
     list.sort((a, b) => a.name.localeCompare(b.name));
-  } 
-  // ✅ NEW category support
-  else if (value === "new") {
-    list = list.filter((t) => t.isNew === true);
-  } 
-  else if (value !== "all") {
+  } else if (value !== "all") {
     list = list.filter((t) => t.category === value);
   }
 
