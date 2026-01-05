@@ -8,6 +8,13 @@ const prevBtn = document.getElementById("prevBtn");
 const tokens = [
   {
     badge: "Presale",
+    title: "Make Oil Great Again (MOGA)",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "https://tokenlist.atcscan.io/metadata/AC7v97VXL6VydnzMa51bFtGyUxjGunU5yjdbmiaqAxk3/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2008105040687554634?s=20",
+  },
+  {
+    badge: "Presale",
     title: "Atlantis Oil (OIL)",
     desc: "Atlantis Chain(ATC-20)",
     img: "./img/oilToken.jpg",
