@@ -8,17 +8,24 @@ const prevBtn = document.getElementById("prevBtn");
 const tokens = [
   {
     badge: "Presale",
+    title: "Monroe Doctrine (MONROE)",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "https://tokenlist.atcscan.io/metadata/ACdBCbVTqqSiLrAdBK2VjTD5TUGyHtJ5wtQkcuSwbH9N/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2008833205001224256?s=20"
+  },
+  {
+    badge: "Presale",
     title: "Make Oil Great Again (MOGA)",
     desc: "Atlantis Chain(ATC-20)",
     img: "https://tokenlist.atcscan.io/metadata/AC7v97VXL6VydnzMa51bFtGyUxjGunU5yjdbmiaqAxk3/logo.png",
-    url: "https://x.com/Atlantis_Ex/status/2008105040687554634?s=20",
+    url: "https://x.com/Atlantis_Ex/status/2008105040687554634?s=20"
   },
   {
     badge: "Presale",
     title: "Atlantis Oil (OIL)",
     desc: "Atlantis Chain(ATC-20)",
     img: "./img/oilToken.jpg",
-    url: "https://x.com/Atlantis_Ex/status/2004480399934922769",
+    url: "https://x.com/Atlantis_Ex/status/2004480399934922769"
   },
   {
     badge: "Presale",
