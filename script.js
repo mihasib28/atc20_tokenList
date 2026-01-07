@@ -413,7 +413,14 @@ const tokens = [
     address: "AC4osRAvTDK9Af5A8Z64vryXGGdEN7M7eNWUE4ej4D3b",
     logo: "https://tokenlist.atcscan.io/metadata/AC4osRAvTDK9Af5A8Z64vryXGGdEN7M7eNWUE4ej4D3b/logo.png",
     category: "meme"
+  },
+   {
+    name: "Monroe Doctrine (MONROE)",
+    address: "ACdBCbVTqqSiLrAdBK2VjTD5TUGyHtJ5wtQkcuSwbH9N",
+    logo: "https://tokenlist.atcscan.io/metadata/ACdBCbVTqqSiLrAdBK2VjTD5TUGyHtJ5wtQkcuSwbH9N/logo.png",
+    category: "commemorative"
   }
+
 ];
 
 
