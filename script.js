@@ -36,7 +36,7 @@ const tokens = [
     name: "Diana the Earth Queen (QUEEN)",
     address: "ACtPnTY6cCqdPWTfvFPJ4mDRAPTyDa1xfruVR41E1SG4",
     logo: "https://tokenlist.atcscan.io/metadata/ACtPnTY6cCqdPWTfvFPJ4mDRAPTyDa1xfruVR41E1SG4/logo.png",
-    category: "meme",
+    category: "commemorative",
   },
   {
     name: "Elon the Mars Emperor (EMPEROR)",
@@ -103,13 +103,13 @@ const tokens = [
     name: "Charlie Kirk the American Hero (KIRK)",
     address: "ACmXEAEZCgi8BHAvgKqzeovTBNfpTZjv5dQypzV3pLjF",
     logo: "https://tokenlist.atcscan.io/metadata/ACmXEAEZCgi8BHAvgKqzeovTBNfpTZjv5dQypzV3pLjF/logo.png",
-    category: "meme",
+    category: "commemorative",
   },
   {
     name: "AzukiCoin (AZUKI)",
     address: "ACuaycuupvSBHZ7ijU7gT6GvSapm81khxa7itVjrsAVP",
     logo: "https://tokenlist.atcscan.io/metadata/ACuaycuupvSBHZ7ijU7gT6GvSapm81khxa7itVjrsAVP/logo.png",
-    category: "meme",
+    category: "commemorative",
   },
   {
     name: "Labubu the Atlantis Fairy (LABUBU)",
@@ -122,13 +122,13 @@ const tokens = [
     name: "Stealth Attack Drone (GJ11)",
     address: "AC9RwDs7HoV65NFd5QtnkUPwrWTnANktAcoak33Qv4xv",
     logo: "https://tokenlist.atcscan.io/metadata/AC9RwDs7HoV65NFd5QtnkUPwrWTnANktAcoak33Qv4xv/logo.png",
-    category: "meme",
+    category: "commemorative",
   },
   {
     name: "LiuqiuCoin (LIUQIU)",
     address: "ACj9UQvTi1D6pN7X6Dnmcgzpsnam9Ab5ikZ8LAVLVSkv",
     logo: "https://tokenlist.atcscan.io/metadata/ACj9UQvTi1D6pN7X6Dnmcgzpsnam9Ab5ikZ8LAVLVSkv/logo.png",
-    category: "meme",
+    category: "commemorative",
   },
   {
     name: "Dogwifhat (WIF)",
