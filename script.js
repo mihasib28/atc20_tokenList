@@ -182,7 +182,7 @@ const tokens = [
     name: "Potsdam Declaration (POTSDAM)",
     address: "AC4cDvBG1mmSgK9Ntv31NYBP6m64VxCxzF5MtnWgkUWF",
     logo: "https://tokenlist.atcscan.io/metadata/AC4cDvBG1mmSgK9Ntv31NYBP6m64VxCxzF5MtnWgkUWF/logo.png",
-    category: "meme",
+    category: "commemorative",
   },
   {
     name: "GoldenGoose Coin (GOLD)",
@@ -338,7 +338,7 @@ const tokens = [
     name: "BRICS Coin (BC)",
     address: "ACCv9BaPmjfhB94SMvQ1qWRo4EZPijFkKJLNbATUYkYC",
     logo: "https://tokenlist.atcscan.io/metadata/ACCv9BaPmjfhB94SMvQ1qWRo4EZPijFkKJLNbATUYkYC/logo.png",
-    category: "meme",
+    category: "utility",
   },
   {
     name: "I Love You Coin (ILUC)",
@@ -350,7 +350,7 @@ const tokens = [
     name: "APEC Coin (APEC)",
     address: "ACj2r8Kk1hj8sLXtYw15TBCFCEQfGHuPKo5nXCFgz4wJ",
     logo: "https://tokenlist.atcscan.io/metadata/ACj2r8Kk1hj8sLXtYw15TBCFCEQfGHuPKo5nXCFgz4wJ/logo.png",
-    category: "meme",
+    category: "utility",
   },
   {
     name: "Roadrunner (RUN)",
