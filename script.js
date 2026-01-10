@@ -419,6 +419,12 @@ const tokens = [
     address: "ACdBCbVTqqSiLrAdBK2VjTD5TUGyHtJ5wtQkcuSwbH9N",
     logo: "https://tokenlist.atcscan.io/metadata/ACdBCbVTqqSiLrAdBK2VjTD5TUGyHtJ5wtQkcuSwbH9N/logo.png",
     category: "commemorative"
+  },
+   {
+    name: "Trumpnomics (TN)",
+    address: "ACG14qjSXyXSYgAwdfmcd79CruBnN3ozui6d18njR4v2",
+    logo: "https://tokenlist.atcscan.io/metadata/ACG14qjSXyXSYgAwdfmcd79CruBnN3ozui6d18njR4v2/logo.png",
+    category: "utility"
   }
 
 ];
