@@ -7,7 +7,7 @@ async function loadCoins() {
 
   try {
     const res = await fetch(
-      "https://get-price28.onrender.com/api/coins?symbols=ATC"
+      "https://coinmarketcap-price-1.onrender.com/api/coins?symbols=ATC"
     );
 
     if (res.status === 429) {
