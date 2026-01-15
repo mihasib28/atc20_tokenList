@@ -8,6 +8,13 @@ const prevBtn = document.getElementById("prevBtn");
 const tokens = [
   {
     badge: "Presale",
+    title: "Advanced Bitcoin (aBTC)",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "https://tokenlist.atcscan.io/metadata/ACaUqfatXwxHBiH9eaLqrXihjykj2FaVZwM9WW4dDY8v/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2011691804395970775?s=20"
+  },
+  {
+    badge: "Presale",
     title: "Monroe Doctrine (MONROE)",
     desc: "Atlantis Chain(ATC-20)",
     img: "https://tokenlist.atcscan.io/metadata/ACdBCbVTqqSiLrAdBK2VjTD5TUGyHtJ5wtQkcuSwbH9N/logo.png",
