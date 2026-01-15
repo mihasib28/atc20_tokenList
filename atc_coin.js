@@ -1,49 +1,47 @@
-let lastPrices = {}; 
-let isFetching = false; 
+let lastPrices = {};
+let isFetching = false;
 
 async function loadCoins() {
-  if (isFetching) return; 
+  if (isFetching) return;
   isFetching = true;
 
   try {
     const res = await fetch(
-      "https://coinmarketcap-price-1.onrender.com/api/coins?symbols=ATC"
+      "https://hibit-price-api.onrender.com/api/atc-price"
     );
 
     if (res.status === 429) {
       console.warn("Rate limited! Waiting 10s before retry...");
-      setTimeout(loadCoins, 10000); 
+      setTimeout(loadCoins, 10000);
       return;
     }
 
-    const data = await res.json();
+    const json = await res.json();
+
+    const coin = {
+      symbol: json.symbol || "ATC/USDT",
+      price: Number(json.price)
+    };
+
     const container = document.getElementById("coins");
     container.innerHTML = "";
 
-    data.forEach(coin => {
-      const changeClass = coin.change24h >= 0 ? "positive" : "negative";
-      const arrow = coin.change24h >= 0 ? "▲" : "▼";
+    let blinkClass = "";
+    if (lastPrices[coin.symbol] !== undefined) {
+      if (coin.price > lastPrices[coin.symbol]) blinkClass = "blink-up";
+      if (coin.price < lastPrices[coin.symbol]) blinkClass = "blink-down";
+    }
 
-      let blinkClass = "";
-      if (lastPrices[coin.symbol] !== undefined) {
-        if (coin.price > lastPrices[coin.symbol]) blinkClass = "blink-up";
-        if (coin.price < lastPrices[coin.symbol]) blinkClass = "blink-down";
-      }
+    container.innerHTML = `
+      <div class="coin-card">
+        <h5 class="symbol">${coin.symbol}</h5>
+        <p class="price ${blinkClass}">
+          $${coin.price.toFixed(2)}
+        </p>
+      </div>
+    `;
 
-      container.innerHTML += `
-        <div class="coin-card">
-          <p class="price ${blinkClass}">
-            $${coin.price.toFixed(3)}
-          </p>
-          <p class="change ${changeClass}">
-            <span class="label">24h</span>
-            ${arrow} ${coin.change24h.toFixed(2)}%
-          </p>
-        </div>
-      `;
-
-      lastPrices[coin.symbol] = coin.price;
-    });
+    lastPrices[coin.symbol] = coin.price;
 
   } catch (err) {
     console.error("Error fetching coin data:", err);
@@ -51,7 +49,6 @@ async function loadCoins() {
     isFetching = false;
   }
 }
-
 
 loadCoins();
 setInterval(loadCoins, 15000);
