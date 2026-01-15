@@ -1,39 +1,57 @@
-let lastPrice = null;
+let lastPrices = {}; 
+let isFetching = false; 
 
 async function loadCoins() {
-  const res = await fetch(
-    "https://coinmarketcap-price.onrender.com/api/coins?symbols=ATC"
-  );
-  const data = await res.json();
+  if (isFetching) return; 
+  isFetching = true;
 
-  const container = document.getElementById("coins");
-  container.innerHTML = "";
+  try {
+    const res = await fetch(
+      "https://coinmarketcap-price.onrender.com/api/coins?symbols=ATC"
+    );
 
-  data.forEach(coin => {
-    const changeClass = coin.change24h >= 0 ? "positive" : "negative";
-    const arrow = coin.change24h >= 0 ? "▲" : "▼";
-
-    let blinkClass = "";
-    if (lastPrice !== null) {
-      if (coin.price > lastPrice) blinkClass = "blink-up";
-      if (coin.price < lastPrice) blinkClass = "blink-down";
+    if (res.status === 429) {
+      console.warn("Rate limited! Waiting 10s before retry...");
+      setTimeout(loadCoins, 10000); 
+      return;
     }
 
-    container.innerHTML += `
-      <div class="coin-card">
-        <p class="price ${blinkClass}">
-          $${coin.price.toFixed(3)}
-        </p>
-        <p class="change ${changeClass}">
-          <span class="label">24h</span>
-          ${arrow} ${coin.change24h.toFixed(2)}%
-        </p>
-      </div>
-    `;
+    const data = await res.json();
+    const container = document.getElementById("coins");
+    container.innerHTML = "";
 
-    lastPrice = coin.price;
-  });
+    data.forEach(coin => {
+      const changeClass = coin.change24h >= 0 ? "positive" : "negative";
+      const arrow = coin.change24h >= 0 ? "▲" : "▼";
+
+      let blinkClass = "";
+      if (lastPrices[coin.symbol] !== undefined) {
+        if (coin.price > lastPrices[coin.symbol]) blinkClass = "blink-up";
+        if (coin.price < lastPrices[coin.symbol]) blinkClass = "blink-down";
+      }
+
+      container.innerHTML += `
+        <div class="coin-card">
+          <p class="price ${blinkClass}">
+            $${coin.price.toFixed(3)}
+          </p>
+          <p class="change ${changeClass}">
+            <span class="label">24h</span>
+            ${arrow} ${coin.change24h.toFixed(2)}%
+          </p>
+        </div>
+      `;
+
+      lastPrices[coin.symbol] = coin.price;
+    });
+
+  } catch (err) {
+    console.error("Error fetching coin data:", err);
+  } finally {
+    isFetching = false;
+  }
 }
 
+
 loadCoins();
-setInterval(loadCoins, 5000);
+setInterval(loadCoins, 15000);
