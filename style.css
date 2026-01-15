@@ -366,6 +366,75 @@ html {
     backdrop-filter: blur(12px);
 }
 
+
+
+
+
+.coin-card {
+  background: #12172c;
+    border: 1px solid #008cff70;
+  border-radius: 10px;
+  padding: 12px 16px;
+  width: 170px;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #eaecef;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 600;
+  transition: color 0.4s ease;
+}
+
+.change {
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.4s ease;
+}
+
+.label {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-right: 4px;
+}
+
+.positive {
+  color: #0ecb81;
+}
+
+.negative {
+  color: #f6465d;
+}
+
+@keyframes blinkUp {
+  0% { color: #0ecb81; }
+  100% { color: #eaecef; }
+}
+
+@keyframes blinkDown {
+  0% { color: #f6465d; }
+  100% { color: #eaecef; }
+}
+
+.blink-up {
+  animation: blinkUp 0.6s ease;
+}
+
+.blink-down {
+  animation: blinkDown 0.6s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* MAIN TOKEN CARD - FULL WIDTH */
 /* CENTER CONTENT FOR MAIN TOKEN CARD ONLY */
 .token-card-main {
