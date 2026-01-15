@@ -425,7 +425,14 @@ const tokens = [
     address: "ACG14qjSXyXSYgAwdfmcd79CruBnN3ozui6d18njR4v2",
     logo: "https://tokenlist.atcscan.io/metadata/ACG14qjSXyXSYgAwdfmcd79CruBnN3ozui6d18njR4v2/logo.png",
     category: "utility"
-  }
+  },
+   {
+    name: "Advanced Bitcoin (aBTC)",
+    address: "ACaUqfatXwxHBiH9eaLqrXihjykj2FaVZwM9WW4dDY8v",
+    logo: "https://tokenlist.atcscan.io/metadata/ACaUqfatXwxHBiH9eaLqrXihjykj2FaVZwM9WW4dDY8v/logo.png",
+    category: "utility"
+  },
+  
 
 ];
 
