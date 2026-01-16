@@ -62,28 +62,43 @@ function renderTokens() {
 
 
 // ===== PAGINATION =====
-function renderPagination() {
+// ================= PAGINATION =================
+function renderPagination(list = currentList) {
   const pagination = document.getElementById("pagination");
+  if (!pagination) return;
+
   pagination.innerHTML = "";
 
-  const totalPages = Math.ceil(currentList.length / TOKENS_PER_PAGE);
+  const totalPages = Math.ceil(list.length / TOKENS_PER_PAGE);
   if (totalPages <= 1) return;
 
   for (let i = 1; i <= totalPages; i++) {
     const btn = document.createElement("button");
     btn.textContent = i;
-    btn.className = i === currentPage ? "active" : "";
+
+    if (i === currentPage) btn.classList.add("active");
 
     btn.onclick = () => {
+      if (currentPage === i) return;
+
       currentPage = i;
-      renderTokens();
-      renderPagination();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      renderTokens(list);
+      renderPagination(list);
+
+      // keep scroll on token section
+      const tokenSection = document.getElementById("tokenSection");
+      if (tokenSection) {
+        tokenSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
     };
 
     pagination.appendChild(btn);
   }
 }
+
 
 // ===== FILTER =====
 // ===== LOAD TOKENS =====
