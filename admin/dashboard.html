@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="dashboard">
+    <header>
+      <h2>Admin Dashboard</h2>
+      <button onclick="logout()">Logout</button>
+    </header>
+
+    <section class="add-token">
+      <h3>Add Token</h3>
+      <input id="name" placeholder="Token Name">
+      <input id="address" placeholder="Contract Address">
+      <input id="logo" placeholder="Logo URL from atcscan.io">
+      <select id="category">
+        <option value="">Select Category</option>
+        <option value="stable">Stable</option>
+        <option value="meme">Meme</option>
+        <option value="utility">Utility</option>
+        <option value="commemorative">Commemorative</option>
+      </select>
+
+      <button onclick="addToken()">Add Token</button>
+      <p id="tokenMsg"></p>
+    </section>
+
+    <section>
+      <h3>All Tokens</h3>
+      <div id="tokenList" class="token-grid"></div>
+    </section>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+backend/
+backend/.env
+backend/node_modules/
+backend/dist/
+backend/logs/
+backend/coverage/
+backend/.nyc_output/
+atlo/

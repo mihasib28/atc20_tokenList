@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Auth</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="auth-container">
+  <h1>Admin Panel</h1>
+
+  <div class="tabs">
+    <button id="loginTab" class="active" onclick="showLogin()">Login</button>
+    <button id="registerTab" onclick="showRegister()">Register</button>
+  </div>
+
+  <!-- LOGIN -->
+  <form id="loginForm">
+    <input
+      type="text"
+      id="loginUsername"
+      placeholder="Username"
+      required
+    >
+    <input
+      type="password"
+      id="loginPassword"
+      placeholder="Password"
+      required
+    >
+    <button type="submit">Login</button>
+  </form>
+
+  <!-- REGISTER -->
+  <form id="registerForm" style="display:none">
+    <input
+      type="text"
+      id="regUsername"
+      placeholder="Username"
+      required
+    >
+    <input
+      type="password"
+      id="regPassword"
+      placeholder="Password"
+      required
+    >
+    <input
+      type="text"
+      id="regInviteCode"
+      placeholder="Admin Invite Code"
+      required
+    >
+    <button type="submit">Register</button>
+  </form>
+
+  <p id="authMsg"></p>
+</div>
+
+<script src="./auth.js"></script>
+</body>
+</html>

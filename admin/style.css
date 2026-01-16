@@ -1,0 +1,269 @@
+/* =====================
+   GLOBAL RESET
+===================== */
+
+:root {
+  --bg-main: #0b1022;
+  --bg-card: #121a35;
+  --primary: #1da1ff;
+  --primary-soft: rgba(29, 161, 255, 0.25);
+  --danger: #f6465d;
+  --text-main: #ffffff;
+  --text-muted: #9aa4bf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: radial-gradient(circle at top, #141b3d, #0b1022 60%);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =====================
+   AUTH CONTAINER
+===================== */
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background: #12172c;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 140, 255, 0.2);
+}
+
+.auth-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background: #1e2545;
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.tabs button.active {
+  background: #008cff;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #008cff50;
+  background: #0d1021;
+  color: #fff;
+  font-size: 1rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #008cff;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #008cff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #34b9ff;
+  opacity: 1;
+}
+
+#authMsg {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #f6465d;
+}
+
+/* =====================
+   DASHBOARD
+===================== */
+.dashboard {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h2 {
+  font-size: 1.8rem;
+}
+
+header button {
+  width: auto;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  background: #f6465d;
+}
+
+.add-token {
+  background: #12172c;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 15px rgba(0, 140, 255, 0.1);
+}
+
+.add-token h3 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.add-token input,
+.add-token select {
+  font-size: 1rem;
+}
+
+.add-token button {
+  margin-top: 10px;
+}
+
+/* =====================
+   TOKEN GRID
+===================== */
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.token-card {
+  background: #12172c;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #008cff50;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.token-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 140, 255, 0.3);
+}
+
+.token-card p {
+  word-break: break-all;
+  margin-bottom: 8px;
+}
+
+.token-card button {
+  margin-top: auto;
+  background: #f6465d;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.token-card button:hover {
+  background: #ff3b56;
+}
+
+/* =====================
+   RESPONSIVE MOBILE
+===================== */
+@media (max-width: 768px) {
+
+  .auth-container {
+    margin: 50px 20px;
+    padding: 25px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+
+
+  .token-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+  }
+
+  .add-token {
+    padding: 15px;
+  }
+
+  .add-token h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .auth-container {
+    margin: 40px 15px;
+    padding: 20px;
+  }
+
+  input, select, button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .token-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .token-card {
+    padding: 12px;
+  }
+
+  header h2 {
+    font-size: 1.5rem;
+  }
+
+  header button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
