@@ -28,7 +28,6 @@ tokens.forEach(token => {
     <div class="quest-card">
       <span class="badge">${token.badge}</span>
       <h3>${token.title}</h3>
-      <p>20% Airdrop</p>
       <div class="footer">
         <img class="avatar" src="${token.img}" alt="">
         <h4>${token.desc}</h4>
