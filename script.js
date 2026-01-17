@@ -15,17 +15,8 @@ if ("scrollRestoration" in history) {
 let tokens = [];
 let currentList = [];
 let currentPage = 1;
+let hashScrolled = false;
 
-// ===== LOAD TOKENS =====
-async function loadTokens() {
-  try {
-    const res = await fetch(API_URL);
-    tokens = await res.json();
-    applyFilters(); // keeps filter after refresh
-  } catch (err) {
-    console.error(err);
-  }
-}
 
 
 // ===== RENDER TOKENS (MATCHES YOUR CSS STRUCTURE) =====
@@ -179,9 +170,12 @@ function applyFilters() {
   renderPagination();
   updateCategoryCounts();
 
-  // 🔑 handle hash scroll here
-  setTimeout(handleHashScroll, 100);
+  // only once
+  if (!hashScrolled) {
+    setTimeout(handleHashScroll, 100);
+  }
 }
+
 
 
 // ================= NAVBAR =================
@@ -245,26 +239,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function handleHashScroll(retry = 0) {
+  if (hashScrolled) return;
+
   const hash = window.location.hash;
   if (!hash) return;
 
   const target = document.querySelector(hash);
   if (!target) return;
 
-  // If page is still too short, retry
   if (document.body.scrollHeight < window.innerHeight + 200 && retry < 10) {
     setTimeout(() => handleHashScroll(retry + 1), 150);
     return;
   }
+
+  hashScrolled = true; // 🔒 lock it
 
   target.scrollIntoView({
     behavior: "smooth",
     block: "start"
   });
 
-  // remove hash to stop future auto jumps
   history.replaceState(null, "", window.location.pathname);
 }
+
 
 // ================= CHAT =================
 const openChat = document.getElementById("openChat");
