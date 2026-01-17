@@ -331,7 +331,7 @@ const answers = [
       "AtlantisChain delivers ultra-high performance with a peak capacity of 3.6M+ TPS, enabling fast and scalable on-chain activity.",
   },
   {
-    keywords: ["block time", "confirmation time", "instant", "real time"],
+    keywords: ["block time", "confirmation time", "instant", "real time", "speed"],
     reply:
       "AtlantisChain features an ultra-fast block time of approximately 0.031 seconds, allowing near-instant transaction confirmations.",
   },
@@ -368,12 +368,7 @@ const answers = [
   {
     keywords: ["wallet", "wallet support", "address"],
     reply:
-      "Atlantis Wallet is the official cold wallet of AtlantisChain, secured by the proprietary Atlantis QuantumLock™ system, eliminating traditional private keys and outdated security models.",
-  },
-  {
-    keywords: ["presale", "max", "max presale"],
-    reply:
-      "MAX Presale provides early access to selected Atlantis ecosystem tokens and supports long-term ecosystem growth.",
+      "Atlantis Wallet is the official cold wallet of AtlantisChain, secured by the proprietary Atlantis QuantumLock™ system, eliminating traditional private keys and outdated security models. It supports ATC-20 tokens and provides a user-friendly interface for managing assets. visit: https://atlantiswallet.org/ ",
   },
   {
     keywords: ["security", "safe", "secure"],
@@ -418,12 +413,12 @@ const answers = [
   {
     keywords: ["nft", "nfts"],
     reply:
-      "AtlantisChain supports NFT creation and trading, enabling digital asset ownership within the ecosystem.",
+      "AtlantisChain supports NFT creation and trading, enabling digital asset ownership within the ecosystem.(Under development)",
   },
   {
     keywords: ["roadmap", "future", "plans"],
     reply:
-      "The AtlantisChain roadmap focuses on scalability, ecosystem expansion, and advanced DeFi infrastructure.",
+      "The AtlantisChain roadmap focuses on scalability, ecosystem expansion, and advanced DeFi infrastructure. for details, visit the official website: atlantischain.org",
   },
   {
     keywords: ["community", "users"],
@@ -433,7 +428,7 @@ const answers = [
   {
     keywords: ["exchange", "cex", "listing"],
     reply:
-      "Atlantis ecosystem tokens aim for broader adoption through decentralized exchanges and future centralized listings.",
+      "$ATC is now listed on Hibit Exchange. Keep an eye on the official Twitter (X) and Telegram channels for the latest listing updates.",
   },
   {
     keywords: ["blocks", "total blocks", "network activity"],
@@ -467,7 +462,7 @@ function botReply(message) {
   for (let item of answers) {
     if (item.keywords.some((k) => msg.includes(k))) return item.reply;
   }
-  return "Sorry, I didn’t understand that. Please ask about AtlantisChain, ATC-20, DEX, Launchpad, or USDA.";
+  return "Sorry, I didn’t understand that. Please ask about AtlantisChain, ATC-20, DEX, wallet, explorer, Launchpad, or USDA.";
 }
 
 sendBtn?.addEventListener("click", sendMessage);
