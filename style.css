@@ -358,8 +358,6 @@ html {
 }
 
 .token-card-main {
-    background: rgba(29, 34, 66, 0.45);
-
     border: 1px solid rgba(0,140,255,0.3);
     border-radius: 18px;
     padding: 20px;
