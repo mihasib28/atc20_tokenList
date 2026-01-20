@@ -413,18 +413,18 @@ body {
     clear: both;
 }
 
-.footer-toggle {
+.blog-footer-toggle {
     transition: transform 0.8s ease; 
 }
 
-.footer-toggle:hover {
+.blog-footer-toggle:hover {
     transform: translateY(-3px);
 }
 
 
 
 
-.footer-toggle {
+.blog-footer-toggle {
     width: 100%;
     background: none;
     border: none;
@@ -491,7 +491,7 @@ body {
     }
 
     /* Remove toggle behavior on PC */
-    .footer-toggle {
+    .blog-footer-toggle {
         cursor: default;
         background: #008cff;
         border-radius: 20px;
@@ -504,7 +504,7 @@ body {
         font-size: 24px;
         color: #008cff;
     }
-     .footer-toggle {
+     .blog-footer-toggle {
         padding: 1px 5px;
     }
 }
