@@ -480,3 +480,10 @@ function sendMessage() {
 }
 
 
+// ================= FOOTER =================
+      document.querySelectorAll(".footer-toggle").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const links = btn.nextElementSibling;
+          links.style.display = links.style.display === "block" ? "none" : "block";
+        });
+      });
