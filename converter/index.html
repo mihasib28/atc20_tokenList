@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Crypto Converter</title>
+
+<style>
+:root {
+  --bg: #0d1021;
+  --card: #0d1021;
+  --border: #141830;
+  --text: #eaecef;
+  --muted: #46b6ff;
+  --yellow: #f0b90b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.converter {
+  background: var(--card);
+  width: 380px;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+h2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.block {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+input {
+  flex: 1;
+  min-width: 0;
+  height: 42px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 22px;
+}
+
+select {
+  height: 42px;
+  min-width: 84px;
+  background: var(--border);
+  border: none;
+  color: var(--text);
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* MOBILE FIX */
+@media (max-width: 480px) {
+  .converter {
+    width: 94%;
+    padding: 18px;
+  }
+
+  input {
+    font-size: 18px;
+  }
+
+  select {
+    min-width: 72px;
+    font-size: 13px;
+  }
+}
+
+.swap {
+  text-align: center;
+  margin: 10px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  background: var(--color-blue-700, #46b6ff);
+  color: #000;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.result {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="converter">
+  <h2>Convert</h2>
+
+  <div class="block">
+    <div class="label">From</div>
+    <div class="row">
+      <input id="amount" type="number" value="1" min="0" />
+      <select id="fromCoin">
+        <option value="atlantis-coin-2" selected>ATC</option>
+        <option value="bitcoin">BTC</option>
+        <option value="ethereum">ETH</option>
+        <option value="binancecoin">BNB</option>
+        <option value="solana">SOL</option>
+        <option value="usdt">USDT</option>
+        <option value="usdc">USDC</option>
+        <option value="usda">USDA</option>
+        <option value="usdb">USDB</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="swap">↓</div>
+
+  <div class="block">
+    <div class="label">To</div>
+    <div class="row">
+      <input id="toAmount" disabled placeholder="0" value="0" />
+      <select id="toCoin">
+        <option value="usdt" selected>USDT</option>
+        <option value="atlantis-coin-2">ATC</option>
+        <option value="bitcoin">BTC</option>
+        <option value="ethereum">ETH</option>
+        <option value="binancecoin">BNB</option>
+        <option value="solana">SOL</option>
+        <option value="usdc">USDC</option>
+        <option value="usda">USDA</option>
+        <option value="usdb">USDB</option>
+      </select>
+    </div>
+  </div>
+
+  <button onclick="convert()">Preview</button>
+
+  <div class="result" id="result">—</div>
+
+  <div class="note">
+    USDT / USDC / USDA / USDB = 1 USD<br>
+  </div>
+</div>
+
+<script>
+const API_KEY = "CG-VaCGYksE1RpesE73h3jbcXHJ";
+
+const coins = {
+  "atlantis-coin-2": { symbol: "ATC" },
+  bitcoin: { symbol: "BTC" },
+  ethereum: { symbol: "ETH" },
+  binancecoin: { symbol: "BNB" },
+  solana: { symbol: "SOL" },
+  usdt: { symbol: "USDT", fixed: 1 },
+  usdc: { symbol: "USDC", fixed: 1 },
+  usda: { symbol: "USDA", fixed: 1 },
+  usdb: { symbol: "USDB", fixed: 1 }
+};
+
+let prices = {};
+
+async function fetchPrices() {
+  const ids = Object.keys(coins)
+    .filter(c => !coins[c].fixed)
+    .join(",");
+
+  const url = `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&x_cg_demo_api_key=${API_KEY}`;
+  const res = await fetch(url);
+  const data = await res.json();
+
+  for (let id in data) {
+    prices[id] = data[id].usd;
+  }
+}
+
+function getPrice(id) {
+  return coins[id].fixed ?? prices[id];
+}
+
+function symbol(id) {
+  return coins[id].symbol;
+}
+
+async function convert() {
+  if (!Object.keys(prices).length) {
+    await fetchPrices();
+  }
+
+  const amount = parseFloat(amountInput.value);
+  const from = fromCoin.value;
+  const to = toCoin.value;
+
+  if (!amount || amount <= 0) {
+    result.innerText = "Invalid amount";
+    toAmount.value = "0";
+    return;
+  }
+
+  const value = (amount * getPrice(from)) / getPrice(to);
+
+  // ✅ show value inside disabled input
+  toAmount.value = value.toFixed(6);
+
+  // existing preview text
+  result.innerText = `${amount} ${symbol(from)} ≈ ${value.toFixed(6)} ${symbol(to)}`;
+}
+
+const amountInput = document.getElementById("amount");
+const fromCoin = document.getElementById("fromCoin");
+const toCoin = document.getElementById("toCoin");
+const result = document.getElementById("result");
+
+
+</script>
+
+</body>
+</html>
