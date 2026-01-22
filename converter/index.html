@@ -10,7 +10,7 @@
   --card: #0d1021;
   --border: #141830;
   --text: #eaecef;
-  --muted: #46b6ff;
+  --muted: #008cff;
   --yellow: #f0b90b;
 }
 
@@ -112,7 +112,7 @@ select {
 
 button {
   width: 100%;
-  background: var(--color-blue-700, #46b6ff);
+  background: var(--color-blue-700, #008cff);
   color: #000;
   border: none;
   padding: 14px;
@@ -250,10 +250,10 @@ async function convert() {
   const value = (amount * getPrice(from)) / getPrice(to);
 
   // ✅ show value inside disabled input
-  toAmount.value = value.toFixed(6);
+  toAmount.value = value.toFixed(3);
 
   // existing preview text
-  result.innerText = `${amount} ${symbol(from)} ≈ ${value.toFixed(6)} ${symbol(to)}`;
+  result.innerText = `${amount} ${symbol(from)} ≈ ${value.toFixed(3)} ${symbol(to)}`;
 }
 
 const amountInput = document.getElementById("amount");
