@@ -8,6 +8,13 @@ const prevBtn = document.getElementById("prevBtn");
 const tokens = [
   {
     badge: "Presale",
+    title: "Atlantis GBP (GBPA)",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "https://tokenlist.atcscan.io/metadata/ACwLHQjXGLm3dtK3EpFX8j8tDYuKfx2bi4T8x2azePst/logo.jpg",
+    url: "https://x.com/i/status/2016784422817968275"
+  },
+  {
+    badge: "Presale",
     title: "Embrace the Penguin (PENGUIN)",
     desc: "Atlantis Chain(ATC-20)",
     img: "https://tokenlist.atcscan.io/metadata/ACRZsm8HEQ2LxDMfsLy1nKCZLNHVe91C4t37hYdqzcFr/logo.png",
