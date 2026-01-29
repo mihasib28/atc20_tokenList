@@ -8,6 +8,27 @@ const prevBtn = document.getElementById("prevBtn");
 const tokens = [
   {
     badge: "Presale",
+    title: "Embrace the Penguin (PENGUIN)",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "https://tokenlist.atcscan.io/metadata/ACRZsm8HEQ2LxDMfsLy1nKCZLNHVe91C4t37hYdqzcFr/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2015654817343918144"
+  },
+  {
+    badge: "Presale",
+    title: "WINNING",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "https://tokenlist.atcscan.io/metadata/ACu6vZ9DGqTPnzd4A97fTM3zASbs4UJx4zZ4Dk5F8guC/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2015989242149970271"
+  },
+  {
+    badge: "Presale",
+    title: "MEMES",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "https://tokenlist.atcscan.io/metadata/ACzwcUCTm5FkC28emZTREbLZ6ZDMthxa7ihbFvBawG5H/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2014207782560596430"
+  },
+  {
+    badge: "Presale",
     title: "Advanced Bitcoin (aBTC)",
     desc: "Atlantis Chain(ATC-20)",
     img: "https://tokenlist.atcscan.io/metadata/ACaUqfatXwxHBiH9eaLqrXihjykj2FaVZwM9WW4dDY8v/logo.png",
