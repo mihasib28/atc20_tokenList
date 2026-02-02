@@ -50,6 +50,13 @@ const tokens = [
   },
   {
     badge: "Presale",
+    title: "Trumpnomics (TN)",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "https://tokenlist.atcscan.io/metadata/ACG14qjSXyXSYgAwdfmcd79CruBnN3ozui6d18njR4v2/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2009874294772248628"
+  },
+  {
+    badge: "Presale",
     title: "Monroe Doctrine (MONROE)",
     desc: "Atlantis Chain(ATC-20)",
     img: "https://tokenlist.atcscan.io/metadata/ACdBCbVTqqSiLrAdBK2VjTD5TUGyHtJ5wtQkcuSwbH9N/logo.png",
@@ -110,111 +117,6 @@ const tokens = [
     desc: "Atlantis Chain(ATC-20)",
     img: "./img/upcomingtoken_6.png",
     url: "https://x.com/Atlantis_Ex/status/1996394662186385684"
-  },
-  {
-    badge: "Presale",
-    title: "UNI",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_7.png",
-    url: "https://x.com/Atlantis_Ex/status/1994312163465273422"
-  },
-  {
-    badge: "Presale",
-    title: "BONK",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_8.png",
-    url: "https://x.com/Atlantis_Ex/status/1994305054161944591"
-  },
-  {
-    badge: "Presale",
-    title: "DINO",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_9.png",
-    url: "https://x.com/Atlantis_Ex/status/1994296279321424310"
-  },
-  {
-    badge: "Presale",
-    title: "BRETT",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_10.png",
-    url: "https://x.com/Atlantis_Ex/status/1993913407842480356"
-  },
-  {
-    badge: "Presale",
-    title: "WIF",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_11.png",
-    url: "https://x.com/Atlantis_Ex/status/1993813717482385508"
-  },
-  {
-    badge: "Presale",
-    title: "TRX",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_12.png",
-    url: "https://x.com/Atlantis_Ex/status/1993735698021548507"
-  },
-  {
-    badge: "Presale",
-    title: "BNB",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_13.png",
-    url: "https://x.com/Atlantis_Ex/status/1993590857581109606"
-  },
-  {
-    badge: "Presale",
-    title: "ETH",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_14.png",
-    url: "https://x.com/Atlantis_Ex/status/1993237761378115708"
-  },
-  {
-    badge: "Presale",
-    title: "BOME",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_15.png",
-    url: "https://x.com/Atlantis_Ex/status/1993232705254035546"
-  },
-  {
-    badge: "Presale",
-    title: "DOGE",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_16.jpg",
-    url: "https://x.com/Atlantis_Ex/status/1992752210334437669"
-  },
-  {
-    badge: "Presale",
-    title: "MOG",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_17.png",
-    url: "https://x.com/Atlantis_Ex/status/1993026704013770865"
-  },
-  {
-    badge: "Presale",
-    title: "BABYDOGE",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_18.png",
-    url: "https://x.com/Atlantis_Ex/status/1993048807060521394"
-  },
-  {
-    badge: "Presale",
-    title: "MATIC",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_19.png",
-    url: "https://x.com/Atlantis_Ex/status/1992748061752520742"
-  },
-  {
-    badge: "Presale",
-    title: "SOL",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_20.png",
-    url: "https://x.com/Atlantis_Ex/status/1992752478631440475"
-  },
-  {
-    badge: "Presale",
-    title: "Pepe (PEPE)",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_21.png",
-    url: "https://x.com/Atlantis_Ex/status/1982948875452477450"
   },
   {
     badge: "Presale",
