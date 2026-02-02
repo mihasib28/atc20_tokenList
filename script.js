@@ -17,6 +17,27 @@ let currentList = [];
 let currentPage = 1;
 let hashScrolled = false;
 
+function showLoader() {
+  const loader = document.getElementById("tokenLoader");
+  if (!loader) return;
+
+  loader.innerHTML = `
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton"></div>
+  `;
+
+  loader.classList.remove("hidden");
+}
+
+
+function hideLoader() {
+  document.getElementById("tokenLoader")?.classList.add("hidden");
+}
+
 
 
 // ===== RENDER TOKENS (MATCHES YOUR CSS STRUCTURE) =====
@@ -101,19 +122,25 @@ function renderPagination(list = currentList) {
 // ===== FILTER =====
 // ===== LOAD TOKENS =====
 async function loadTokens() {
+  showLoader();
+
   try {
     const res = await fetch(API_URL);
     const data = await res.json();
 
-    tokens = data.tokens; // save tokens
-    window.tokenCounts = data.counts; // save counts globally
+    tokens = data.tokens;
+    window.tokenCounts = data.counts;
 
-    applyFilters(); // keeps filter after refresh
-    updateCategoryCounts(); // update dropdown counts
+    applyFilters();
+    updateCategoryCounts();
   } catch (err) {
     console.error(err);
+    document.getElementById("tokenLoader").innerText = "Failed to load tokens";
+  } finally {
+    hideLoader();
   }
 }
+
 
 // ===== UPDATE DROPDOWN COUNTS =====
 function updateCategoryCounts() {
