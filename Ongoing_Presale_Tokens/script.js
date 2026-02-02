@@ -64,7 +64,7 @@ const tokens = [
   },
   {
     badge: "Presale",
-    title: "Make Oil Great Again (MOGA)",
+    title: "MOGA",
     desc: "Atlantis Chain(ATC-20)",
     img: "https://tokenlist.atcscan.io/metadata/AC7v97VXL6VydnzMa51bFtGyUxjGunU5yjdbmiaqAxk3/logo.png",
     url: "https://x.com/Atlantis_Ex/status/2008105040687554634?s=20"
@@ -134,14 +134,14 @@ const tokens = [
   },
   {
     badge: "Presale",
-    title: "Labubu the Atlantis Fairy (LABUBU)",
+    title: "LABUBU",
     desc: "Atlantis Chain(ATC-20)",
     img: "./img/upcomingtoken_24.png",
     url: "https://x.com/Atlantis_Ex/status/1979769512724427140"
   },
   {
     badge: "Presale",
-    title: " LiuqiuCoin (LIUQIU)",
+    title: "LiuqiuCoin (LIUQIU)",
     desc: "Atlantis Chain(ATC-20)",
     img: "./img/upcomingtoken_26.png",
     url: "https://x.com/Atlantis_Ex/status/1989566687889252814",
@@ -149,7 +149,7 @@ const tokens = [
   },
   {
     badge: "Presale",
-    title: "Potsdam Declaration (POTSDAM)",
+    title: "POTSDAM",
     desc: "Atlantis Chain(ATC-20)",
     img: "./img/upcomingtoken_27.jpg",
     url: "https://x.com/Atlantis_Ex/status/1990328255388500363",
