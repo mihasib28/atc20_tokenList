@@ -98,24 +98,50 @@ async function addToken() {
   }
 }
 
-/* ===== DELETE TOKEN ===== */
-async function deleteToken(id) {
-  if (!confirm("Delete token?")) return;
+/* ===== DELETE TOKEN WITH CONFIRMATION MODAL ===== */
+let tokenToDelete = null; // store id of token to delete
+
+function deleteToken(id) {
+  tokenToDelete = id;
+  document.getElementById("deleteInput").value = ""; // reset input
+  document.getElementById("deleteModal").style.display = "flex";
+}
+
+// Cancel button
+document.getElementById("cancelDelete").addEventListener("click", () => {
+  tokenToDelete = null;
+  document.getElementById("deleteModal").style.display = "none";
+});
+
+// Confirm button
+document.getElementById("confirmDelete").addEventListener("click", async () => {
+  const input = document.getElementById("deleteInput").value.trim();
+
+  if (input !== "confirm") {
+    alert("You must type 'confirm' to delete the token");
+    return;
+  }
+
+  if (!tokenToDelete) return;
 
   try {
-    const res = await fetch(`${API}/tokens/${id}`, {
+    const res = await fetch(`${API}/tokens/${tokenToDelete}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` }
     });
 
     if (!res.ok) throw new Error("Failed to delete token");
 
-    loadTokens(); // Refresh token list
+    alert("Token deleted successfully ✅");
+    document.getElementById("deleteModal").style.display = "none";
+    tokenToDelete = null;
+    loadTokens();
   } catch (err) {
     alert("Error deleting token");
     console.error(err);
   }
-}
+});
+
 
 /* ===== LOGOUT ===== */
 function logout() {
