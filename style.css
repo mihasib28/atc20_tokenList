@@ -802,6 +802,10 @@ footer {
   font-size: 14px;
 }
 
+.footer-bottom a {
+  color: #4aa8ff;
+}
+
 /* Desktop Layout — 4 Columns */
 @media (min-width: 900px) {
   .footer-container {
@@ -1049,4 +1053,5 @@ footer {
 .token-loader.hidden {
   display: none;
 }
+
 
