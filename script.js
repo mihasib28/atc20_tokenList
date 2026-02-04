@@ -21,17 +21,15 @@ function showLoader() {
   const loader = document.getElementById("tokenLoader");
   if (!loader) return;
 
-  loader.innerHTML = `
-    <div class="skeleton"></div>
-    <div class="skeleton"></div>
-    <div class="skeleton"></div>
-    <div class="skeleton"></div>
-    <div class="skeleton"></div>
-    <div class="skeleton"></div>
-  `;
+  let html = "";
+  for (let i = 0; i < 20; i++) {
+    html += `<div class="skeleton"></div>`;
+  }
 
+  loader.innerHTML = html;
   loader.classList.remove("hidden");
 }
+
 
 
 function hideLoader() {
