@@ -52,27 +52,36 @@ function renderTokens() {
     return;
   }
 
-  pageItems.forEach((token) => {
-    container.innerHTML += `
-      <div class="token-card">
-        <div class="logo-text">
-          <img src="${token.logo}" class="token-logo no-interaction" draggable="false">
-          <div class="token-name">${token.name}</div>
-        </div>
+pageItems.forEach((token) => {
+  const logoSrc = token.logo ? token.logo : "./Asset/unnamed.png";
 
-        <div class="contract">${token.address}</div>
-
-        <div class="button-row">
-          <button class="btn" onclick="copyAddress('${token.address}')">
-            Copy
-          </button>
-          <button class="btn" onclick="openExplorer('${token.address}')">
-            Explorer
-          </button>
+  container.innerHTML += `
+    <div class="token-card">
+      <div class="logo-text">
+        <div class="logo-wrapper">
+          <img 
+            src="${logoSrc}" 
+            onerror="this.onerror=null;this.src='./Asset/unnamed.png';"
+            class="token-logo no-interaction" 
+            draggable="false"
+          >
         </div>
+        <div class="token-name">${token.name}</div>
       </div>
-    `;
-  });
+
+      <div class="contract">${token.address}</div>
+
+      <div class="button-row">
+        <button class="btn" onclick="copyAddress('${token.address}')">
+          Copy
+        </button>
+        <button class="btn" onclick="openExplorer('${token.address}')">
+          Explorer
+        </button>
+      </div>
+    </div>
+  `;
+});
 }
 
 
