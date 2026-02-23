@@ -196,7 +196,9 @@ tokens.forEach(token => {
       <h3>${token.title}</h3>
       <p>20% Airdrop</p>
       <div class="footer">
-        <img class="avatar" src="${token.img}" alt="">
+        <img class="avatar" src="${token.img}" onerror="this.onerror=null;this.src='../Asset/unnamed.png';"
+            class="token-logo no-interaction" 
+            draggable="false" alt="">
         <h4>${token.desc}</h4>
         <a class="presale-btn" href="${token.url}" target="_blank">
           <button>${token.claim ? "Claim Airdrop" : "Join presale"}</button>
