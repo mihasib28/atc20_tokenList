@@ -15,6 +15,7 @@
 
 
 
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 
 
     <link rel="stylesheet" href="style.css" />
@@ -37,6 +38,7 @@
 
 <body>
 
+
     <nav class="navbar">
         <div class="navbar-container">
             <a href="/" class="navbar-logo no-link-drag" draggable="false">
@@ -44,21 +46,27 @@
                 <span class="sub-text no-interaction" draggable="false">Contract Directory</span>
             </a>
 
+            <div class="navbar-right">
+                <ul class="navbar-menu" id="navbarMenu">
+                    <li><a href="/" class="nav-link active" data-target="home">Home</a></li>
+                    <li><a href="/Blog" class="nav-link" data-target="blog">Blog</a></li>
+                    <li><a href="#presale" class="nav-link presale-btn" id="presaleNavBtn">Join Presale</a></li>
+                </ul>
 
+                <a href="#presale">
+                <div class="model-container">
+                    <model-viewer src="./Asset/freeArBlender.glb" alt="3D model" auto-rotate shadow-intensity="1" ar>
+                    </model-viewer>
+                </div>
 
-            <button class="navbar-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <ul class="navbar-menu" id="navbarMenu">
-                <li><a href="/" class="nav-link active" data-target="home">Home</a></li>
-                <li><a href="/Blog" class="nav-link" data-target="blog">Blog</a></li>
-                <li><a href="#presale" class="nav-link presale-btn" id="presaleNavBtn">Join Presale</a></li>
-            </ul>
+                </a>
 
-
-
+                <button class="navbar-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -119,7 +127,7 @@
                 CoinGecko
             </button>
 
-            
+
 
         </div>
     </div>
@@ -144,7 +152,7 @@
         </div>
 
         <div id="tokenLoader" class="token-loader"></div>
-        
+
         <div id="tokenList" class="token-grid" draggable="false"></div>
 
         <!-- PAGINATION -->
