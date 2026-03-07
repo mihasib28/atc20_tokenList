@@ -8,6 +8,20 @@ const prevBtn = document.getElementById("prevBtn");
 const tokens = [
   {
     badge: "Presale",
+    title: "LAWLESS",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "https://tokenlist.atcscan.io/metadata/ACRz33R9qpCeq5zZFsRHYYNAttDuZVahwpqryAQzDqEU/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2029452932555628949?s=20"
+  },
+  {
+    badge: "Presale",
+    title: "POLICE",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "https://tokenlist.atcscan.io/metadata/ACwZhHfG6Raif8GLwLHDEbnmLFQFgpeCQih7cZLdAqGB/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2028294583239729309?s=20"
+  },
+  {
+    badge: "Presale",
     title: "Atlantis Silver (AG)",
     desc: "Atlantis Chain(ATC-20)",
     img: "https://tokenlist.atcscan.io/metadata/ACdTSwfv63eD86ATeUEDx1P79FSfQHC8jUfXoizKzTkh/logo.jpg",
