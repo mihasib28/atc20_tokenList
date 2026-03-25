@@ -8,6 +8,13 @@ const prevBtn = document.getElementById("prevBtn");
 const tokens = [
   {
     badge: "Presale",
+    title: "SURPRISE",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "https://tokenlist.atcscan.io/metadata/ACxCXnejV7Y7qToCNJk8qL99PvDhe92vR1Kvc4WR99Ry/logo.jpg",
+    url: "https://x.com/Atlantis_Ex/status/2035579117933035585?s=20"
+  },
+  {
+    badge: "Presale",
     title: "LAWLESS",
     desc: "Atlantis Chain(ATC-20)",
     img: "https://tokenlist.atcscan.io/metadata/ACRz33R9qpCeq5zZFsRHYYNAttDuZVahwpqryAQzDqEU/logo.png",
