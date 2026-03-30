@@ -8,6 +8,13 @@ const prevBtn = document.getElementById("prevBtn");
 const tokens = [
   {
     badge: "Presale",
+    title: "7DOGS",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "./img/7Dogs.jpg",
+    url: "https://x.com/Atlantis_Ex/status/2038011902127980967?s=20"
+  },
+  {
+    badge: "Presale",
     title: "SURPRISE",
     desc: "Atlantis Chain(ATC-20)",
     img: "https://tokenlist.atcscan.io/metadata/ACxCXnejV7Y7qToCNJk8qL99PvDhe92vR1Kvc4WR99Ry/logo.jpg",
