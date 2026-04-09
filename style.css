@@ -463,24 +463,34 @@ model-viewer {
 /* MAIN CARD BUTTONS */
 .token-card-main .main-buttons {
   display: flex;
-  flex-wrap: nowrap; /* default: no wrap on large screens */
+  flex-wrap: nowrap; 
   justify-content: center;
   gap: 12px;
-  overflow-x: auto; /* allow horizontal scroll if needed */
+  overflow-x: auto; 
   padding-bottom: 5px;
+}
+
+.token-card-main .main-buttons button {
+  flex: 0 0 auto;   
+  padding: 10px 14px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* RESPONSIVE FOR MOBILE */
 @media (max-width: 600px) {
   .token-card-main .main-buttons {
-    flex-wrap: wrap; /* allow buttons to wrap */
-    gap: 8px; /* smaller gap for mobile */
+    flex-wrap: wrap;
+    gap: 8px;
     justify-content: center;
   }
 
   .token-card-main .main-buttons button {
-    flex: 1 1 45%; /* buttons take ~half width */
-    min-width: 120px; /* prevent too small buttons */
+    flex: 1 1 45%;
+    max-width: 45%;
+    min-width: 120px;
   }
 }
 
@@ -500,12 +510,6 @@ model-viewer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 12px;
-}
-
-.token-card-main .main-buttons button {
-  flex: 1 1 45%;
-  max-width: 45%;   /* prevents full width */
-  min-width: 120px;
 }
 
 /* LOGO */
