@@ -1,4 +1,4 @@
-const API = "https://atc20-tokenlist-backend.onrender.com/api";
+const API = "https://atc20-tokenlist-backend-lb0k.onrender.com/api";
 const token = localStorage.getItem("token");
 
 if (!token) {

@@ -7,7 +7,7 @@ async function loadCoins() {
 
   try {
     const res = await fetch(
-      "https://hibit-price-api.onrender.com/api/atc-price"
+      "https://hibit-price-api-zs7i.onrender.com/api/atc-price"
     );
 
     if (res.status === 429) {
