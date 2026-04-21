@@ -91,7 +91,7 @@ async function addToken() {
     logo.value = "";
     category.value = "";
 
-    loadTokens(); // Refresh token list
+    loadTokens(); // Refresh token list 
   } catch (err) {
     tokenMsg.innerText = "Error adding token";
     console.error(err);
