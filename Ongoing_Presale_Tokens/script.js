@@ -8,31 +8,38 @@ const prevBtn = document.getElementById("prevBtn");
 const tokens = [
   {
     badge: "Presale",
-    title: "7DOGS",
+    title: "Two Kings (2KINGS)",
     desc: "Atlantis Chain(ATC-20)",
-    img: "./img/7Dogs.jpg",
-    url: "https://x.com/Atlantis_Ex/status/2038011902127980967?s=20"
+    img: "https://tokenlist.atcscan.io/metadata/ACLjmsZ8LGbJT46oKHAuqPDByAU4wsCjvPRbBZkbLNS7/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2050026588943921158"
   },
   {
     badge: "Presale",
-    title: "SURPRISE",
+    title: "State51",
     desc: "Atlantis Chain(ATC-20)",
-    img: "https://tokenlist.atcscan.io/metadata/ACxCXnejV7Y7qToCNJk8qL99PvDhe92vR1Kvc4WR99Ry/logo.jpg",
-    url: "https://x.com/Atlantis_Ex/status/2035579117933035585?s=20"
+    img: "https://tokenlist.atcscan.io/metadata/ACfmSADX1456pFMkNW8mrrnAGsNnA2sKaKeoKTUA11UR/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2054416638318108911"
   },
   {
     badge: "Presale",
-    title: "LAWLESS",
+    title: "PRAYER",
     desc: "Atlantis Chain(ATC-20)",
-    img: "https://tokenlist.atcscan.io/metadata/ACRz33R9qpCeq5zZFsRHYYNAttDuZVahwpqryAQzDqEU/logo.png",
-    url: "https://x.com/Atlantis_Ex/status/2029452932555628949?s=20"
+    img: "https://tokenlist.atcscan.io/metadata/ACfjfqFYQwpPh6TJuvGDA69VAo4ywYL3RSW5v6riV4T9/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2052644995501555731"
   },
   {
     badge: "Presale",
-    title: "POLICE",
+    title: "UFO",
     desc: "Atlantis Chain(ATC-20)",
-    img: "https://tokenlist.atcscan.io/metadata/ACwZhHfG6Raif8GLwLHDEbnmLFQFgpeCQih7cZLdAqGB/logo.png",
-    url: "https://x.com/Atlantis_Ex/status/2028294583239729309?s=20"
+    img: "https://tokenlist.atcscan.io/metadata/ACLoFAW7ZhJzruBboRD7xrY6DoxMUUC9tpqefz7vrrsu/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2053034806091636984"
+  },
+  {
+    badge: "Presale",
+    title: "ARTEMIS",
+    desc: "Atlantis Chain(ATC-20)",
+    img: "https://tokenlist.atcscan.io/metadata/ACWodvNQzyoxaWzdVkf1ZHFcQVbQMJu4uGr6kDYiiqRr/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2039919925226336608"
   },
   {
     badge: "Presale",
@@ -43,38 +50,10 @@ const tokens = [
   },
   {
     badge: "Presale",
-    title: "Atlantis GBP (GBPA)",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "https://tokenlist.atcscan.io/metadata/ACwLHQjXGLm3dtK3EpFX8j8tDYuKfx2bi4T8x2azePst/logo.jpg",
-    url: "https://x.com/i/status/2016784422817968275"
-  },
-  {
-    badge: "Presale",
-    title: "PENGUIN",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "https://tokenlist.atcscan.io/metadata/ACRZsm8HEQ2LxDMfsLy1nKCZLNHVe91C4t37hYdqzcFr/logo.png",
-    url: "https://x.com/Atlantis_Ex/status/2015654817343918144"
-  },
-  {
-    badge: "Presale",
     title: "WINNING",
     desc: "Atlantis Chain(ATC-20)",
     img: "https://tokenlist.atcscan.io/metadata/ACu6vZ9DGqTPnzd4A97fTM3zASbs4UJx4zZ4Dk5F8guC/logo.png",
     url: "https://x.com/Atlantis_Ex/status/2015989242149970271"
-  },
-  {
-    badge: "Presale",
-    title: "MEMES",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "https://tokenlist.atcscan.io/metadata/ACzwcUCTm5FkC28emZTREbLZ6ZDMthxa7ihbFvBawG5H/logo.png",
-    url: "https://x.com/Atlantis_Ex/status/2014207782560596430"
-  },
-  {
-    badge: "Presale",
-    title: "Advanced Bitcoin (aBTC)",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "https://tokenlist.atcscan.io/metadata/ACaUqfatXwxHBiH9eaLqrXihjykj2FaVZwM9WW4dDY8v/logo.png",
-    url: "https://x.com/Atlantis_Ex/status/2011691804395970775?s=20"
   },
   {
     badge: "Presale",
@@ -92,13 +71,6 @@ const tokens = [
   },
   {
     badge: "Presale",
-    title: "MOGA",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "https://tokenlist.atcscan.io/metadata/AC7v97VXL6VydnzMa51bFtGyUxjGunU5yjdbmiaqAxk3/logo.png",
-    url: "https://x.com/Atlantis_Ex/status/2008105040687554634?s=20"
-  },
-  {
-    badge: "Presale",
     title: "Atlantis Oil (OIL)",
     desc: "Atlantis Chain(ATC-20)",
     img: "./img/oilToken.jpg",
@@ -113,13 +85,6 @@ const tokens = [
   },
   {
     badge: "Presale",
-    title: "BIGGER",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_2.png",
-    url: "https://x.com/Atlantis_Ex/status/1998520482971488429"
-  },
-  {
-    badge: "Presale",
     title: "AtlantisSpace (AS)",
     desc: "Atlantis Chain(ATC-20)",
     img: "./img/upcomingtoken_3.png",
@@ -127,67 +92,17 @@ const tokens = [
   },
   {
     badge: "Presale",
-    title: "Tiger Girl (TIGER)",
+    title: "Paper Tiger (PAPERTIGER)",
     desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_4.png",
-    url: "https://x.com/Atlantis_Ex/status/1997953471157305691"
+    img: "https://tokenlist.atcscan.io/metadata/ACJ6omMbJTnfXdtZGSqqM5TvdPKHHcj78NmBS1cgFWmJ/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2033362703792898391",
   },
   {
     badge: "Presale",
-    title: "Drunk Raccoon (DRUNK)",
+    title: "Trump Doctrine (TRUMPISM)",
     desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_5.png",
-    url: "https://x.com/Atlantis_Ex/status/1997256368579924213"
-  },
-  {
-    badge: "Presale",
-    title: "Roadrunner (RUN)",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_6.png",
-    url: "https://x.com/Atlantis_Ex/status/1996394662186385684"
-  },
-  {
-    badge: "Presale",
-    title: "Bunny King (BUNY)",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_22.jpg",
-    url: "https://x.com/Atlantis_Ex/status/1980135913775661183"
-  },
-  {
-    badge: "Presale",
-    title: "AzukiCoin (AZUKI)",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_23.jpg",
-    url: "https://x.com/Atlantis_Ex/status/1979019731429658988"
-  },
-  {
-    badge: "Presale",
-    title: "LABUBU",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_24.png",
-    url: "https://x.com/Atlantis_Ex/status/1979769512724427140"
-  },
-  {
-    badge: "Presale",
-    title: "LiuqiuCoin (LIUQIU)",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_26.png",
-    url: "https://x.com/Atlantis_Ex/status/1989566687889252814",
-
-  },
-  {
-    badge: "Presale",
-    title: "POTSDAM",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_27.jpg",
-    url: "https://x.com/Atlantis_Ex/status/1990328255388500363",
-  },
-  {
-    badge: "Presale",
-    title: "GJ11",
-    desc: "Atlantis Chain(ATC-20)",
-    img: "./img/upcomingtoken_28.jpg",
-    url: "https://x.com/Atlantis_Ex/status/1989209489178857828",
+    img: "https://tokenlist.atcscan.io/metadata/AC8L5wKQbUfJUr75bTnPUNYES5LWSkFtArs4Jk9gzxew/logo.png",
+    url: "https://x.com/Atlantis_Ex/status/2031187863010971950",
   },
   {
     badge: "Presale",
