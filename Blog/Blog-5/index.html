@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" sizes="16x16" href="../../Asset/favicons.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../Asset/favicons.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../../Asset/favicons.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../Asset/favicons180x180.png">
+<link rel="shortcut icon" type="image/png" href="../../Asset/favicons.png">
+
+<title>What is AtlantisChain?</title>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#0d1624;
+    --card:#111c2c;
+    --text:#eaf2ff;
+    --muted:#9aa4b2;
+    --accent:#00b39f;
+    --glass:rgba(255,255,255,.03);
+    --maxwidth:1100px;
+}
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    padding:32px 20px;
+    display:flex;
+    justify-content:center;
+}
+.container{
+    width:100%;
+    max-width:var(--maxwidth);
+}
+.hero{
+    background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+    border-radius:16px;
+    padding:30px;
+    display:flex;
+    gap:24px;
+    align-items:center;
+    box-shadow:0 6px 30px rgba(0,0,0,.4);
+}
+.hero-card{
+    flex:1;
+}
+h1{
+    margin:0 0 12px;
+    font-size:32px;
+    font-weight:600;
+}
+.lead{
+    color:var(--muted);
+    font-size:15px;
+}
+
+.stats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:24px;
+}
+.stat{
+    background:var(--glass);
+    padding:14px;
+    border-radius:12px;
+    min-width:160px;
+}
+.num{
+    font-size:20px;
+    font-weight:600;
+    color:#bff0e7;
+}
+.label{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:4px;
+}
+
+.side-card{
+    min-width:250px;
+}
+.card{
+    background:var(--glass);
+    padding:18px;
+    border-radius:12px;
+}
+.card h3{
+    margin-top:0;
+}
+
+.content{
+    margin-top:24px;
+    background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));
+    padding:28px;
+    border-radius:14px;
+    box-shadow:0 6px 30px rgba(0,0,0,.4);
+}
+
+h2{
+    margin-top:32px;
+    font-weight:500;
+    color:#f2f8ff;
+}
+
+p{
+    color:var(--muted);
+}
+
+.features{
+    color:var(--muted);
+    padding-left:20px;
+}
+
+.features li{
+    margin-bottom:10px;
+}
+
+a{
+    color:#68f0d5;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+footer{
+    margin-top:30px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:var(--muted);
+    font-size:14px;
+}
+
+.back-btn{
+    margin-bottom:18px;
+}
+
+.back-btn a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#fff;
+    text-decoration:none;
+    background:rgba(255,255,255,.05);
+    padding:10px 14px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.back-btn a:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:600px){
+    h1{
+        font-size:24px;
+    }
+
+    .stat{
+        min-width:130px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="back-btn">
+    <a href="/Blog"><img src="https://img.icons8.com/forma-bold-filled-sharp/24/FFFFFF/back.png" alt="back arrow">Back Page
+    </a>
+  </div>
+
+<header>
+<div class="hero">
+
+<div class="hero-card">
+    <h1>What is AtlantisChain?</h1>
+
+    <p class="lead">
+        The world's first AI-powered, quantum-resistant Layer-ZERO blockchain,
+        delivering 3,600,000 TPS, 0.031-second finality, and near-zero fees for
+        global commerce, stablecoins, and real-world assets.
+    </p>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="num">3,600,000 TPS</div>
+            <div class="label">maximum throughput</div>
+        </div>
+
+        <div class="stat">
+            <div class="num">0.031s</div>
+            <div class="label">block time</div>
+        </div>
+
+        <div class="stat">
+            <div class="num">0.031s</div>
+            <div class="label">instant finality</div>
+        </div>
+
+        <div class="stat">
+            <div class="num">PoL</div>
+            <div class="label">Proof of Light</div>
+        </div>
+
+        <div class="stat">
+            <div class="num">400+</div>
+            <div class="label">media reports</div>
+        </div>
+    </div>
+</div>
+
+<div class="side-card">
+    <div class="card">
+        <h3>Key Advantages</h3>
+        <ul>
+            <li>AI-Powered Infrastructure</li>
+            <li>Quantum-Resistant Security</li>
+            <li>Near-Zero Transaction Fees</li>
+            <li>Instant Finality</li>
+            <li>Real-Time Global Payments</li>
+        </ul>
+    </div>
+</div>
+
+</div>
+</header>
+
+<main>
+
+<section class="content">
+
+<article>
+
+<h2>What is AtlantisChain?</h2>
+
+<p>
+AtlantisChain is a U.S.-designed Layer-ZERO public blockchain engineered for
+real-time commerce, financial infrastructure, and public services. Powered by
+the innovative Proof of Light (PoL) consensus algorithm, the network delivers
+up to 3,600,000 transactions per second while maintaining a block time and
+finality of just 0.031 seconds.
+</p>
+
+<h2>Built for Global Scale</h2>
+
+<p>
+AtlantisChain has been extensively reported by more than 400 media outlets
+throughout the United States. The network is designed to support stablecoins,
+real-world assets (RWAs), enterprise payments, and large-scale decentralized
+applications requiring predictable performance and extremely low fees.
+</p>
+
+<h2>AI-Powered & Quantum-Resistant</h2>
+
+<p>
+AtlantisChain is described as the world's first AI-powered and
+quantum-resistant blockchain. Its architecture focuses on security,
+commercial scalability, and real-time settlement while maintaining fixed
+near-zero transaction fees.
+</p>
+
+<h2>Major Innovations</h2>
+
+<ul class="features">
+<li>0.031-second block time and finality since April 2025</li>
+<li>Up to 3,600,000 TPS scalability</li>
+<li>AI-powered blockchain infrastructure</li>
+<li>Quantum-resistant security model</li>
+<li>Near-zero transaction fees</li>
+<li>Instant irreversible ATC-20 token transactions</li>
+<li>Global stablecoin and RWA payment support</li>
+</ul>
+
+<h2>Atlantis Time</h2>
+
+<p>
+AtlantisChain introduced Atlantis Time, a proprietary blockchain time system
+that runs parallel to Earth Time while operating independently within the
+network architecture.
+</p>
+
+<h2>Atlantis Wallet & QuantumLock™</h2>
+
+<p>
+ATC-20 assets are secured through Atlantis Wallet, protected by the
+Atlantis QuantumLock™ security framework designed to defend against
+advanced cyber threats and future quantum-era attack vectors.
+</p>
+
+<h2>Protected Intellectual Property</h2>
+
+<p>
+AtlantisChain states that its intellectual property is protected by a
+USPTO-registered trademark under the Atlantis Coin® brand, giving the
+ecosystem a unique position within the blockchain industry.
+</p>
+
+<h2>Atlantis Coin® (ATC)</h2>
+
+<p>
+Atlantis Coin® serves as the native utility token powering the entire
+AtlantisChain ecosystem. It facilitates payments, transfers, token
+operations, and network activity throughout the platform.
+</p>
+
+<h2>Future Vision</h2>
+
+<p>
+Built by an MIT-rooted U.S. team, AtlantisChain aims to provide governments,
+institutions, enterprises, and individuals with scalable Web3 infrastructure
+capable of supporting real-time global commerce and digital finance.
+</p>
+
+<h2>Official Resources</h2>
+
+<ul class="features">
+<li><a href="https://AtlantisChain.org" target="_blank">Website</a></li>
+<li><a href="https://www.amazon.com/dp/B0F54KZ7PQ" target="_blank">Amazon</a></li>
+<li><a href="https://www.facebook.com/AtlantisChain" target="_blank">Facebook</a></li>
+<li><a href="https://t.me/Atlantis_Web3" target="_blank">Telegram</a></li>
+<li><a href="https://x.com/AtlantisChain" target="_blank">X (Twitter)</a></li>
+</ul>
+
+<h2>Conclusion</h2>
+
+<p>
+AtlantisChain positions itself as a next-generation Layer-ZERO blockchain
+focused on speed, scalability, security, and enterprise adoption. With
+3,600,000 TPS, 0.031-second finality, AI-powered infrastructure, and
+quantum-resistant technology, the network is designed to support the future
+of global digital commerce and decentralized finance.
+</p>
+
+</article>
+
+<footer>
+Published on <time datetime="2026-06-01">June 1, 2026</time>
+</footer>
+
+</section>
+
+</main>
+
+</div>
+
+</body>
+</html>
