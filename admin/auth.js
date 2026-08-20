@@ -1,4 +1,4 @@
-const API = "https://atc20-tokenlist-backend.onrender.com/api";
+const API = "https://atc20-tokenlist-backend-lb0k.onrender.com/api";
 
 const loginForm = document.getElementById("loginForm");
 const registerForm = document.getElementById("registerForm");

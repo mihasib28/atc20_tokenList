@@ -1,7 +1,7 @@
 // ===== CONFIG =====
 // https://atc20-tokenlist-backend.onrender.com
 // https://atc20-tokenlist-backend-lb0k.onrender.com
-const API_URL = "https://atc20-tokenlist-backend.onrender.com/api/tokens";
+const API_URL = "https://atc20-tokenlist-backend-lb0k.onrender.com/api/tokens";
 const TOKENS_PER_PAGE = 20;
 
 let currentCategory = "default";
